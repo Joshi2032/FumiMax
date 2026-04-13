@@ -1,0 +1,17 @@
+@use '../_variables' as *;
+
+.section {
+	padding: 4rem 1rem 2rem 1rem;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+.faq-list {
+	margin-top: 2rem;
+}
+.faq-item {
+	background: #fff;
+	border-radius: 1rem;
+	box-shadow: 0 2px 12px rgba(26,143,92,0.06);
+	padding: 1.5rem 1rem;
+	margin-bottom: 1rem;
+}
