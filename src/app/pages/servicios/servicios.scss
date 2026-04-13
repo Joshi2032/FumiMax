@@ -1,20 +1,84 @@
 @use '../_variables' as *;
 
+@use '../_variables' as *;
+
 .section {
 	padding: 4rem 1rem 2rem 1rem;
 	max-width: 1200px;
 	margin: 0 auto;
+	font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
 }
+
+h2 {
+	font-size: 2.8rem;
+	font-weight: 800;
+	color: $gris-texto;
+	text-align: center;
+	margin-bottom: 0.5rem;
+}
+
+
+.servicios-descripcion {
+	color: #3a4a56;
+	text-align: center;
+	font-size: 1.15rem;
+	margin-bottom: 2.5rem;
+}
+
 .servicios-list {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-	gap: 2rem;
+	grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+	gap: 2.5rem;
 	margin-top: 2rem;
 }
+
 .servicio {
 	background: #fff;
-	border-radius: 1rem;
-	box-shadow: 0 2px 12px rgba(26,143,92,0.06);
-	padding: 2rem 1rem;
+	border-radius: 1.25rem;
+	box-shadow: 0 2px 16px rgba(26,143,92,0.08);
+	padding: 2.5rem 2rem 2.5rem 2rem;
 	text-align: left;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	transition: box-shadow 0.2s, transform 0.2s;
+	border: 1.5px solid #e6f7ef;
+}
+.servicio:hover {
+	box-shadow: 0 4px 24px rgba(26,143,92,0.14);
+	transform: translateY(-4px) scale(1.02);
+}
+
+.servicio-icon {
+	width: 48px;
+	height: 48px;
+	border-radius: 12px;
+	background: #e6f7ef;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 1.2rem;
+}
+.servicio-icon--main {
+	background: $verde;
+}
+.servicio-icon--main svg circle {
+	fill: $verde !important;
+}
+.servicio h3 {
+	font-size: 1.35rem;
+	font-weight: 700;
+	margin: 0 0 0.5rem 0;
+	color: $gris-texto;
+}
+.servicio p {
+	color: $gris-texto;
+	font-size: 1.05rem;
+	margin: 0;
+}
+
+@media (max-width: 900px) {
+	.servicios-list {
+		grid-template-columns: 1fr;
+	}
 }
