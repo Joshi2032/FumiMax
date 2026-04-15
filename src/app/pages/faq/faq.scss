@@ -1,42 +1,98 @@
 @use '../_variables' as *;
 
-.section {
-	padding: 4rem 1rem 2rem 1rem;
-	max-width: 1200px;
-	margin: 0 auto;
+.faq-section {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background: #e9f1ef;
+  padding: 6rem 0 6rem 0;
 }
+
+.faq-header {
+  text-align: center;
+  margin-bottom: 3rem;
+
+  h2 {
+    font-size: 2.6rem;
+    font-weight: 800;
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #1a2b2e;
+    margin: 0 0 0.6rem;
+    letter-spacing: -0.5px;
+  }
+
+  .faq-descripcion {
+    font-size: 1.15rem;
+    color: #5a6a72;
+    margin: 0;
+  }
+}
+
 .faq-list {
-	margin-top: 2rem;
-	display: flex;
-	flex-direction: column;
-	gap: 1.5rem;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 .faq-item {
-	background: #fff;
-	border-radius: 1rem;
-	box-shadow: 0 2px 12px rgba(26,143,92,0.08);
-	padding: 1.5rem 1.2rem;
-	margin-bottom: 0;
-	transition: box-shadow 0.2s;
-	border-left: 6px solid #1a8f5c;
-	position: relative;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(26,143,92,0.08);
+  padding: 1.5rem 1.2rem;
+  margin-bottom: 0;
+  transition: box-shadow 0.2s;
+  border-left: none;
+  border: 1.5px solid #e4eeeb;
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 56px;
 }
 .faq-item:hover {
-	box-shadow: 0 4px 24px rgba(26,143,92,0.14);
+  box-shadow: 0 4px 24px rgba(26,143,92,0.14);
 }
-.faq-item h4 {
-	font-size: 1.1rem;
-	font-weight: 700;
-	color: #1a8f5c;
-	margin-bottom: 0.5rem;
+.faq-item h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1a2b2e;
+  margin-bottom: 0;
+  flex: 1;
 }
 .faq-item p {
-	color: #3a4a56;
-	font-size: 1rem;
-	margin: 0;
+  color: #3a4a56;
+  font-size: 1rem;
+  margin: 0.7rem 0 0 0;
+  display: none;
+}
+.faq-item.open p {
+  display: block;
+}
+.faq-toggle {
+  margin-left: 1.2rem;
+  color: #1a8f5c;
+  font-size: 1.3rem;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s;
+}
+.faq-item.open .faq-toggle {
+  transform: rotate(180deg);
 }
 @media (max-width: 900px) {
-	.faq-item {
-		padding: 1.1rem 0.7rem;
-	}
+  .faq-section {
+    padding: 3rem 0 2rem 0;
+  }
+  .faq-list {
+    padding: 0 1vw;
+  }
+  .faq-item {
+    padding: 1.1rem 0.7rem;
+  }
 }
