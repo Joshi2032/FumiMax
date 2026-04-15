@@ -1,52 +1,90 @@
 @use '../_variables' as *;
 
-.section {
-	padding: 4rem 1rem 2rem 1rem;
-	max-width: 1200px;
-	margin: 0 auto;
+.certificaciones-section {
+  padding: 3.5rem 2rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
+
+.certificaciones-header {
+  text-align: center;
+  margin-bottom: 3rem;
+
+  h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #1a2b2e;
+    margin: 0 0 0.6rem;
+    letter-spacing: -0.5px;
+  }
+
+  .certificaciones-descripcion {
+    font-size: 1rem;
+    color: #5a6a72;
+    margin: 0;
+  }
+}
+
 .certificaciones-list {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-	gap: 2.5rem;
-	margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2.2rem;
 }
-.certificacion {
-	background: #e6f7ef;
-	border-radius: 1.25rem;
-	padding: 2.5rem 1.5rem;
-	text-align: center;
-	box-shadow: 0 2px 12px rgba(26,143,92,0.08);
-	transition: box-shadow 0.2s;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+
+.certificacion-card {
+  background: #fff;
+  border: 1.5px solid #e4eeeb;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(26,143,92,0.08);
+  padding: 2rem 1.2rem 2rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.7rem;
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+  min-height: 180px;
+  position: relative;
+
+  &:hover {
+    box-shadow: 0 6px 32px rgba(26,143,92,0.14);
+    border-color: #a8cfc4;
+    transform: translateY(-6px) scale(1.025);
+  }
 }
-.certificacion:hover {
-	box-shadow: 0 4px 24px rgba(26,143,92,0.14);
+
+.certificacion-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #0f6e56;
+  background: #e1f5ee;
+  padding: 2px 10px;
+  border-radius: 20px;
+  margin-bottom: 0.5rem;
 }
-.certificacion img {
-	width: 80px;
-	height: 80px;
-	object-fit: contain;
-	margin-bottom: 1rem;
-	border-radius: 0.5rem;
-	background: #fff;
-	box-shadow: 0 1px 6px rgba(26,143,92,0.06);
+
+.certificacion-card h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #1a2b2e;
+  margin: 0 0 0.4rem;
 }
-.certificacion h4 {
-	font-size: 1.15rem;
-	font-weight: 700;
-	color: #1a8f5c;
-	margin-bottom: 0.5rem;
+
+.certificacion-card p {
+  font-size: 0.95rem;
+  color: #3a4a56;
+  line-height: 1.6;
+  margin: 0;
 }
-.certificacion p {
-	color: #3a4a56;
-	font-size: 1rem;
-	margin: 0;
-}
+
 @media (max-width: 900px) {
-	.certificaciones-list {
-		grid-template-columns: 1fr;
-	}
+  .certificaciones-section {
+    padding: 2rem 0.5rem 1rem 0.5rem;
+  }
+  .certificaciones-list {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
 }

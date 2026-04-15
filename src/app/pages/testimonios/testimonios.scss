@@ -1,49 +1,106 @@
 @use '../_variables' as *;
 
-.section {
-	padding: 4rem 1rem 2rem 1rem;
-	max-width: 1200px;
-	margin: 0 auto;
+testimonios-section {
+  padding: 3.5rem 2rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
-.testimonios-list {
-	display: flex;
-	flex-direction: column;
-	gap: 2.5rem;
-	margin-top: 2rem;
+
+testimonios-header {
+  text-align: center;
+  margin-bottom: 3rem;
+
+  h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #1a2b2e;
+    margin: 0 0 0.6rem;
+    letter-spacing: -0.5px;
+  }
+
+  .testimonios-descripcion {
+    font-size: 1rem;
+    color: #5a6a72;
+    margin: 0;
+  }
 }
-.testimonios-list blockquote {
-	background: #fff;
-	border-left: 6px solid #1a8f5c;
-	padding: 2rem 1.5rem 2rem 2.5rem;
-	border-radius: 1rem;
-	box-shadow: 0 2px 12px rgba(26,143,92,0.08);
-	font-style: italic;
-	position: relative;
-	transition: box-shadow 0.2s;
+
+testimonios-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.2rem;
 }
-.testimonios-list blockquote:hover {
-	box-shadow: 0 4px 24px rgba(26,143,92,0.14);
+
+testimonio-card {
+  background: #fff;
+  border: 1.5px solid #e4eeeb;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(26,143,92,0.08);
+  padding: 2rem 1.2rem 2rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.7rem;
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+  min-height: 160px;
+  position: relative;
+
+  &:hover {
+    box-shadow: 0 6px 32px rgba(26,143,92,0.14);
+    border-color: #a8cfc4;
+    transform: translateY(-6px) scale(1.025);
+  }
 }
-.testimonios-list blockquote::before {
-	content: '“';
-	position: absolute;
-	left: 1rem;
-	top: 1rem;
-	font-size: 2.5rem;
-	color: #1a8f5c;
-	font-family: serif;
-	opacity: 0.18;
+
+testimonio-card blockquote {
+  font-size: 1.05rem;
+  color: #1a2b2e;
+  font-style: italic;
+  margin: 0 0 0.7rem 0;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 1.2rem;
 }
-.testimonios-list cite {
-	display: block;
-	margin-top: 1rem;
-	font-weight: 700;
-	color: #388e3c;
-	font-style: normal;
-	font-size: 1rem;
+
+testimonio-card blockquote:before {
+  content: '“';
+  position: absolute;
+  left: 0;
+  top: -0.2rem;
+  font-size: 2.2rem;
+  color: #1D9E75;
+  opacity: 0.18;
+  font-family: serif;
 }
+
+testimonio-author {
+  font-size: 0.95rem;
+  color: #388e3c;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+author-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #0f6e56;
+  background: #e1f5ee;
+  padding: 2px 8px;
+  border-radius: 20px;
+  margin-left: 0.5rem;
+}
+
 @media (max-width: 900px) {
-	.testimonios-list blockquote {
-		padding: 1.5rem 1rem 1.5rem 1.5rem;
-	}
+  .testimonios-section {
+    padding: 2rem 0.5rem 1rem 0.5rem;
+  }
+  .testimonios-list {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
 }
