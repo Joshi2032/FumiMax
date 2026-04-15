@@ -1,5 +1,73 @@
 @use '../_variables' as *;
 
+.proceso {
+	text-align: center;
+	h2 {
+		font-size: 2rem;
+		font-weight: 800;
+		color: #1a2b2e;
+		margin-bottom: 2rem;
+	}
+	.pasos {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 2rem;
+		margin-bottom: 2rem;
+	}
+	.paso {
+		background: #f6faf9;
+		border-radius: 1.25rem;
+		box-shadow: 0 2px 12px rgba(26,143,92,0.06);
+		padding: 2rem 1.5rem;
+		min-width: 220px;
+		max-width: 260px;
+		flex: 1 1 220px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		position: relative;
+		h3 {
+			font-size: 1.2rem;
+			font-weight: 700;
+			color: #388e3c;
+			margin-bottom: 0.5rem;
+		}
+		p {
+			color: #3a4a56;
+			font-size: 1rem;
+		}
+		.numero {
+			position: absolute;
+			top: -1.2rem;
+			left: 50%;
+			transform: translateX(-50%);
+			background: #2e7d32;
+			color: #fff;
+			border-radius: 50%;
+			width: 2.2rem;
+			height: 2.2rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-weight: 800;
+			font-size: 1.1rem;
+			box-shadow: 0 2px 8px rgba(46,125,50,0.10);
+			border: 3px solid #fff;
+		}
+	}
+	@media (max-width: 900px) {
+		.pasos {
+			flex-direction: column;
+			align-items: center;
+		}
+		.paso {
+			max-width: 100%;
+			min-width: 0;
+		}
+	}
+}
+
 .section {
 	padding: 4rem 1rem 2rem 1rem;
 	max-width: 1200px;

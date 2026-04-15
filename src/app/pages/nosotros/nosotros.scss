@@ -1,5 +1,46 @@
 @use '../_variables' as *;
 
+.nosotros {
+	background: linear-gradient(120deg, #f6faf9 60%, #e0f7fa 100%);
+	border-radius: 1.5rem;
+	padding: 3rem 1.5rem;
+	box-shadow: 0 2px 16px 0 rgba(26,143,92,0.06);
+	margin-bottom: 2rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 2.5rem;
+	h2 {
+		font-size: 2rem;
+		font-weight: 800;
+		color: #1a2b2e;
+		margin-bottom: 1rem;
+	}
+	p {
+		color: #3a4a56;
+		font-size: 1.1rem;
+		margin-bottom: 1.5rem;
+	}
+	.nosotros-info {
+		flex: 2;
+	}
+	.nosotros-img {
+		flex: 1;
+		min-width: 180px;
+		img {
+			width: 100%;
+			border-radius: 1rem;
+			box-shadow: 0 2px 12px rgba(26,143,92,0.10);
+		}
+	}
+	@media (max-width: 900px) {
+		flex-direction: column;
+		.nosotros-img {
+			margin-bottom: 1.5rem;
+		}
+	}
+}
+
 .section {
 	padding: 4rem 1rem 2rem 1rem;
 	max-width: 1200px;

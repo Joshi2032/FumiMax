@@ -8,14 +8,42 @@
 .testimonios-list {
 	display: flex;
 	flex-direction: column;
-	gap: 2rem;
+	gap: 2.5rem;
 	margin-top: 2rem;
 }
 .testimonios-list blockquote {
 	background: #fff;
 	border-left: 6px solid #1a8f5c;
-	padding: 1.5rem 1rem 1.5rem 2rem;
-	border-radius: 0.5rem;
-	box-shadow: 0 2px 12px rgba(26,143,92,0.06);
+	padding: 2rem 1.5rem 2rem 2.5rem;
+	border-radius: 1rem;
+	box-shadow: 0 2px 12px rgba(26,143,92,0.08);
 	font-style: italic;
+	position: relative;
+	transition: box-shadow 0.2s;
+}
+.testimonios-list blockquote:hover {
+	box-shadow: 0 4px 24px rgba(26,143,92,0.14);
+}
+.testimonios-list blockquote::before {
+	content: '“';
+	position: absolute;
+	left: 1rem;
+	top: 1rem;
+	font-size: 2.5rem;
+	color: #1a8f5c;
+	font-family: serif;
+	opacity: 0.18;
+}
+.testimonios-list cite {
+	display: block;
+	margin-top: 1rem;
+	font-weight: 700;
+	color: #388e3c;
+	font-style: normal;
+	font-size: 1rem;
+}
+@media (max-width: 900px) {
+	.testimonios-list blockquote {
+		padding: 1.5rem 1rem 1.5rem 1.5rem;
+	}
 }

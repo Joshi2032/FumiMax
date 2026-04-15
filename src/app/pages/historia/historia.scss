@@ -1,20 +1,174 @@
 @use '../_variables' as *;
 
 .section {
-	padding: 4rem 1rem 2rem 1rem;
-	max-width: 1200px;
-	margin: 0 auto;
+  padding: 3rem 2rem 2rem;
+  max-width: 780px;
+  margin: 0 auto;
 }
-.historia-timeline {
-	display: flex;
-	flex-direction: column;
-	gap: 2rem;
-	margin-top: 2rem;
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+
+  h2 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #1a2b2e;
+    margin: 0 0 0.6rem;
+    letter-spacing: -0.5px;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #5a6a72;
+    margin: 0;
+  }
 }
-.historia-evento {
-	background: #fff;
-	border-left: 6px solid #1a8f5c;
-	padding: 1.5rem 1rem 1.5rem 2rem;
-	border-radius: 0.5rem;
-	box-shadow: 0 2px 12px rgba(26,143,92,0.06);
+
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.timeline-track {
+  position: absolute;
+  left: 50%;
+  top: 24px;
+  bottom: 24px;
+  width: 1px;
+  background: #cfe6df;
+  transform: translateX(-50%);
+}
+
+.evento {
+  display: grid;
+  grid-template-columns: 1fr 56px 1fr;
+  align-items: start;
+  gap: 0;
+  padding: 0 0 3rem;
+  position: relative;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  &:hover .dot {
+    background: #1D9E75;
+    border-color: #1D9E75;
+  }
+
+  &:hover .evento-card {
+    border-color: #a8cfc4;
+  }
+}
+
+.evento-left {
+  text-align: right;
+  padding-right: 36px;
+}
+
+.evento-right {
+  text-align: left;
+  padding-left: 36px;
+}
+
+.evento-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 4px;
+  position: relative;
+  z-index: 2;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #4a5e57;
+  flex-shrink: 0;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.evento-card {
+  background: #fff;
+  border: 1px solid #e4eeeb;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  transition: border-color 0.2s;
+}
+
+.empty {
+  visibility: hidden;
+}
+
+.year-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #0f6e56;
+  background: #e1f5ee;
+  padding: 2px 8px;
+  border-radius: 20px;
+  margin-bottom: 0.5rem;
+}
+
+.evento-card h3 {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #1a2b2e;
+  margin: 0 0 0.4rem;
+}
+
+.evento-card p {
+  font-size: 0.875rem;
+  color: #3a4a56;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 2rem 1rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .timeline-track {
+    left: 20px;
+  }
+
+  .evento {
+    grid-template-columns: 36px 1fr;
+  }
+
+  .evento-left {
+    display: none;
+  }
+
+  .evento-center {
+    padding-top: 5px;
+  }
+
+  .evento-right,
+  .evento-right.empty {
+    display: block;
+    visibility: visible;
+    padding-left: 20px;
+  }
+
+  .evento-left.empty {
+    display: none;
+  }
+}
+
+body {
+  background: #f6faf9;
 }

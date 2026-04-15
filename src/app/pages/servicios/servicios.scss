@@ -27,26 +27,27 @@ h2 {
 
 .servicios-list {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-	gap: 2.5rem;
-	margin-top: 2rem;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	gap: 2.2rem;
+	margin-top: 2.2rem;
 }
 
 .servicio {
-	background: #fff;
+	background: linear-gradient(120deg, #f6faf9 60%, #e0f7fa 100%);
 	border-radius: 1.25rem;
 	box-shadow: 0 2px 16px rgba(26,143,92,0.08);
-	padding: 2.5rem 2rem 2.5rem 2rem;
+	padding: 2.2rem 1.5rem 2.2rem 1.5rem;
 	text-align: left;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	transition: box-shadow 0.2s, transform 0.2s;
 	border: 1.5px solid #e6f7ef;
+	min-height: 260px;
 }
 .servicio:hover {
-	box-shadow: 0 4px 24px rgba(26,143,92,0.14);
-	transform: translateY(-4px) scale(1.02);
+	box-shadow: 0 6px 32px rgba(26,143,92,0.14);
+	transform: translateY(-6px) scale(1.025);
 }
 
 .servicio-icon {
@@ -58,6 +59,7 @@ h2 {
 	align-items: center;
 	justify-content: center;
 	margin-bottom: 1.2rem;
+	font-size: 2rem;
 }
 .servicio-icon--main {
 	background: $verde;
@@ -66,14 +68,14 @@ h2 {
 	fill: $verde !important;
 }
 .servicio h3 {
-	font-size: 1.35rem;
-	font-weight: 700;
+	font-size: 1.25rem;
+	font-weight: 800;
 	margin: 0 0 0.5rem 0;
-	color: $gris-texto;
+	color: #1a2b2e;
 }
 .servicio p {
-	color: $gris-texto;
-	font-size: 1.05rem;
+	color: #3a4a56;
+	font-size: 1.08rem;
 	margin: 0;
 }
 
