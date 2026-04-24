@@ -1,5 +1,97 @@
 @use './_variables' as *;
 
+@media (max-width: 600px) {
+  .hero-section,
+  .servicios-section,
+  .certificaciones-section,
+  .proceso-section,
+  .faq-section,
+  .contacto-section,
+  .section {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+// ─── Transiciones de entrada ──────────────────────────────────────────
+$ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+$duration-base: 0.85s;
+
+.section,
+.hero-section {
+  will-change: opacity, transform, filter;
+  transition:
+    opacity    $duration-base $ease-out-expo,
+    transform  $duration-base $ease-out-expo,
+    filter     $duration-base $ease-out-expo;
+
+  // Por defecto: desde abajo
+  opacity: 0;
+  transform: translateY(48px);
+  filter: blur(4px);
+
+  &[data-enter-dir='from-top'] {
+    transform: translateY(-32px);
+  }
+  &[data-enter-dir='from-left'] {
+    transform: translateX(-56px) translateY(16px);
+  }
+  &[data-enter-dir='from-right'] {
+    transform: translateX(56px) translateY(16px);
+  }
+  &[data-enter-dir='from-bottom'] {
+    transform: translateY(56px);
+  }
+
+  // Estado final: visible
+  &.in-view {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+// Respeta preferencia del usuario
+@media (prefers-reduced-motion: reduce) {
+  .section,
+  .hero-section {
+    transition: none !important;
+    transform: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+  }
+}
+
+// ─── Navbar: entrada suave al cargar ─────────────────────────────────
+.main-nav {
+  animation: nav-slide-down 0.6s $ease-out-expo both;
+}
+
+@keyframes nav-slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+// Stagger en los links del nav
+.nav-links li {
+  @for $i from 1 through 10 {
+    &:nth-child(#{$i}) a {
+      animation: nav-link-fade 0.4s $ease-out-expo #{0.15s + $i * 0.05s} both;
+    }
+  }
+}
+
+@keyframes nav-link-fade {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: none; }
+}
+
+
 // Separadores visuales
 
 
@@ -266,21 +358,7 @@ p, li {
   border-radius: 1.5rem;
   box-shadow: 0 4px 32px rgba(26,143,92,0.12);
 }
-.hero-stats {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  margin: 2rem 0 0 0;
-}
-.hero-stats div {
-  text-align: center;
-}
-.hero-stats span {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  color: #1a8f5c;
-}
+// Solo dejar la definición moderna de .hero-section con animación y layout correcto
 .hero-stats small {
   color: #3a4a56;
 }

@@ -1,35 +1,10 @@
 @use '../_variables' as *;
+@use '../_mixins' as *;
+@use '../_mixins' as *;
 
-.servicios-section {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  background: #e9f1ef;
-  padding: 6rem 0 6rem 0;
-}
+.servicios-section { @include full-bleed-section(#e9f1ef); }
 
-.servicios-header {
-  text-align: center;
-  margin-bottom: 3rem;
-
-  h2 {
-    font-size: 2.6rem;
-    font-weight: 800;
-    font-family: Georgia, 'Times New Roman', serif;
-    color: #1a2b2e;
-    margin: 0 0 0.6rem;
-    letter-spacing: -0.5px;
-  }
-
-  .servicios-descripcion {
-    font-size: 1.15rem;
-    color: #5a6a72;
-    margin: 0;
-  }
-}
+.servicios-header { @include section-header; }
 
 .servicios-list {
   display: grid;
@@ -41,25 +16,13 @@
 }
 
 .servicio-card {
-  background: #fff;
-  border: 1.5px solid #e4eeeb;
-  border-radius: 20px;
-  box-shadow: 0 2px 16px rgba(26,143,92,0.08);
-  padding: 2.5rem 2rem 2rem 2rem;
+  @include card-base;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 1.2rem;
-  transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
-  min-height: 220px;
   position: relative;
   overflow: hidden;
-
-  &:hover {
-    box-shadow: 0 6px 32px rgba(26,143,92,0.14);
-    border-color: #a8cfc4;
-    transform: translateY(-6px) scale(1.025);
-  }
 }
 
 .servicio-icon {
@@ -78,14 +41,11 @@
   background: #1a8f5c;
 }
 .servicio-badge {
-  display: inline-block;
+  @include eyebrow;
   font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: #0f6e56;
   background: #e1f5ee;
-  padding: 2px 8px;
   border-radius: 20px;
+  padding: 2px 8px;
   margin-bottom: 0.5rem;
 }
 .servicio-content {

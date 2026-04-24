@@ -1,0 +1,63 @@
+@mixin full-bleed-section($bg, $padding: 6rem 0, $padding-mobile: 3rem 0 2rem) {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  background: $bg;
+  padding: $padding;
+
+  @media (max-width: 900px) { padding: $padding-mobile; }
+}
+
+@mixin section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+
+  h2 {
+    font-size: 2.6rem;
+    font-weight: 800;
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #1a2b2e;
+    margin: 0 0 0.6rem;
+    letter-spacing: -0.5px;
+  }
+
+  p {
+    font-size: 1.15rem;
+    color: #5a6a72;
+    margin: 0;
+  }
+}
+
+@mixin card-base($min-height: 220px) {
+  background: #fff;
+  border: 1.5px solid #e4eeeb;
+  border-radius: 20px;
+  box-shadow: 0 2px 16px rgba(26, 143, 92, 0.08);
+  padding: 2.5rem 2rem 2rem;
+  min-height: $min-height;
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+
+  &:hover {
+    box-shadow: 0 6px 32px rgba(26, 143, 92, 0.14);
+    border-color: #a8cfc4;
+    transform: translateY(-6px) scale(1.025);
+  }
+}
+
+@mixin eyebrow {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a8f5c;
+  letter-spacing: 0.5px;
+  gap: 0.5em;
+  .dot {
+    width: 0.7em;
+    height: 0.7em;
+    border-radius: 50%;
+    background: #1a8f5c;
+    display: inline-block;
+  }
+}

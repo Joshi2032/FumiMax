@@ -1,5 +1,39 @@
 @use '../_variables' as *;
 
+.hero-badge-mobile {
+	display: none;
+	margin: 1.5rem auto 0 auto;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	background: #fff;
+	border: 1px solid #e4eeeb;
+	border-radius: 12px;
+	padding: 10px 14px;
+	max-width: 320px;
+	.badge-icon {
+		width: 36px;
+		height: 36px;
+		border-radius: 8px;
+		background: #E1F5EE;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		svg { width: 18px; height: 18px; }
+	}
+	.badge-text-top {
+		font-size: 13px;
+		font-weight: 600;
+		color: #1a2b2e;
+		line-height: 1.2;
+	}
+	.badge-text-sub {
+		font-size: 11px;
+		color: #8a9a9e;
+	}
+}
+
 .hero {
 	background: linear-gradient(120deg, #e0f7fa 0%, #f6faf9 100%);
 	border-radius: 1.5rem;
@@ -255,5 +289,6 @@
 		gap: 2rem;
 	}
 	.hero-h1 { font-size: 2rem; }
-	.hero-right { display: none; }
+ 	.hero-right { display: none; }
+  .hero-badge-mobile { display: flex; }
 }

@@ -3,6 +3,10 @@ html {
 }
 body {
 	background: #f5f7fa;
+	// Fondo especial para la página de historia
+	&.historia-bg {
+		background: #f6faf9;
+	}
 	margin: 0;
 	font-family: 'Inter', Arial, sans-serif;
 	color: #1a2a36;

@@ -1,4 +1,15 @@
 @use '../_variables' as *;
+@media (max-width: 900px) and (min-width: 769px) {
+  .proceso-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    padding: 0 2vw;
+  }
+  .proceso-item {
+    min-height: 160px;
+    padding: 2rem 1.2rem 1.5rem 1.2rem;
+  }
+}
 
 .proceso-section {
   width: 100vw;

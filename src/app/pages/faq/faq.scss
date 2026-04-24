@@ -87,16 +87,19 @@
 .faq-item.open .faq-toggle {
   transform: rotate(180deg);
 }
-.faq-item p {
+.faq-answer {
   color: #3a4a56;
   font-size: 1rem;
   margin: 0;
-  padding: 1.2rem 1.2rem 1.5rem 1.2rem;
-  display: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 0 1.2rem;
   line-height: 1.7;
 }
-.faq-item.open p {
-  display: block;
+.faq-item.open .faq-answer {
+  max-height: 300px;
+  padding: 1.2rem 1.2rem 1.5rem;
 }
 @media (max-width: 900px) {
   .faq-section {

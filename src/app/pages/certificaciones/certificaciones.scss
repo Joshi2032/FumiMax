@@ -1,35 +1,9 @@
 @use '../_variables' as *;
+@use '../_mixins' as *;
 
-.certificaciones-section {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  background: #101412;
-  padding: 6rem 0 6rem 0;
-}
+.certificaciones-section { @include full-bleed-section(#101412); }
 
-.certificaciones-header {
-  text-align: center;
-  margin-bottom: 3rem;
-
-  h2 {
-    font-size: 2.6rem;
-    font-weight: 800;
-    font-family: Georgia, 'Times New Roman', serif;
-    color: #fff;
-    margin: 0 0 0.6rem;
-    letter-spacing: -0.5px;
-  }
-
-  .certificaciones-descripcion {
-    font-size: 1.15rem;
-    color: #c7c7c7;
-    margin: 0;
-  }
-}
+.certificaciones-header { @include section-header; }
 
 .certificaciones-list {
   display: grid;
@@ -40,14 +14,13 @@
   padding: 0 2vw;
 }
 
-.certificacion-card {
-  background: #151916;
-  border: 1.5px solid #232825;
-  border-radius: 20px;
-  box-shadow: 0 2px 16px rgba(247,167,108,0.08);
-  padding: 2.5rem 2rem 2rem 2rem;
-  display: flex;
-  flex-direction: column;
+  .certificacion-card {
+    @include card-base;
+    background: #151916;
+    border: 1.5px solid #232825;
+    box-shadow: 0 2px 16px rgba(247,167,108,0.08);
+    display: flex;
+    flex-direction: column;
   align-items: center;
   gap: 1.2rem;
   transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
