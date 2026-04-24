@@ -30,4 +30,13 @@ import { Contacto } from './contacto/contacto';
 })
 export class LandingComponent {
   menuOpen = false;
+
+  scrollToSection(event: Event, sectionId: string) {
+    event.preventDefault();
+    this.menuOpen = false;
+    const el = document.getElementById(sectionId);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 }

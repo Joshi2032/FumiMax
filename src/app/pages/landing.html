@@ -7,16 +7,16 @@
       <span class="bar"></span>
     </button>
     <ul class="nav-links" [class.open]="menuOpen">
-      <li><a href="#hero" (click)="menuOpen = false">Inicio</a></li>
-      <li><a href="#servicios" (click)="menuOpen = false">Servicios</a></li>
-      <li><a href="#proceso" (click)="menuOpen = false">Proceso</a></li>
-      <li><a href="#nosotros" (click)="menuOpen = false">Nosotros</a></li>
-      <li><a href="#historia" (click)="menuOpen = false">Historia</a></li>
-      <li><a href="#certificaciones" (click)="menuOpen = false">Certificaciones</a></li>
-      <li><a href="#testimonios" (click)="menuOpen = false">Testimonios</a></li>
-      <li><a href="#faq" (click)="menuOpen = false">FAQ</a></li>
-      <li><a href="#cobertura" (click)="menuOpen = false">Cobertura</a></li>
-      <li><a href="#contacto" class="nav-cta" (click)="menuOpen = false">Contacto</a></li>
+      <li><a href="#hero" (click)="scrollToSection($event, 'hero')">Inicio</a></li>
+      <li><a href="#servicios" (click)="scrollToSection($event, 'servicios')">Servicios</a></li>
+      <li><a href="#proceso" (click)="scrollToSection($event, 'proceso')">Proceso</a></li>
+      <li><a href="#nosotros" (click)="scrollToSection($event, 'nosotros')">Nosotros</a></li>
+      <li><a href="#historia" (click)="scrollToSection($event, 'historia')">Historia</a></li>
+      <li><a href="#certificaciones" (click)="scrollToSection($event, 'certificaciones')">Certificaciones</a></li>
+      <li><a href="#testimonios" (click)="scrollToSection($event, 'testimonios')">Testimonios</a></li>
+      <li><a href="#faq" (click)="scrollToSection($event, 'faq')">FAQ</a></li>
+      <li><a href="#cobertura" (click)="scrollToSection($event, 'cobertura')">Cobertura</a></li>
+      <li><a href="#contacto" class="nav-cta" (click)="scrollToSection($event, 'contacto')">Contacto</a></li>
     </ul>
   </nav>
 
