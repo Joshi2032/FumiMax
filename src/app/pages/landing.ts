@@ -30,11 +30,13 @@ import { Contacto } from './contacto/contacto';
 })
 export class LandingComponent {
     ngAfterViewInit() {
-      // Animación de aparición al hacer scroll
-      const sections = document.querySelectorAll('.section, .hero-section');
+      // Animación de aparición al hacer scroll con retardo progresivo
+      const sections = Array.from(document.querySelectorAll('.section, .hero-section'));
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
+            const idx = sections.indexOf(entry.target as HTMLElement);
+            (entry.target as HTMLElement).style.transitionDelay = `${idx * 0.15}s`;
             entry.target.classList.add('in-view');
           }
         });
