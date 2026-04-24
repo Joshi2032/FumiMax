@@ -29,6 +29,22 @@ import { Contacto } from './contacto/contacto';
   ]
 })
 export class LandingComponent {
+    ngAfterViewInit() {
+      // Animación de aparición al hacer scroll
+      const sections = document.querySelectorAll('.section, .hero-section');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+          }
+        });
+      }, {
+        threshold: 0.15
+      });
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+    }
   menuOpen = false;
 
   scrollToSection(event: Event, sectionId: string) {

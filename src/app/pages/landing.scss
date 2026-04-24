@@ -90,6 +90,13 @@ p, li {
 .hero-section {
   background: linear-gradient(180deg, #f5f7fa 80%, #e6f7ef 100%);
   box-shadow: 0 4px 32px rgba(26,143,92,0.04);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(.4,0,.2,1), transform 0.8s cubic-bezier(.4,0,.2,1);
+  &.in-view {
+    opacity: 1;
+    transform: none;
+  }
 }
 // Barra de navegación sticky
 .main-nav {
@@ -278,6 +285,13 @@ p, li {
   padding: 4rem 1rem 2rem 1rem;
   max-width: 1200px;
   margin: 0 auto;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(.4,0,.2,1), transform 0.8s cubic-bezier(.4,0,.2,1);
+  &.in-view {
+    opacity: 1;
+    transform: none;
+  }
 }
 .servicios-list {
   display: grid;
