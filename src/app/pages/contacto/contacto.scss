@@ -1,6 +1,8 @@
 @use '../_variables' as *;
 @use '../_mixins' as *;
 
+
+// ...al final del archivo...
 @media (max-width: 900px) and (min-width: 769px) {
   .contacto-section {
     grid-template-columns: 1fr 1.2fr;

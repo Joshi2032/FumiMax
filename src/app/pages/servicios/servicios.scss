@@ -1,6 +1,5 @@
 @use '../_variables' as *;
 @use '../_mixins' as *;
-@use '../_mixins' as *;
 
 .servicios-section { @include full-bleed-section(#e9f1ef); }
 

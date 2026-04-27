@@ -1,4 +1,6 @@
 @use '../_variables' as *;
+
+// ...al final del archivo...
 @media (max-width: 900px) and (min-width: 769px) {
   .proceso-list {
     grid-template-columns: 1fr 1fr;

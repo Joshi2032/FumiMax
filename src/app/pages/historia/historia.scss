@@ -1,12 +1,13 @@
 @use '../_variables' as *;
 
-.section {
+.historia-wrapper {
   padding: 3rem 2rem 2rem;
   max-width: 780px;
   margin: 0 auto;
 }
 
-.section-header {
+// Encabezado de la historia
+.historia-header {
   text-align: center;
   margin-bottom: 3.5rem;
 
@@ -130,11 +131,11 @@
 }
 
 @media (max-width: 600px) {
-  .section {
+  .historia-wrapper {
     padding: 2rem 1rem;
   }
 
-  .section-header h2 {
+  .historia-header h2 {
     font-size: 1.8rem;
   }
 
