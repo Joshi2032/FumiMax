@@ -2,11 +2,36 @@
   <div class="nosotros-left">
     <div class="nosotros-badge">
       <span class="nosotros-badge-dot"></span>
-      15+ años de experiencia
+      Más de 15 años de excelencia
     </div>
     <h2>¿Quiénes Somos?</h2>
-    <p>FumiGuard nació con una misión singular: proporcionar una defensa impenetrable para tu propiedad. Nuestro equipo de profesionales certificados combina tecnología de punta con un profundo conocimiento del comportamiento de las plagas.</p>
-    <p>Creemos en la comunicación clara y procesos transparentes, asegurando que estés informado en cada paso. No solo eliminamos plagas; restauramos tu tranquilidad.</p>
+
+    <p>MAXIFUM DEL BAJIO es una empresa con más de 15 años eliminando plagas en Guadalajara y Michoacán. Somos profesionales certificados que cuidamos tu hogar, negocio e industria con métodos seguros y eficaces.</p>
+
+    <div class="nosotros-tabs">
+      <button class="nosotros-tab-btn" [class.active]="activeTab() === 'mision'" (click)="setTab('mision')">Misión</button>
+      <button class="nosotros-tab-btn" [class.active]="activeTab() === 'vision'" (click)="setTab('vision')">Visión</button>
+      <button class="nosotros-tab-btn" [class.active]="activeTab() === 'valores'" (click)="setTab('valores')">Valores</button>
+    </div>
+
+    <div class="nosotros-tab-content" [class.active]="activeTab() === 'mision'" id="mision">
+      <p>Eliminar plagas de forma rápida y segura. Nos importa la salud de tu familia, tus empleados y el ambiente. Usamos productos certificados y métodos que funcionan.</p>
+    </div>
+
+    <div class="nosotros-tab-content" [class.active]="activeTab() === 'vision'" id="vision">
+      <p>Ser la empresa número 1 en fumigación. Queremos que confíes en nosotros porque siempre cumplimos, somos profesionales y nos importa que estés satisfecho.</p>
+    </div>
+
+    <div class="nosotros-tab-content" [class.active]="activeTab() === 'valores'" id="valores">
+      <ul class="nosotros-valores">
+        <li><strong>Calidad:</strong> Trabajos que duran y funcionan bien</li>
+        <li><strong>Trabajo en equipo:</strong> Unidos para servir mejor</li>
+        <li><strong>Honestidad:</strong> Sin sorpresas, todo claro</li>
+        <li><strong>Actitud de servicio:</strong> Lo hacemos con ganas</li>
+        <li><strong>Respeto:</strong> Por ti, tu familia y el ambiente</li>
+      </ul>
+    </div>
+
     <ul class="nosotros-stats">
       <li><span class="stat-num">15+</span> <span class="stat-label">Años</span></li>
       <li><span class="stat-num">5,000+</span> <span class="stat-label">Clientes</span></li>
@@ -16,7 +41,7 @@
   </div>
   <div class="nosotros-right">
     <div class="nosotros-img-wrap">
-      <img src="https://fumiga-amigable-web.lovable.app/assets/about-team-JhY5D51E.jpg" alt="Equipo profesional de FumiGuard" />
+      <img src="https://fumiga-amigable-web.lovable.app/assets/about-team-JhY5D51E.jpg" alt="Equipo profesional de MAXIFUM DEL BAJIO" />
     </div>
   </div>
 </section>

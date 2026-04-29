@@ -7,8 +7,10 @@
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  background: #e9f1ef;
-  padding: 6rem 0 6rem 0;
+  background:
+    radial-gradient(circle at top right, rgba(37, 211, 102, 0.08), transparent 20%),
+    linear-gradient(180deg, #eef4f2 0%, #f7f9fa 100%);
+  padding: 5.5rem 0;
 }
 
 .testimonios-header {
@@ -16,16 +18,16 @@
   margin-bottom: 3rem;
 
   h2 {
-    font-size: 2.6rem;
+    font-size: clamp(2rem, 3vw, 3rem);
     font-weight: 800;
     font-family: Georgia, 'Times New Roman', serif;
-    color: #1a2b2e;
+    color: #0f1f22;
     margin: 0 0 0.6rem;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.04em;
   }
 
   .testimonios-descripcion {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     color: #5a6a72;
     margin: 0;
   }
@@ -33,41 +35,40 @@
 
 .testimonios-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2.2rem;
-  max-width: 1550px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.4rem;
+  max-width: 1320px;
   margin: 0 auto;
-  padding: 0 2vw;
+  padding: 0 1.25rem;
 }
 
 .testimonio-card {
-  background: #fff;
-  border: 1.5px solid #e4eeeb;
-  border-radius: 20px;
-  box-shadow: 0 2px 16px rgba(26,143,92,0.08);
-  padding: 2.5rem 2rem 2rem 2rem;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(20, 108, 68, 0.08);
+  border-radius: 24px;
+  box-shadow: 0 18px 38px rgba(15, 31, 34, 0.06);
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1.2rem;
+  gap: 1rem;
   transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
-  min-height: 220px;
   position: relative;
   overflow: hidden;
 
   &:hover {
-    box-shadow: 0 6px 32px rgba(26,143,92,0.14);
-    border-color: #a8cfc4;
-    transform: translateY(-6px) scale(1.025);
+    box-shadow: 0 24px 46px rgba(15, 31, 34, 0.1);
+    border-color: rgba(20, 108, 68, 0.16);
+    transform: translateY(-4px);
   }
 }
 
 .testimonio-card blockquote {
-  font-size: 1.15rem;
-  color: #222;
+  font-size: 1rem;
+  color: #24343a;
   font-style: italic;
-  margin: 0 0 1.2rem 0;
-  line-height: 1.7;
+  margin: 0;
+  line-height: 1.75;
   position: relative;
   padding-left: 0;
   quotes: "\201C" "\201D";
@@ -79,8 +80,7 @@
 
 .testimonio-stars {
   color: #f7a76c;
-  font-size: 1.3rem;
-  margin-bottom: 0.7rem;
+  font-size: 1.1rem;
   display: block;
 }
 
@@ -92,13 +92,13 @@
 }
 
 .testimonio-avatar {
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  background: #e1f1ef;
-  color: #6a7a7e;
-  font-weight: 700;
-  font-size: 1.1rem;
+  background: #e1f5ee;
+  color: #146c44;
+  font-weight: 800;
+  font-size: 0.95rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -113,7 +113,7 @@
 
 .testimonio-author-info strong {
   font-weight: 700;
-  color: #1a2b2e;
+  color: #0f1f22;
   font-size: 1rem;
 }
 
@@ -124,27 +124,16 @@
 }
 
 @media (max-width: 1200px) {
-  .testimonios-list {
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-  }
+  .testimonios-list { gap: 1.2rem; }
 }
 @media (max-width: 900px) {
   .testimonios-section {
-    padding: 3rem 0 2rem 0;
+    padding: 3.5rem 0;
   }
   .testimonios-list {
-    grid-template-columns: 1fr;
-    gap: 1.2rem;
-    padding: 0 1vw;
+    padding: 0 0.9rem;
   }
   .testimonio-card {
-    padding: 1.5rem 1rem 1.2rem 1rem;
-    min-height: 0;
-  }
-  .testimonio-avatar {
-    width: 36px;
-    height: 36px;
-    font-size: 1rem;
+    padding: 1.35rem;
   }
 }

@@ -1,94 +1,133 @@
 @use '../_variables' as *;
 @use '../_mixins' as *;
 
-.certificaciones-section { @include full-bleed-section(#101412); }
-
-.certificaciones-header { @include section-header; }
-
-.certificaciones-list {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2.2rem;
-  max-width: 1550px;
-  margin: 0 auto;
-  padding: 0 2vw;
+.certificaciones-section {
+  @include full-bleed-section(#0f1517);
+  position: relative;
 }
 
-  .certificacion-card {
-    @include card-base;
-    background: #151916;
-    border: 1.5px solid #232825;
-    box-shadow: 0 2px 16px rgba(247,167,108,0.08);
-    display: flex;
-    flex-direction: column;
-  align-items: center;
-  gap: 1.2rem;
-  transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
-  min-height: 220px;
+.certificaciones-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top right, rgba(37, 211, 102, 0.08), transparent 22%),
+    radial-gradient(circle at left center, rgba(255, 255, 255, 0.04), transparent 20%);
+  pointer-events: none;
+}
+
+.certificaciones-header {
+  @include section-header;
+  position: relative;
+  z-index: 1;
+
+  h2 {
+    font-family: Georgia, 'Times New Roman', serif;
+    letter-spacing: -0.04em;
+    color: #ffffff;
+  }
+
+  p {
+    max-width: 40rem;
+    margin-inline: auto;
+    color: rgba(255, 255, 255, 0.72);
+  }
+}
+
+.certificaciones-list {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.4rem;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.certificacion-card {
+  @include card-base;
+  background: rgba(18, 24, 26, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.22);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.95rem;
+  min-height: 100%;
   position: relative;
   overflow: hidden;
-  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: auto -1rem -1rem auto;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(37, 211, 102, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
 
   &:hover {
-    box-shadow: 0 6px 32px rgba(247,167,108,0.14);
-    border-color: #f7a76c;
-    transform: translateY(-6px) scale(1.025);
+    transform: translateY(-4px);
+    box-shadow: 0 24px 46px rgba(0, 0, 0, 0.28);
+    border-color: rgba(37, 211, 102, 0.16);
   }
 }
 
 .certificacion-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: #231a12;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 1rem;
+  background: rgba(37, 211, 102, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 2rem;
-  color: #f7a76c;
-  margin-bottom: 1.2rem;
+  color: #25d366;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .certificacion-card h3 {
-  font-size: 1.25rem;
+  margin: 0;
+  font-size: 1.15rem;
   font-weight: 800;
-  color: #fff;
-  margin: 0 0 0.4rem;
+  color: #ffffff;
 }
 
 .certificacion-card p {
-  font-size: 1rem;
-  color: #c7c7c7;
-  line-height: 1.6;
   margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.74);
 }
 
 .certificacion-badge {
   display: none;
 }
 
-@media (max-width: 1200px) {
-  .certificaciones-list {
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-  }
-}
 @media (max-width: 900px) {
   .certificaciones-section {
-    padding: 3rem 0 2rem 0;
+    padding: 3.5rem 0;
   }
+
+  .certificaciones-list {
+    padding: 0 0.9rem;
+  }
+
+  .certificacion-card {
+    padding: 1.35rem;
+  }
+}
+
+@media (max-width: 600px) {
   .certificaciones-list {
     grid-template-columns: 1fr;
-    gap: 1.2rem;
-    padding: 0 1vw;
   }
-  .certificacion-card {
-    padding: 1.5rem 1rem 1.2rem 1rem;
-    min-height: 0;
-  }
-  .certificacion-icon {
-    width: 38px;
-    height: 38px;
-    font-size: 1.2rem;
+
+  .certificaciones-header h2 {
+    font-size: 1.9rem;
   }
 }

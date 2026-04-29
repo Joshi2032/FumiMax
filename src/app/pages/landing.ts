@@ -35,7 +35,7 @@ export class LandingComponent implements AfterViewInit, OnDestroy {
 
   ngAfterViewInit() {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const sections = Array.from(document.querySelectorAll<HTMLElement>('.section, .hero-section'));
+    const sections = Array.from(document.querySelectorAll<HTMLElement>('.section, .hero-shell'));
 
     sections.forEach((el, i) => {
       if (prefersReduced) {

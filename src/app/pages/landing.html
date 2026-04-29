@@ -1,7 +1,21 @@
-<!-- Navegación Sticky fuera de main -->
-<nav class="main-nav">
-    <div class="nav-logo">FumiGuard</div>
-    <button class="nav-toggle" aria-label="Abrir menú" (click)="menuOpen = !menuOpen">
+<header class="site-header">
+  <div class="site-topbar">
+    <p>Control profesional de plagas para hogares, comercios e industria</p>
+    <a href="#contacto" (click)="scrollToSection($event, 'contacto')">Cotización rápida</a>
+  </div>
+
+  <nav class="main-nav" aria-label="Navegación principal">
+    <div class="nav-brand">
+      <div class="nav-logo">MAXIFUM</div>
+      <span class="nav-tagline">Protección integral y respuesta rápida</span>
+    </div>
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-label="Abrir menú"
+      [attr.aria-expanded]="menuOpen"
+      (click)="menuOpen = !menuOpen"
+    >
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
@@ -19,9 +33,10 @@
       <li><a href="#contacto" class="nav-cta" (click)="scrollToSection($event, 'contacto')">Contacto</a></li>
     </ul>
   </nav>
+</header>
 
 <main>
-  <app-hero id="hero" class="hero-section"></app-hero>
+  <app-hero id="hero" class="hero-shell"></app-hero>
 
   <app-servicios id="servicios" class="section"></app-servicios>
 
@@ -46,7 +61,7 @@
 <!-- Footer fuera de main -->
 <footer class="main-footer">
   <div class="footer-content">
-    <div class="footer-brand">FumiGuard</div>
+    <div class="footer-brand">MAXIFUM</div>
     <div class="footer-links">
       <a href="#servicios">Servicios</a>
       <a href="#nosotros">Nosotros</a>
@@ -55,6 +70,6 @@
       <a href="#faq">FAQ</a>
       <a href="#contacto">Contacto</a>
     </div>
-    <div class="footer-copy">© 2026 FumiGuard. Todos los derechos reservados.</div>
+    <div class="footer-copy">© 2026 MAXIFUM DEL BAJIO. Todos los derechos reservados.</div>
   </div>
 </footer>

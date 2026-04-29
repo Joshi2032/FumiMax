@@ -8,5 +8,5 @@ import { RouterOutlet } from '@angular/router';
   styleUrls: ['./app.scss']
 })
 export class App {
-  protected readonly title = signal('FumiMax');
+  protected readonly title = signal('MAXIFUM DEL BAJIO');
 }

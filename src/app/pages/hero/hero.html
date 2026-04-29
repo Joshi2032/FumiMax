@@ -6,12 +6,12 @@
     </div>
 
     <h1 class="hero-h1">
-      Protección implacable<br>contra plagas.<br>
-      <em>Tranquilidad absoluta.</em>
+      Protección integral<br>contra plagas.<br>
+      <em>Respuesta rápida, resultados reales.</em>
     </h1>
 
     <p class="hero-p">
-      Para hogares y empresas, FumiGuard ofrece un escudo robusto contra intrusiones no deseadas. Servicios expertos de fumigación diseñados para máxima eficacia y tu completa seguridad.
+      Para hogares y empresas, MAXIFUM DEL BAJIO ofrece soluciones profesionales de control de plagas con protocolos seguros, atención ágil y seguimiento continuo.
     </p>
 
     <div class="hero-actions">
@@ -22,11 +22,26 @@
         Solicitar inspección
       </a>
       <a href="#servicios" class="btn-secondary">
-        Nuestros servicios
+        Ver servicios
         <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
         </svg>
       </a>
+    </div>
+
+    <div class="hero-trust">
+      <div class="hero-trust-item">
+        <strong>24 h</strong>
+        <span>Atención inicial</span>
+      </div>
+      <div class="hero-trust-item">
+        <strong>Seguro</strong>
+        <span>Protocolos certificados</span>
+      </div>
+      <div class="hero-trust-item">
+        <strong>Integral</strong>
+        <span>Hogar y negocio</span>
+      </div>
     </div>
 
     <div class="hero-stats">
@@ -48,21 +63,57 @@
   </div>
 
   <div class="hero-right">
-    <div class="hero-img-wrap">
-      <img
-        src="https://fumiga-amigable-web.lovable.app/assets/hero-fumigation-DsFz2rm0.jpg"
-        alt="Profesional de fumigación realizando tratamiento"
-      />
-      <div class="hero-img-badge">
-        <div class="badge-icon">
-          <svg fill="none" viewBox="0 0 24 24" stroke="#1D9E75" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-          </svg>
-        </div>
-        <div>
-          <div class="badge-text-top">Atención en 24 hrs</div>
-          <div class="badge-text-sub">Disponible todos los días</div>
-        </div>
+    <div class="hero-carousel" [style.--active-index]="activeIndex()">
+      <div class="hero-carousel-track">
+        @for (slide of slides; track slide.src; let index = $index) {
+          <article class="hero-slide" [class.is-active]="activeIndex() === index">
+            <div class="hero-img-wrap">
+              <img [src]="slide.src" [alt]="slide.alt" />
+              <div class="hero-img-badge">
+                <div class="badge-icon">
+                  <svg fill="none" viewBox="0 0 24 24" stroke="#1D9E75" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="badge-text-top">Atención en 24 hrs</div>
+                  <div class="badge-text-sub">Disponible todos los días</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-slide-caption">
+              <span>{{ slide.eyebrow }}</span>
+              <strong>{{ slide.title }}</strong>
+              <p>{{ slide.description }}</p>
+            </div>
+          </article>
+        }
+      </div>
+
+      <button class="hero-carousel-button hero-carousel-button--prev" type="button" aria-label="Imagen anterior" (click)="previousSlide()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
+      <button class="hero-carousel-button hero-carousel-button--next" type="button" aria-label="Siguiente imagen" (click)="nextSlide()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+
+      <div class="hero-carousel-dots" role="tablist" aria-label="Carrusel de imágenes">
+        @for (slide of slides; track slide.src; let index = $index) {
+          <button
+            type="button"
+            class="hero-carousel-dot"
+            [class.is-active]="activeIndex() === index"
+            [attr.aria-label]="'Ver imagen ' + (index + 1)"
+            [attr.aria-pressed]="activeIndex() === index"
+            (click)="goToSlide(index)"
+          ></button>
+        }
       </div>
     </div>
   </div>
