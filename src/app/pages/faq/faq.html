@@ -1,17 +1,23 @@
 <section class="faq-section">
   <div class="faq-header">
     <h2>Preguntas Frecuentes</h2>
-    <p class="faq-descripcion">Resolvemos las dudas más comunes sobre nuestros servicios.</p>
+    <p class="faq-descripcion">Respuestas simples sobre fumigación, seguridad, tiempos y garantía.</p>
   </div>
   <div class="faq-list">
     @for (faq of faqs(); let idx = $index; track idx) {
       <div class="faq-item" [class.open]="openIndex() === idx">
-        <div class="faq-item-header" (click)="toggle(idx)">
+        <button
+          class="faq-item-header"
+          type="button"
+          [attr.aria-expanded]="openIndex() === idx"
+          [attr.aria-controls]="'faq-panel-' + idx"
+          (click)="toggle(idx)"
+        >
           <h3>{{ faq.pregunta }}</h3>
-          <span class="faq-toggle">&#9660;</span>
-        </div>
+          <span class="faq-toggle" aria-hidden="true">&#9660;</span>
+        </button>
         @if (openIndex() === idx) {
-          <p>{{ faq.respuesta }}</p>
+          <p [id]="'faq-panel-' + idx" class="faq-answer">{{ faq.respuesta }}</p>
         }
       </div>
     }

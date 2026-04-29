@@ -13,28 +13,28 @@ interface FaqItem {
 export class Faq {
   faqs = signal<FaqItem[]>([
     {
-      pregunta: '¿Los productos que utilizan son seguros para niños y mascotas?',
-      respuesta: 'Sí, todos nuestros productos están certificados y aprobados por las autoridades sanitarias. Utilizamos formulaciones de baja toxicidad que son seguras para tu familia y mascotas. Además, te proporcionamos instrucciones claras sobre tiempos de reingreso después del tratamiento.',
+      pregunta: '¿Qué tipo de plagas atienden?',
+      respuesta: 'Atendemos las plagas más comunes en casas, negocios e industria: cucarachas, hormigas, mosquitos, arañas, termitas, roedores, chinches y más.',
     },
     {
-      pregunta: '¿Cuánto tiempo tarda en hacer efecto el tratamiento?',
-      respuesta: 'El tiempo varía según el tipo de plaga y tratamiento, pero la mayoría de los clientes nota resultados en pocas horas o días.',
+      pregunta: '¿Los productos son seguros para niños y mascotas?',
+      respuesta: 'Sí. Usamos productos autorizados y te explicamos cuándo puedes volver a usar el espacio con tranquilidad.',
     },
     {
-      pregunta: '¿Ofrecen garantía en sus servicios?',
-      respuesta: 'Sí, todos nuestros servicios cuentan con garantía extendida y seguimiento post-tratamiento.',
+      pregunta: '¿Tienen servicio para casas, negocios e industrias?',
+      respuesta: 'Sí. Adaptamos el servicio según el lugar: hogar, oficina, restaurante, bodega, local comercial o industria.',
     },
     {
-      pregunta: '¿Necesito salir de mi casa durante la fumigación?',
-      respuesta: 'En la mayoría de los casos, solo es necesario ausentarse durante el tratamiento y un breve periodo posterior. Te indicaremos los tiempos exactos.',
+      pregunta: '¿Necesito salir durante la fumigación?',
+      respuesta: 'Depende del tratamiento, pero en muchos casos solo es necesario salir por un tiempo corto. Te lo indicamos antes de empezar.',
     },
     {
-      pregunta: '¿Con qué frecuencia debo fumigar mi hogar o negocio?',
-      respuesta: 'Recomendamos tratamientos preventivos cada 3 a 6 meses, dependiendo del entorno y nivel de riesgo.',
+      pregunta: '¿Con qué frecuencia conviene fumigar?',
+      respuesta: 'Lo ideal depende del tipo de lugar y del problema. En muchos casos se recomienda un plan preventivo cada 3 a 6 meses.',
     },
     {
-      pregunta: '¿Qué tipo de plagas pueden controlar?',
-      respuesta: 'Controlamos cucarachas, hormigas, termitas, roedores, arañas, pulgas, chinches y más.',
+      pregunta: '¿Dan garantía en el servicio?',
+      respuesta: 'Sí, nuestros servicios incluyen garantía y seguimiento según el tipo de tratamiento.',
     },
   ]);
 

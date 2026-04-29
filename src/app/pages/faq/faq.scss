@@ -15,7 +15,7 @@
 
 .faq-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2.4rem;
 
   h2 {
     font-size: clamp(2rem, 3vw, 3rem);
@@ -58,16 +58,21 @@
   box-shadow: 0 24px 44px rgba(15, 31, 34, 0.1);
 }
 .faq-item-header {
+  width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   cursor: pointer;
+  border: 0;
+  background: transparent;
   padding: 1.35rem 1.25rem;
+  text-align: left;
 }
 .faq-item.open .faq-item-header {
   border-bottom: 1px solid rgba(20, 108, 68, 0.08);
 }
 .faq-item h3 {
-  font-size: 1rem;
+  font-size: 0.98rem;
   font-weight: 700;
   color: #0f1f22;
   margin: 0;
@@ -89,7 +94,7 @@
 }
 .faq-answer {
   color: #3a4a56;
-  font-size: 1rem;
+  font-size: 0.98rem;
   margin: 0;
   max-height: 0;
   overflow: hidden;
@@ -101,6 +106,12 @@
   max-height: 300px;
   padding: 1.1rem 1.25rem 1.35rem;
 }
+
+.faq-item-header:focus-visible {
+  outline: 2px solid rgba(20, 108, 68, 0.35);
+  outline-offset: 2px;
+}
+
 @media (max-width: 900px) {
   .faq-section {
     padding: 3.5rem 0;
