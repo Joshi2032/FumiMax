@@ -33,15 +33,95 @@
   }
 }
 
+.cobertura-content {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.cobertura-map-card,
+.cobertura-list-card {
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(20, 108, 68, 0.08);
+  border-radius: 24px;
+  box-shadow: 0 18px 38px rgba(15, 31, 34, 0.06);
+}
+
+.cobertura-map-card {
+  padding: 1rem;
+}
+
+.map-state {
+  min-height: 360px;
+  border-radius: 24px;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  text-align: center;
+  font-weight: 700;
+  color: #0f1f22;
+  background: linear-gradient(180deg, #fbfcfb 0%, #eef4f2 100%);
+  border: 1px dashed rgba(20, 108, 68, 0.18);
+}
+
+.map-state--error {
+  color: #8f1f1f;
+  background: linear-gradient(180deg, #fff7f7 0%, #fdecec 100%);
+  border-color: rgba(200, 29, 29, 0.2);
+}
+
+.coverage-legend {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  background: #f2f7f5;
+  color: #0f1f22;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 0.9rem;
+}
+
+.legend-dot {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: #d72626;
+  box-shadow: 0 0 0 6px rgba(215, 38, 38, 0.12);
+}
+
+.cobertura-map {
+  width: 100%;
+  height: auto;
+  display: block;
+  min-height: 360px;
+}
+
+.cobertura-list-card {
+  padding: 1.4rem;
+
+  h3 {
+    margin: 0 0 1rem;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #0f1f22;
+  }
+}
+
 .cobertura-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1rem;
-  margin-top: 1.8rem;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin-top: 0;
   list-style: none;
-  padding: 0 1.25rem;
-  max-width: 1080px;
-  margin-inline: auto;
+  padding: 0;
+  max-width: none;
+  margin: 0;
 }
 .cobertura-list li {
   background: rgba(255, 255, 255, 0.96);
@@ -72,7 +152,24 @@
   .cobertura-section {
     padding: 3.5rem 0;
   }
-  .cobertura-list {
+
+  .cobertura-content {
+    grid-template-columns: 1fr;
     padding: 0 0.9rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .cobertura-map-card {
+    padding: 0.85rem;
+  }
+
+  .map-state {
+    min-height: 260px;
+    padding: 1.25rem;
+  }
+
+  .cobertura-list-card {
+    padding: 1.1rem;
   }
 }
