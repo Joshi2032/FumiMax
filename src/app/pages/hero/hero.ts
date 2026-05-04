@@ -17,7 +17,7 @@ type HeroSlide = Readonly<{
 export class Hero implements OnInit, OnDestroy {
   readonly slides: ReadonlyArray<HeroSlide> = [
     {
-      src: 'https://images.unsplash.com/photo-1581578017425-5d69b5d4f4a0?auto=format&fit=crop&w=1200&q=80',
+      src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80',
       alt: 'Técnico aplicando tratamiento preventivo en un entorno residencial',
       eyebrow: 'Cobertura residencial',
       title: 'Protección continua para hogares y condominios',
