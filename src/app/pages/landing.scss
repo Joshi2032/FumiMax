@@ -66,8 +66,9 @@ main {
 
 .nav-brand {
   display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
   min-width: 0;
 }
 
@@ -80,10 +81,25 @@ main {
 
 .nav-logo-img {
   display: block;
-  max-height: 44px;
+  max-height: 56px;
+  max-width: 220px;
   width: auto;
+  margin-right: 12px;
   object-fit: contain;
   background: transparent;
+}
+
+@media (max-width: 600px) {
+  .nav-brand {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.15rem;
+  }
+
+  .nav-logo-img {
+    max-height: 44px;
+    margin-right: 0;
+  }
 }
 
 .nav-tagline {
