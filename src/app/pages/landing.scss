@@ -78,6 +78,14 @@ main {
   color: #0f1f22;
 }
 
+.nav-logo-img {
+  display: block;
+  max-height: 44px;
+  width: auto;
+  object-fit: contain;
+  background: transparent;
+}
+
 .nav-tagline {
   font-size: 0.8rem;
   color: #5a6a72;
