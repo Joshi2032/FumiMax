@@ -338,44 +338,6 @@
   }
 }
 
-.hero-carousel-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
-  border-radius: 999px;
-  border: 1px solid rgba(20, 108, 68, 0.16);
-  background: rgba(255, 255, 255, 0.96);
-  color: #146c44;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 12px 26px rgba(15, 31, 34, 0.12);
-  z-index: 2;
-  transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
-
-  svg {
-    width: 18px;
-    height: 18px;
-  }
-
-  &:hover {
-    transform: translateY(-50%) scale(1.04);
-    background: #eef8f4;
-    box-shadow: 0 16px 30px rgba(15, 31, 34, 0.14);
-  }
-}
-
-.hero-carousel-button--prev {
-  left: 0.75rem;
-}
-
-.hero-carousel-button--next {
-  right: 0.75rem;
-}
-
 .hero-carousel-dots {
   display: flex;
   justify-content: center;
