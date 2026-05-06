@@ -8,7 +8,7 @@
   align-items: center;
   padding: 3.5rem 1.25rem;
   background: linear-gradient(180deg, #ffffff 0%, #f7faf9 100%);
-  border: 1px solid rgba(20, 108, 68, 0.08);
+  border: 1px solid rgba($verde-oscuro, 0.08);
   border-radius: 28px;
   box-shadow: 0 22px 48px rgba(15, 31, 34, 0.06);
   overflow: hidden;
@@ -23,8 +23,8 @@
 .nosotros-badge {
   @include eyebrow;
   font-size: 12px;
-  background: #E1F5EE;
-  color: #085041;
+  background: $verde-claro;
+  color: $verde-oscuro;
   padding: 5px 12px;
   border-radius: 20px;
   width: fit-content;
@@ -35,7 +35,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #1D9E75;
+  background: $verde;
   flex-shrink: 0;
 }
 
@@ -43,7 +43,7 @@
   font-size: clamp(2rem, 3vw, 3rem);
   font-weight: 800;
   font-family: Georgia, 'Times New Roman', serif;
-  color: #0f1f22;
+  color: $brand-black;
   margin: 0;
   letter-spacing: -0.04em;
 }
@@ -60,7 +60,7 @@
   gap: 0.5rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  border-bottom: 2px solid rgba(20, 108, 68, 0.1);
+  border-bottom: 2px solid rgba($verde-oscuro, 0.1);
 }
 
 .nosotros-tab-btn {
@@ -76,13 +76,13 @@
   position: relative;
   bottom: -2px;
 
-  &:hover {
-    color: #146c44;
+    &:hover {
+    color: $verde-oscuro;
   }
 
   &.active {
-    color: #146c44;
-    border-bottom-color: #146c44;
+    color: $verde-oscuro;
+    border-bottom-color: $verde-oscuro;
   }
 }
 
@@ -127,12 +127,12 @@
   padding: 0.95rem 1rem;
   border-radius: 18px;
   background: #f3f8f6;
-  border: 1px solid rgba(20, 108, 68, 0.08);
+  border: 1px solid rgba($verde-oscuro, 0.08);
 }
 .stat-num {
   font-size: 1.4rem;
   font-weight: 900;
-  color: #146c44;
+  color: $verde-oscuro;
   line-height: 1;
 }
 .stat-label {
@@ -152,7 +152,7 @@
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 22px 44px rgba(15, 31, 34, 0.12);
-  background: #e6f7ef;
+  background: $verde-claro;
   padding: 0.55rem;
   width: 100%;
   max-width: 380px;
@@ -183,10 +183,10 @@
     border: 1px solid rgba(20, 108, 68, 0.08);
     font-size: 0.95rem;
     line-height: 1.6;
-    color: #52646b;
+      color: #52646b;
 
     strong {
-      color: #146c44;
+      color: $verde-oscuro;
       font-weight: 700;
     }
   }

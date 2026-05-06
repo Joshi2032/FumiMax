@@ -9,7 +9,7 @@
   margin-right: -50vw;
   padding: 5.5rem 0;
   background:
-    radial-gradient(circle at top right, rgba(37, 211, 102, 0.08), transparent 20%),
+    radial-gradient(circle at top right, rgba($verde-accent, 0.08), transparent 20%),
     linear-gradient(180deg, #eef4f2 0%, #f7f9fa 100%);
 }
 
@@ -23,7 +23,7 @@
     font-size: clamp(2rem, 3vw, 3rem);
     line-height: 1.05;
     letter-spacing: -0.04em;
-    color: #0f1f22;
+    color: $brand-black;
   }
 
   .proceso-descripcion {
@@ -46,7 +46,7 @@
 
 .proceso-item {
   background: rgba(255, 255, 255, 0.96);
-  border: 1px solid rgba(20, 108, 68, 0.08);
+  border: 1px solid rgba($verde-oscuro, 0.08);
   border-radius: 24px;
   box-shadow: 0 18px 38px rgba(15, 31, 34, 0.06);
   padding: 1.5rem;
@@ -63,14 +63,14 @@
     position: absolute;
     inset: 0 auto 0 0;
     width: 4px;
-    background: linear-gradient(180deg, #1a8f5c 0%, #25d366 100%);
+    background: $degradado;
     opacity: 0.9;
   }
 
   &:hover {
     transform: translateY(-4px);
     box-shadow: 0 24px 44px rgba(15, 31, 34, 0.1);
-    border-color: rgba(20, 108, 68, 0.16);
+    border-color: rgba($verde-oscuro, 0.16);
   }
 }
 
@@ -80,10 +80,10 @@
   justify-content: center;
   width: 3rem;
   height: 3rem;
-  background: #ecf8f3;
+    background: $verde-claro;
   border-radius: 14px;
-  border: 1px solid rgba(20, 108, 68, 0.08);
-  color: #146c44;
+  border: 1px solid rgba($verde-oscuro, 0.08);
+  color: $verde-oscuro;
   box-shadow: 0 8px 18px rgba(15, 31, 34, 0.05);
 }
 
@@ -93,7 +93,7 @@
   right: 1rem;
   font-size: 2.2rem;
   font-weight: 900;
-  color: rgba(20, 108, 68, 0.08);
+  color: rgba($verde-oscuro, 0.08);
   user-select: none;
   pointer-events: none;
 }
@@ -108,7 +108,7 @@
   margin: 0;
   font-size: 1.15rem;
   font-weight: 800;
-  color: #0f1f22;
+  color: $brand-black;
 }
 
 .proceso-content p {

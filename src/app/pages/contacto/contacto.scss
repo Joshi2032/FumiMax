@@ -41,7 +41,7 @@
 
 .contacto-info-block {
   background: linear-gradient(180deg, #ffffff 0%, #f7faf9 100%);
-  border: 1px solid rgba(20, 108, 68, 0.08);
+  border: 1px solid rgba($verde-oscuro, 0.08);
   border-radius: 24px;
   box-shadow: 0 18px 38px rgba(15, 31, 34, 0.06);
   padding: 2rem 1.75rem;
@@ -52,7 +52,7 @@
   font-size: clamp(2rem, 3vw, 2.8rem);
   line-height: 1.05;
   letter-spacing: -0.04em;
-  color: #0f1f22;
+  color: $brand-black;
   margin: 0 0 1rem;
 }
 
@@ -67,11 +67,11 @@
   font-size: 2.2rem;
   font-weight: 800;
   line-height: 1.15;
-  color: #1a2b2e;
+  color: $gris-texto;
   margin: 0 0 1rem 0;
   em {
     font-style: italic;
-    color: #1a8f5c;
+    color: $verde;
   }
 }
 
@@ -95,19 +95,19 @@
   padding: 0.9rem 1rem;
   background: #ffffff;
   border-radius: 1rem;
-  border: 1px solid rgba(20, 108, 68, 0.08);
+  border: 1px solid rgba($verde-oscuro, 0.08);
 }
 
 .contacto-info-icon {
   width: 36px;
   height: 36px;
-  background: #e8f7f0;
+  background: $verde-claro;
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  color: #1a8f5c;
+  color: $verde;
 }
 
 .contacto-info-label {
@@ -125,12 +125,12 @@
   font-weight: 500;
   color: #1a2b2e;
   text-decoration: none;
-  &:hover { color: #1a8f5c; }
+  &:hover { color: $verde; }
 }
 
 .contact-form {
   background: rgba(255, 255, 255, 0.96);
-  border: 1px solid rgba(20, 108, 68, 0.08);
+  border: 1px solid rgba($verde-oscuro, 0.08);
   border-radius: 24px;
   padding: 2rem 1.75rem;
   display: flex;
@@ -164,7 +164,7 @@
   font-size: 0.92rem;
   font-family: inherit;
   background: #f8fafb;
-  border: 1px solid rgba(20, 108, 68, 0.12);
+  border: 1px solid rgba($verde-oscuro, 0.12);
   border-radius: 0.85rem;
   color: #1a2b2e;
   transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
@@ -173,9 +173,9 @@
   resize: none;
   &::placeholder { color: #b0bec5; }
   &:focus {
-    border-color: #1a8f5c;
+    border-color: $verde;
     background: #fff;
-    box-shadow: 0 0 0 3px rgba(26, 143, 92, 0.1);
+    box-shadow: 0 0 0 3px rgba($verde, 0.1);
   }
 }
 
@@ -184,7 +184,7 @@
 .contact-form button {
   width: 100%;
   padding: 0.85rem;
-  background: #1a8f5c;
+  background: $degradado;
   color: #fff;
   border: none;
   border-radius: 999px;
@@ -193,7 +193,7 @@
   font-family: inherit;
   cursor: pointer;
   transition: background 0.15s, transform 0.1s;
-  &:hover { background: #146c44; }
+  &:hover { background: $verde-oscuro; }
   &:active { transform: scale(0.99); }
 }
 
@@ -223,8 +223,8 @@
   width: 100%;
   padding: 0.75rem;
   background: transparent;
-  border: 1px solid #25d366;
-  color: #1a8f5c;
+  border: 1px solid $verde-accent;
+  color: $verde;
   border-radius: 999px;
   font-size: 0.92rem;
   font-weight: 700;
@@ -233,7 +233,7 @@
   transition: background 0.15s, color 0.15s;
   box-sizing: border-box;
   &:hover {
-    background: #25d366;
+    background: $verde-accent;
     color: #fff;
   }
 }

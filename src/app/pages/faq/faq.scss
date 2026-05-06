@@ -8,7 +8,7 @@
   margin-left: -50vw;
   margin-right: -50vw;
   background:
-    radial-gradient(circle at top right, rgba(37, 211, 102, 0.08), transparent 20%),
+    radial-gradient(circle at top right, rgba($verde-accent, 0.08), transparent 20%),
     linear-gradient(180deg, #eef4f2 0%, #f7f9fa 100%);
   padding: 5.5rem 0;
 }
@@ -21,7 +21,7 @@
     font-size: clamp(2rem, 3vw, 3rem);
     font-weight: 800;
     font-family: Georgia, 'Times New Roman', serif;
-    color: #0f1f22;
+    color: $brand-black;
     margin: 0 0 0.6rem;
     letter-spacing: -0.04em;
   }
@@ -49,7 +49,7 @@
   padding: 0;
   margin-bottom: 0;
   transition: box-shadow 0.2s;
-  border: 1px solid rgba(20, 108, 68, 0.08);
+  border: 1px solid rgba($verde-oscuro, 0.08);
   position: relative;
   overflow: hidden;
   display: block;
@@ -69,19 +69,19 @@
   text-align: left;
 }
 .faq-item.open .faq-item-header {
-  border-bottom: 1px solid rgba(20, 108, 68, 0.08);
+  border-bottom: 1px solid rgba($verde-oscuro, 0.08);
 }
 .faq-item h3 {
   font-size: 0.98rem;
   font-weight: 700;
-  color: #0f1f22;
+  color: $brand-black;
   margin: 0;
   flex: 1;
   line-height: 1.4;
 }
 .faq-toggle {
   margin-left: 1rem;
-  color: #1a8f5c;
+  color: $verde;
   font-size: 1.25rem;
   cursor: pointer;
   user-select: none;
@@ -108,7 +108,7 @@
 }
 
 .faq-item-header:focus-visible {
-  outline: 2px solid rgba(20, 108, 68, 0.35);
+  outline: 2px solid rgba($verde-oscuro, 0.35);
   outline-offset: 2px;
 }
 

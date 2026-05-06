@@ -15,7 +15,7 @@
     font-size: clamp(1.9rem, 4vw, 2.4rem);
     font-weight: 800;
     font-family: Georgia, 'Times New Roman', serif;
-    color: #1a2b2e;
+    color: $gris-texto;
     margin: 0 0 0.6rem;
     letter-spacing: -0.5px;
   }
@@ -57,8 +57,8 @@
   }
 
   &:hover .dot {
-    background: #1D9E75;
-    border-color: #1D9E75;
+    background: $verde;
+    border-color: $verde;
   }
 
   &:hover .evento-card {
@@ -190,8 +190,8 @@
   .evento-card {
     border-radius: 12px;
     padding: 1rem;
-    border-left: 4px solid #1d9e75;
-    box-shadow: 0 2px 12px rgba(20, 108, 68, 0.08);
+    border-left: 4px solid $verde;
+    box-shadow: 0 2px 12px rgba($verde-oscuro, 0.08);
   }
 
   .evento-card h3 {

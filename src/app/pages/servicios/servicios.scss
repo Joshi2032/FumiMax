@@ -11,8 +11,8 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at top right, rgba(37, 211, 102, 0.08), transparent 22%),
-    radial-gradient(circle at left center, rgba(26, 143, 92, 0.05), transparent 24%);
+    radial-gradient(circle at top right, rgba($verde-accent, 0.08), transparent 22%),
+    radial-gradient(circle at left center, rgba($verde, 0.05), transparent 24%);
   pointer-events: none;
 }
 
@@ -52,7 +52,7 @@
   position: relative;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.96);
-  border: 1px solid rgba(20, 108, 68, 0.08);
+  border: 1px solid rgba($verde-oscuro, 0.08);
   box-shadow: 0 18px 38px rgba(15, 31, 34, 0.06);
   min-height: 100%;
 
@@ -63,14 +63,14 @@
     width: 7rem;
     height: 7rem;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(26, 143, 92, 0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba($verde, 0.08) 0%, transparent 70%);
     pointer-events: none;
   }
 
   &:hover {
     transform: translateY(-4px);
     box-shadow: 0 24px 46px rgba(15, 31, 34, 0.1);
-    border-color: rgba(20, 108, 68, 0.16);
+    border-color: rgba($verde-oscuro, 0.16);
   }
 }
 
@@ -78,25 +78,25 @@
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 1rem;
-  background: #ecf8f3;
+  background: $verde-claro;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 2rem;
   flex-shrink: 0;
   margin-bottom: 0.45rem;
-  border: 1px solid rgba(20, 108, 68, 0.08);
+  border: 1px solid rgba($verde-oscuro, 0.08);
 }
 
 .servicio-icon--main {
-  background: linear-gradient(135deg, #146c44 0%, #1a8f5c 100%);
+  background: linear-gradient(135deg, $verde-oscuro 0%, $verde 100%);
 }
 
 .servicio-badge {
   @include eyebrow;
   font-size: 0.7rem;
-  background: rgba(26, 143, 92, 0.08);
-  color: #146c44;
+  background: rgba($verde, 0.08);
+  color: $verde-oscuro;
   border-radius: 999px;
   padding: 0.28rem 0.65rem;
   letter-spacing: 0.08em;
