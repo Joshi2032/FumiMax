@@ -89,7 +89,8 @@
 }
 
 .servicio-icon--main {
-  background: linear-gradient(135deg, $verde-oscuro 0%, $verde 100%);
+  background: rgba($brand-orange, 0.12);
+  border-color: rgba($brand-orange-dark, 0.22);
 }
 
 .servicio-badge {

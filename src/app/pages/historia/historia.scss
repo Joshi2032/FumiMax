@@ -176,22 +176,36 @@
     display: block;
     text-align: left;
     padding: 0;
+    width: 100%;
   }
 
   .evento-center {
     display: none;
   }
 
+  .empty,
   .evento-left.empty,
   .evento-right.empty {
-    display: none;
+    display: none !important;
+  }
+
+  .evento-left:not(.empty) .evento-card,
+  .evento-right:not(.empty) .evento-card {
+    display: block;
+    width: 100%;
   }
 
   .evento-card {
     border-radius: 12px;
     padding: 1rem;
-    border-left: 4px solid $verde;
+    border-left: 4px solid $brand-orange;
     box-shadow: 0 2px 12px rgba($verde-oscuro, 0.08);
+  }
+
+  .year-badge {
+    background: #ffe9dc;
+    color: $brand-orange-dark;
+    font-weight: 700;
   }
 
   .evento-card h3 {
