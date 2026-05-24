@@ -7,18 +7,34 @@
 html {
 	scroll-behavior: smooth;
 }
+
 body {
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh; // Obliga al body a ocupar toda la altura de la pantalla
 	background:
 		radial-gradient(circle at top left, rgba(26, 143, 92, 0.08), transparent 22%),
 		radial-gradient(circle at 100% 18%, rgba(37, 211, 102, 0.05), transparent 18%),
 		#f5f7fa;
-	// Fondo especial para la página de historia
+
 	&.historia-bg {
 		background: #f6faf9;
 	}
-	margin: 0;
+
 	font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
 	color: #1a2a36;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+// Contenedor dinámico de rutas
+main {
+	flex: 1 0 auto; // Crece automáticamente para empujar el footer hacia abajo
+	width: 100%;
+}
+
+// Pie de página persistente
+.main-footer {
+	flex-shrink: 0; // Evita que el footer se deforme o encoja
 }

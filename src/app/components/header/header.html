@@ -1,18 +1,34 @@
 <header class="site-header">
   <div class="site-topbar">
-    <p>Fumigadoras y control profesional de plagas</p>
-    <a routerLink="/contacto">Cotización rápida</a>
+    <p>Fumigadoras y control profesional de plagas para hogares, comercios e industria</p>
+    <a routerLink="/contacto" class="topbar-cta">Cotización rápida</a>
   </div>
 
-  <nav class="main-nav">
+  <nav class="main-nav" aria-label="Navegación principal">
     <div class="nav-brand">
-      <img src="/Maxifum.png" alt="MAXIFUM" class="nav-logo-img" />
+      <div class="nav-logo">
+        <img src="/Maxifum.png" alt="MAXIFUM" class="nav-logo-img" />
+      </div>
+      <span class="nav-tagline">Protección integral y respuesta rápida</span>
     </div>
-    <ul class="nav-links">
-      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Inicio</a></li>
-      <li><a routerLink="/servicios" routerLinkActive="active">Servicios</a></li>
-      <li><a routerLink="/nosotros" routerLinkActive="active">Nosotros</a></li>
-      <li><a routerLink="/contacto" routerLinkActive="active">Contacto</a></li>
+
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-label="Abrir menú"
+      [attr.aria-expanded]="menuOpen"
+      (click)="toggleMenu()"
+    >
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <ul class="nav-links" [class.open]="menuOpen">
+      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()">Inicio</a></li>
+      <li><a routerLink="/servicios" routerLinkActive="active" (click)="closeMenu()">Servicios</a></li>
+      <li><a routerLink="/cobertura" routerLinkActive="active" (click)="closeMenu()">Cobertura</a></li>
+      <li><a routerLink="/contacto" class="nav-cta" routerLinkActive="active" (click)="closeMenu()">Contacto</a></li>
     </ul>
   </nav>
 </header>
