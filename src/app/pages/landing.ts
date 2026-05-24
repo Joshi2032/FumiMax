@@ -1,5 +1,6 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
 import { Hero } from './hero/hero';
+import { Plagas } from './plagas/plagas';
 import { Servicios } from './servicios/servicios';
 import { Proceso } from './proceso/proceso';
 import { Nosotros } from './nosotros/nosotros';
@@ -17,6 +18,7 @@ import { Contacto } from './contacto/contacto';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     Hero,
+    Plagas,
     Servicios,
     Proceso,
     Nosotros,

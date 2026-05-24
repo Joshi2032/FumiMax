@@ -1,0 +1,167 @@
+@use '../_variables' as *;
+@use '../_mixins' as *;
+
+.plagas-section {
+  @include full-bleed-section(#f3f7f8, 5rem 0 4rem, 3.5rem 0 2rem);
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at top right, rgba($verde-accent, 0.08), transparent 22%),
+      radial-gradient(circle at left center, rgba($verde, 0.05), transparent 24%);
+    pointer-events: none;
+  }
+}
+
+.plagas-header {
+  @include section-header;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 3rem;
+
+  h2 {
+    font-family: Georgia, 'Times New Roman', serif;
+    letter-spacing: -0.04em;
+    max-width: 14ch;
+    margin-inline: auto;
+  }
+
+  p {
+    max-width: 44rem;
+    margin-inline: auto;
+  }
+
+  .plagas-eyebrow {
+    @include eyebrow;
+    display: inline-flex;
+    background: rgba($verde, 0.08);
+    color: $verde-oscuro;
+    border-radius: 999px;
+    padding: 0.28rem 0.65rem;
+    letter-spacing: 0.08em;
+    font-size: 0.72rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.plagas-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.4rem;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.plaga-card {
+  @include card-base;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba($verde-oscuro, 0.08);
+  box-shadow: 0 18px 38px rgba(15, 31, 34, 0.06);
+  min-height: 100%;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: auto -1rem -1rem auto;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba($verde, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 46px rgba(15, 31, 34, 0.1);
+    border-color: rgba($verde-oscuro, 0.16);
+  }
+}
+
+.plaga-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 1rem;
+  background: $verde-claro;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-bottom: 0.45rem;
+  border: 1px solid rgba($verde-oscuro, 0.08);
+  color: $verde-oscuro;
+
+  svg {
+    width: 1.9rem;
+    height: 1.9rem;
+  }
+}
+
+.plaga-icon--roaches { color: #8d5c5d; }
+.plaga-icon--rodents { color: #7d7370; }
+.plaga-icon--termites { color: #584a8d; }
+.plaga-icon--bedbugs { color: #2e63d8; }
+.plaga-icon--ants { color: #4c46a0; }
+.plaga-icon--mosquitoes { color: #9d6a7f; }
+.plaga-icon--spiders { color: #5b57a7; }
+.plaga-icon--pigeons { color: #bdb6c5; }
+
+.plaga-card h3 {
+  margin: 0;
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: #0f1f22;
+}
+
+.plaga-card p {
+  margin: 0;
+  color: #52646b;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.plaga-card a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: auto;
+  color: $verde-oscuro;
+  text-decoration: none;
+  font-size: 0.84rem;
+  font-weight: 800;
+}
+
+@media (max-width: 900px) {
+  .plagas-section {
+    padding: 3.5rem 0;
+  }
+
+  .plagas-grid {
+    padding: 0 0.9rem;
+  }
+
+  .plaga-card {
+    padding: 1.4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .plagas-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .plagas-header h2 {
+    font-size: 1.9rem;
+  }
+}
