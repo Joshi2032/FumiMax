@@ -33,7 +33,6 @@
     transition: $transition-base;
 
     &:hover {
-      // CORRECCIÓN AQUÍ: Usar color.adjust en lugar de lighten
       color: color.adjust($brand-orange, $lightness: 10%);
     }
   }
