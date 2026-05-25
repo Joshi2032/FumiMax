@@ -33,6 +33,7 @@
     transition: $transition-base;
 
     &:hover {
+      // CORRECCIÓN AQUÍ: Usar color.adjust en lugar de lighten
       color: color.adjust($brand-orange, $lightness: 10%);
     }
   }
@@ -88,7 +89,6 @@
     }
   }
 
-  // Botón de contacto destacado al estilo Terminix
   .nav-cta {
     background: $degradado;
     color: $blanco-limpio !important;
@@ -123,10 +123,9 @@
   }
 }
 
-// Responsive para móviles
 @media (max-width: 768px) {
   .site-topbar {
-    display: none; // Oculta barra superior en móviles para ahorrar espacio
+    display: none;
   }
 
   .nav-toggle {
