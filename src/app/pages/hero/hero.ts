@@ -13,14 +13,14 @@ export class Hero {
 
   slides = [
     {
-      src: '/Maxifum.png',
+      src: '/Maxifum.png?v=1', // <-- El ?v=1 hace que la ruta sea única para Angular
       alt: 'Control de plagas residencial',
       eyebrow: 'Servicio Residencial',
       title: 'Protege tu hogar y familia',
       description: 'Tratamientos seguros y eficaces contra insectos y roedores.'
     },
     {
-      src: '/Maxifum.png',
+      src: '/Maxifum.png?v=2', // <-- El ?v=2 evita la colisión de la llave
       alt: 'Control de plagas comercial',
       eyebrow: 'Servicio Comercial e Industrial',
       title: 'Soluciones empresariales MIP',
