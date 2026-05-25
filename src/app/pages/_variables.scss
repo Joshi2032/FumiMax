@@ -1,12 +1,20 @@
-// Paleta y degradados (variables globales)
-$brand-orange: #f26a22; // color principal del logo (naranja)
+// Paleta corporativa (Estilo Rentokil/Terminix)
+$brand-navy: #002855;       // Azul marino corporativo (Confianza/Autoridad)
+$brand-navy-light: #003f82; // Azul marino secundario
+$brand-orange: #f26a22;     // Acento principal (Llamados a la acción)
 $brand-orange-dark: #c44b14;
 $brand-black: #111111;
-$brand-green: #1a8f5c; // conservar como acento si se desea
-$verde: $brand-green;
-$verde-oscuro: #146c44;
-$verde-claro: #e6f7ef;
-$gris-fondo: #f5f7fa;
-$gris-texto: #3a4a56;
-$degradado: linear-gradient(90deg, $brand-orange 0%, $brand-orange-dark 100%);
-$verde-accent: #25d366;
+$brand-green: #1a8f5c;
+
+// Grises y Fondos
+$blanco-limpio: #ffffff;
+$gris-fondo: #f4f6f8;       // Gris muy sutil para fondos de sección
+$gris-tarjetas: #ffffff;
+$gris-texto: #4a5568;       // Gris oscuro para legibilidad de párrafos
+$gris-bordes: #e2e8f0;
+
+// Tipografía y Sombras
+$shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+$shadow-md: 0 4px 6px rgba(0,0,0,0.07);
+$shadow-hover: 0 10px 20px rgba(0,40,85,0.1);
+$transition-base: all 0.3s ease;
