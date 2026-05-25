@@ -1,12 +1,36 @@
 <footer class="main-footer">
-  <div class="footer-content">
-    <div class="footer-brand">MAXIFUM</div>
-    <div class="footer-links">
-      <a routerLink="/">Inicio</a>
-      <a routerLink="/servicios">Servicios</a>
-      <a routerLink="/cobertura">Cobertura</a>
-      <a routerLink="/contacto">Contacto</a>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h3>FumiMax</h3>
+      <p>Expertos en control de plagas con más de 15 años de experiencia. Protegemos tu salud y patrimonio con soluciones integrales.</p>
     </div>
-    <div class="footer-copy">© 2026 MAXIFUM DEL BAJIO. Todos los derechos reservados.</div>
+
+    <div class="footer-col">
+      <h4>Servicios</h4>
+      <ul>
+        <li><a routerLink="/servicios">Control de Insectos</a></li>
+        <li><a routerLink="/servicios">Control de Roedores</a></li>
+        <li><a routerLink="/servicios">Desinfección Comercial</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <p>📍 La Piedad, Michoacán</p>
+      <p>📞 352 123 4567</p>
+      <p>✉️ contacto@fumimax.com</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Certificaciones</h4>
+      <div class="trust-badges">
+        <div class="badge-placeholder">Licencia Cofepris</div>
+        <div class="badge-placeholder">Certificación MIP</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; {{ currentYear }} FumiMax Del Bajío. Todos los derechos reservados.</p>
   </div>
 </footer>
