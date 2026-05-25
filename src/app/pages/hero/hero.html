@@ -1,28 +1,22 @@
 <section class="hero-container">
-  <div class="hero-left">
-    <h1>Fumigadoras y control de plagas</h1>
-    <p>Soluciones profesionales para hogares y negocios.</p>
-    <a routerLink="/contacto" class="btn-primary">Solicitar inspección</a>
+  <div class="hero-content">
+    <div class="hero-badge">Profesionales en Control de Plagas</div>
+    <h1>Protección total para tu <em>hogar y empresa.</em></h1>
+    <p>Soluciones rápidas, seguras y garantizadas en todo el Bajío. Eliminamos riesgos con protocolos de alta eficiencia.</p>
+
+    <div class="hero-cta">
+      <a routerLink="/contacto" class="btn-primary">Solicitar Cotización</a>
+      <a routerLink="/servicios" class="btn-secondary">Ver Servicios</a>
+    </div>
+
+    <div class="hero-features">
+      <div class="feature">✓ Certificados</div>
+      <div class="feature">✓ Garantía 100%</div>
+      <div class="feature">✓ Respuesta 24h</div>
+    </div>
   </div>
 
-  <div class="hero-right">
-    <div class="hero-carousel">
-      <div class="hero-carousel-track">
-        @for (slide of slides; track $index) {
-          <div class="hero-slide" [class.active]="activeIndex() === $index">
-            <h2>{{ slide.title }}</h2>
-            <p>{{ slide.eyebrow }}</p>
-          </div>
-        }
-      </div>
-
-      <div class="hero-carousel-dots">
-        @for (slide of slides; track $index) {
-          <button (click)="goToSlide($index)" [class.active]="activeIndex() === $index">
-            {{ $index + 1 }}
-          </button>
-        }
-      </div>
-    </div>
+  <div class="hero-image">
+    <img src="/Maxifum.png" alt="Servicios FumiMax">
   </div>
 </section>
