@@ -13,7 +13,7 @@ export class Hero {
 
   slides = [
     {
-      src: '/Maxifum.png', // Reemplaza por tus imágenes reales del carrusel corporativo
+      src: '/Maxifum.png',
       alt: 'Control de plagas residencial',
       eyebrow: 'Servicio Residencial',
       title: 'Protege tu hogar y familia',

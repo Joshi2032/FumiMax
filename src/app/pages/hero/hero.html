@@ -65,7 +65,7 @@
   <div class="hero-right">
     <div class="hero-carousel" [style.--active-index]="activeIndex()">
       <div class="hero-carousel-track">
-        @for (slide of slides; track slide.src; let index = $index) {
+        @for (slide of slides; track $index; let index = $index) {
           <article class="hero-slide" [class.is-active]="activeIndex() === index">
             <div class="hero-img-wrap">
               <img [src]="slide.src" [alt]="slide.alt" />
@@ -92,7 +92,7 @@
       </div>
 
       <div class="hero-carousel-dots" role="tablist" aria-label="Carrusel de imágenes">
-        @for (slide of slides; track slide.src; let index = $index) {
+        @for (slide of slides; track $index; let index = $index) {
           <button
             type="button"
             class="hero-carousel-dot"
