@@ -1,24 +1,168 @@
-// Header styles
+@use '../../pages/variables' as *;
+
 .site-header {
-  // Add your header styles here
+  width: 100%;
+  background-color: $blanco-limpio;
+  box-shadow: $shadow-sm;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-family: 'Inter', sans-serif;
 }
 
 .site-topbar {
-  // Add topbar styles here
+  background-color: $brand-navy;
+  color: $blanco-limpio;
+  padding: 0.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+
+  p {
+    margin: 0;
+    font-weight: 400;
+    opacity: 0.9;
+  }
+
+  .topbar-cta {
+    color: $brand-orange;
+    text-decoration: none;
+    font-weight: 700;
+    transition: $transition-base;
+
+    &:hover {
+      color: lighten($brand-orange, 10%);
+    }
+  }
 }
 
 .main-nav {
-  // Add navigation styles here
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav-brand {
-  // Add brand styles here
-}
+  display: flex;
+  flex-direction: column;
 
-.nav-logo-img {
-  // Add logo image styles here
+  .nav-logo-img {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .nav-tagline {
+    font-size: 0.75rem;
+    color: $gris-texto;
+    margin-top: 0.25rem;
+    font-weight: 500;
+  }
 }
 
 .nav-links {
-  // Add navigation links styles here
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li a {
+    text-decoration: none;
+    color: $brand-navy;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: $transition-base;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+
+    &:hover, &.active {
+      color: $brand-navy-light;
+      border-bottom-color: $brand-navy-light;
+    }
+  }
+
+  // Botón de contacto destacado al estilo Terminix
+  .nav-cta {
+    background: $degradado;
+    color: $blanco-limpio !important;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 6px;
+    border-bottom: none !important;
+    box-shadow: $shadow-sm;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: $shadow-md;
+      opacity: 0.95;
+    }
+  }
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  padding: 4px;
+
+  .bar {
+    width: 26px;
+    height: 3px;
+    background-color: $brand-navy;
+    border-radius: 2px;
+    transition: $transition-base;
+  }
+}
+
+// Responsive para móviles
+@media (max-width: 768px) {
+  .site-topbar {
+    display: none; // Oculta barra superior en móviles para ahorrar espacio
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: $blanco-limpio;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1.5rem;
+    border-top: 1px solid $gris-bordes;
+    box-shadow: $shadow-md;
+    transform: translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: $transition-base;
+
+    &.open {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    li a {
+      width: 100%;
+      text-align: center;
+      display: block;
+    }
+
+    .nav-cta {
+      width: 100%;
+      text-align: center;
+    }
+  }
 }
