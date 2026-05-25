@@ -12,7 +12,7 @@ body {
 	margin: 0;
 	display: flex;
 	flex-direction: column;
-	min-height: 100vh; // Obliga al body a ocupar toda la altura de la pantalla
+	min-height: 100vh;
 	background:
 		radial-gradient(circle at top left, rgba(26, 143, 92, 0.08), transparent 22%),
 		radial-gradient(circle at 100% 18%, rgba(37, 211, 102, 0.05), transparent 18%),
@@ -28,13 +28,11 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-// Contenedor dinámico de rutas
 main {
-	flex: 1 0 auto; // Crece automáticamente para empujar el footer hacia abajo
+	flex: 1 0 auto;
 	width: 100%;
 }
 
-// Pie de página persistente
 .main-footer {
-	flex-shrink: 0; // Evita que el footer se deforme o encoja
+	flex-shrink: 0;
 }

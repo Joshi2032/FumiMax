@@ -6,6 +6,15 @@ $brand-orange-dark: #c44b14;
 $brand-black: #111111;
 $brand-green: #1a8f5c;
 
+// Variables Legacy (Verdes) para evitar errores en componentes no migrados
+$verde: $brand-green;
+$verde-oscuro: #146c44;
+$verde-claro: #e6f7ef;
+$verde-accent: #25d366;
+
+// Degradados oficiales de la marca
+$degradado: linear-gradient(90deg, $brand-orange 0%, $brand-orange-dark 100%);
+
 // Grises y Fondos
 $blanco-limpio: #ffffff;
 $gris-fondo: #f4f6f8;       // Gris muy sutil para fondos de sección
