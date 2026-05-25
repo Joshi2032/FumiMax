@@ -123,13 +123,8 @@
 }
 
 @media (max-width: 768px) {
-  .site-topbar {
-    display: none;
-  }
-
-  .nav-toggle {
-    display: flex;
-  }
+  .site-topbar { display: none; }
+  .nav-toggle { display: flex; }
 
   .nav-links {
     position: absolute;
@@ -151,17 +146,6 @@
       transform: translateY(0);
       opacity: 1;
       pointer-events: auto;
-    }
-
-    li a {
-      width: 100%;
-      text-align: center;
-      display: block;
-    }
-
-    .nav-cta {
-      width: 100%;
-      text-align: center;
     }
   }
 }

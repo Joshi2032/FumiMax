@@ -1,36 +1,75 @@
 <footer class="main-footer">
-  <div class="footer-grid">
-    <div class="footer-col">
-      <h3>FumiMax</h3>
-      <p>Expertos en control de plagas con más de 15 años de experiencia. Protegemos tu salud y patrimonio con soluciones integrales.</p>
+  <div class="footer-container">
+    <div class="footer-grid">
+
+      <div class="footer-brand-col">
+        <h2 class="footer-logo">Fumi<span>Max</span></h2>
+        <p class="footer-description">
+          Líderes en manejo integrado de plagas residenciales, comerciales e industriales. Brindamos tranquilidad con estándares de nivel clínico.
+        </p>
+        <div class="footer-status">
+          <span class="status-indicator"></span> Servicio Activo en el Bajío
+        </div>
+      </div>
+
+      <div class="footer-links-col">
+        <h3>Explorar</h3>
+        <ul>
+          <li><a routerLink="/">Inicio</a></li>
+          <li><a routerLink="/servicios">Nuestros Servicios</a></li>
+          <li><a routerLink="/certificaciones">Certificaciones</a></li>
+          <li><a routerLink="/contacto">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact-col">
+        <h3>Atención Inmediata</h3>
+        <ul class="contact-info">
+          <li>
+            <strong class="contact-label">Ubicación:</strong>
+            <span>La Piedad, Michoacán</span>
+          </li>
+          <li>
+            <strong class="contact-label">Teléfono:</strong>
+            <a href="tel:3521234567" class="phone-link">352 123 4567</a>
+          </li>
+          <li>
+            <strong class="contact-label">Soporte:</strong>
+            <span>contacto@fumimax.com</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-trust-col">
+        <h3>Autoridad Sanitaria</h3>
+        <p class="trust-text">Operamos bajo estrictas normativas y licencias sanitarias federales.</p>
+        <div class="badge-group">
+          <div class="trust-badge">
+            <span class="badge-icon">✓</span>
+            <div class="badge-text">
+              <strong>COFEPRIS</strong>
+              <small>Licencia Sanitaria</small>
+            </div>
+          </div>
+          <div class="trust-badge">
+            <span class="badge-icon">✓</span>
+            <div class="badge-text">
+              <strong>MIP</strong>
+              <small>Manejo Integrado</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <div class="footer-col">
-      <h4>Servicios</h4>
-      <ul>
-        <li><a routerLink="/servicios">Control de Insectos</a></li>
-        <li><a routerLink="/servicios">Control de Roedores</a></li>
-        <li><a routerLink="/servicios">Desinfección Comercial</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h4>Contacto</h4>
-      <p>📍 La Piedad, Michoacán</p>
-      <p>📞 352 123 4567</p>
-      <p>✉️ contacto@fumimax.com</p>
-    </div>
-
-    <div class="footer-col">
-      <h4>Certificaciones</h4>
-      <div class="trust-badges">
-        <div class="badge-placeholder">Licencia Cofepris</div>
-        <div class="badge-placeholder">Certificación MIP</div>
+    <div class="footer-bottom">
+      <p class="copyright">&copy; {{ currentYear }} FumiMax. Todos los derechos reservados.</p>
+      <div class="footer-legal-links">
+        <a routerLink="/privacidad">Aviso de Privacidad</a>
+        <span class="separator">•</span>
+        <a routerLink="/terminos">Términos de Servicio</a>
       </div>
     </div>
-  </div>
-
-  <div class="footer-bottom">
-    <p>&copy; {{ currentYear }} FumiMax Del Bajío. Todos los derechos reservados.</p>
   </div>
 </footer>
