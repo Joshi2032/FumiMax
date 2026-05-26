@@ -14,7 +14,7 @@
 .site-topbar {
   background-color: $brand-navy;
   color: $blanco-limpio;
-  padding: 0.5rem 2rem;
+  padding: 0.6rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -51,17 +51,26 @@
   display: flex;
   flex-direction: column;
 
-  .nav-logo-img {
-    height: 45px;
-    width: auto;
-    object-fit: contain;
+  .nav-logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1;
+    color: $brand-navy;
+    letter-spacing: -0.5px;
+
+    span {
+      color: $brand-orange;
+    }
   }
 
   .nav-tagline {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     color: $gris-texto;
     margin-top: 0.25rem;
-    font-weight: 500;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
   }
 }
 
@@ -123,8 +132,13 @@
 }
 
 @media (max-width: 768px) {
-  .site-topbar { display: none; }
-  .nav-toggle { display: flex; }
+  .site-topbar {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
 
   .nav-links {
     position: absolute;
@@ -146,6 +160,17 @@
       transform: translateY(0);
       opacity: 1;
       pointer-events: auto;
+    }
+
+    li a {
+      width: 100%;
+      text-align: center;
+      display: block;
+    }
+
+    .nav-cta {
+      width: 100%;
+      text-align: center;
     }
   }
 }

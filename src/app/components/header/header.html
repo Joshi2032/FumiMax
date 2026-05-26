@@ -1,34 +1,27 @@
 <header class="site-header">
   <div class="site-topbar">
-    <p>Fumigadoras y control profesional de plagas para hogares, comercios e industria</p>
-    <a routerLink="/contacto" class="topbar-cta">Cotización rápida</a>
+    <p>🛡️ Control de Plagas con Certificación Sanitaria Federal</p>
+    <a href="tel:3521234567" class="topbar-cta">📞 Urgencias: 352 123 4567</a>
   </div>
 
-  <nav class="main-nav" aria-label="Navegación principal">
+  <nav class="main-nav">
     <div class="nav-brand">
-      <div class="nav-logo">
-        <img src="/Maxifum.png" alt="MAXIFUM" class="nav-logo-img" />
-      </div>
-      <span class="nav-tagline">Protección integral y respuesta rápida</span>
+      <h1 class="nav-logo">Fumi<span>Max</span></h1>
+      <span class="nav-tagline">Manejo Integrado de Plagas</span>
     </div>
 
-    <button
-      class="nav-toggle"
-      type="button"
-      aria-label="Abrir menú"
-      [attr.aria-expanded]="menuOpen"
-      (click)="toggleMenu()"
-    >
+    <ul class="nav-links">
+      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Inicio</a></li>
+      <li><a routerLink="/servicios" routerLinkActive="active">Servicios</a></li>
+      <li><a routerLink="/plagas" routerLinkActive="active">Catálogo de Plagas</a></li>
+      <li><a routerLink="/proceso" routerLinkActive="active">Nuestro Proceso</a></li>
+      <li><a routerLink="/contacto" class="nav-cta">Cotizar Ahora</a></li>
+    </ul>
+
+    <button class="nav-toggle" aria-label="Abrir menú">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
     </button>
-
-    <ul class="nav-links" [class.open]="menuOpen">
-      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()">Inicio</a></li>
-      <li><a routerLink="/servicios" routerLinkActive="active" (click)="closeMenu()">Servicios</a></li>
-      <li><a routerLink="/cobertura" routerLinkActive="active" (click)="closeMenu()">Cobertura</a></li>
-      <li><a routerLink="/contacto" class="nav-cta" routerLinkActive="active" (click)="closeMenu()">Contacto</a></li>
-    </ul>
   </nav>
 </header>
