@@ -1,167 +1,173 @@
-@use '../_variables' as *;
-@use '../_mixins' as *;
+@use '../variables' as *;
 
-.plagas-section {
-  @include full-bleed-section(#f3f7f8, 5rem 0 4rem, 3.5rem 0 2rem);
-  position: relative;
-
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(circle at top right, rgba($verde-accent, 0.08), transparent 22%),
-      radial-gradient(circle at left center, rgba($verde, 0.05), transparent 24%);
-    pointer-events: none;
-  }
+.plagas-page {
+  padding: 80px 20px;
+  background-color: $gris-fondo;
+  font-family: 'Inter', sans-serif;
 }
 
 .plagas-header {
-  @include section-header;
-  position: relative;
-  z-index: 1;
-  margin-bottom: 3rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px auto;
 
-  h2 {
-    font-family: Georgia, 'Times New Roman', serif;
-    letter-spacing: -0.04em;
-    max-width: 14ch;
-    margin-inline: auto;
+  .plagas-tag {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba($brand-navy, 0.08);
+    color: $brand-navy;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+
+  h1 {
+    font-size: 2.75rem;
+    color: $brand-navy;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 20px 0;
+
+    em {
+      font-style: normal;
+      color: $brand-orange;
+    }
   }
 
   p {
-    max-width: 44rem;
-    margin-inline: auto;
+    color: $gris-texto;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin: 0;
   }
+}
 
-  .plagas-eyebrow {
-    @include eyebrow;
-    display: inline-flex;
-    background: rgba($verde, 0.08);
-    color: $verde-oscuro;
-    border-radius: 999px;
-    padding: 0.28rem 0.65rem;
-    letter-spacing: 0.08em;
-    font-size: 0.72rem;
-    margin-bottom: 1rem;
-  }
+.plagas-container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .plagas-grid {
-  position: relative;
-  z-index: 1;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.4rem;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: 0 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 30px;
+  width: 100%;
 }
 
 .plaga-card {
-  @include card-base;
+  background-color: $blanco-limpio;
+  border: 1px solid $gris-bordes;
+  border-radius: 12px;
+  padding: 35px 30px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1rem;
   position: relative;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.96);
-  border: 1px solid rgba($verde-oscuro, 0.08);
-  box-shadow: 0 18px 38px rgba(15, 31, 34, 0.06);
-  min-height: 100%;
-
-  &::after {
-    content: '';
-    position: absolute;
-    inset: auto -1rem -1rem auto;
-    width: 7rem;
-    height: 7rem;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba($verde, 0.08) 0%, transparent 70%);
-    pointer-events: none;
-  }
+  box-shadow: $shadow-sm;
+  transition: $transition-base;
 
   &:hover {
     transform: translateY(-4px);
-    box-shadow: 0 24px 46px rgba(15, 31, 34, 0.1);
-    border-color: rgba($verde-oscuro, 0.16);
+    box-shadow: $shadow-hover;
+    border-color: rgba($brand-navy, 0.15);
+  }
+
+  .plaga-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+
+    &.riesgo-medio {
+      background-color: rgba(238, 156, 0, 0.1);
+      color: #ee9c00;
+    }
+
+    &.riesgo-alto {
+      background-color: rgba($brand-orange, 0.1);
+      color: $brand-orange;
+    }
+
+    &.riesgo-critico {
+      background-color: rgba(229, 62, 62, 0.1);
+      color: #e53e3e;
+    }
+  }
+
+  .plaga-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    line-height: 1;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+    color: $brand-navy;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+  }
+
+  .plaga-meta {
+    font-size: 0.85rem;
+    color: $gris-texto;
+    margin: 0 0 16px 0;
+    line-height: 1.4;
+
+    strong {
+      color: $brand-navy;
+    }
+  }
+
+  .plaga-desc {
+    font-size: 0.95rem;
+    color: $gris-texto;
+    line-height: 1.6;
+    margin: 0 0 25px 0;
+    flex-grow: 1;
+  }
+
+  .plaga-actions {
+    width: 100%;
+
+    .btn-plaga {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      padding: 10px 16px;
+      background-color: transparent;
+      border: 2px solid $brand-navy-light;
+      color: $brand-navy;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border-radius: 6px;
+      transition: $transition-base;
+
+      &:hover {
+        background-color: $brand-navy;
+        border-color: $brand-navy;
+        color: $blanco-limpio;
+      }
+    }
   }
 }
 
-.plaga-icon {
-  width: 3.5rem;
-  height: 3.5rem;
-  border-radius: 1rem;
-  background: $verde-claro;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  margin-bottom: 0.45rem;
-  border: 1px solid rgba($verde-oscuro, 0.08);
-  color: $verde-oscuro;
-
-  svg {
-    width: 1.9rem;
-    height: 1.9rem;
-  }
-}
-
-.plaga-icon--roaches { color: #8d5c5d; }
-.plaga-icon--rodents { color: #7d7370; }
-.plaga-icon--termites { color: #584a8d; }
-.plaga-icon--bedbugs { color: #2e63d8; }
-.plaga-icon--ants { color: #4c46a0; }
-.plaga-icon--mosquitoes { color: #9d6a7f; }
-.plaga-icon--spiders { color: #5b57a7; }
-.plaga-icon--pigeons { color: #bdb6c5; }
-
-.plaga-card h3 {
-  margin: 0;
-  font-size: 1.18rem;
-  font-weight: 800;
-  color: #0f1f22;
-}
-
-.plaga-card p {
-  margin: 0;
-  color: #52646b;
-  font-size: 0.98rem;
-  line-height: 1.7;
-}
-
-.plaga-card a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  margin-top: auto;
-  color: $verde-oscuro;
-  text-decoration: none;
-  font-size: 0.84rem;
-  font-weight: 800;
-}
-
-@media (max-width: 900px) {
-  .plagas-section {
-    padding: 3.5rem 0;
+@media (max-width: 768px) {
+  .plagas-header h1 {
+    font-size: 2.2rem;
   }
 
-  .plagas-grid {
-    padding: 0 0.9rem;
-  }
-
-  .plaga-card {
-    padding: 1.4rem;
-  }
-}
-
-@media (max-width: 600px) {
   .plagas-grid {
     grid-template-columns: 1fr;
   }
 
-  .plagas-header h2 {
-    font-size: 1.9rem;
+  .plaga-card {
+    padding: 25px 20px;
   }
 }

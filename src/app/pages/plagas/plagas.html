@@ -1,142 +1,79 @@
-<section class="plagas-section" aria-labelledby="plagas-title">
+<section class="plagas-page">
   <div class="plagas-header">
-    <p class="plagas-eyebrow">Atendemos cualquier plaga</p>
-    <h2 id="plagas-title">Identifica tu plaga, nosotros la eliminamos</h2>
-    <p class="plagas-description">
-      Contamos con protocolos específicos para cada tipo de plaga, garantizando resultados rápidos y duraderos.
-    </p>
+    <span class="plagas-tag">Manual Técnico</span>
+    <h1>Identificación y Control de <em>Plagas Urbanas</em></h1>
+    <p>Consulte nuestra guía de vectores biológicos comunes en la región del Bajío y los riesgos asociados a su presencia.</p>
   </div>
 
-  <div class="plagas-grid" role="list" aria-label="Tipos de plagas atendidas">
-    <article class="plaga-card" role="listitem">
-      <div class="plaga-icon plaga-icon--roaches" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 3c-2 0-3.5 1.6-3.5 3.5V10l-2 1.5L4.2 10.2a1.5 1.5 0 0 0-2.1.2 1.5 1.5 0 0 0 .2 2.1l2.3 2.1V17c0 1.7 1.3 3 3 3h8c1.7 0 3-1.3 3-3v-2.5l2.3-2.1a1.5 1.5 0 0 0 .2-2.1 1.5 1.5 0 0 0-2.1-.2L16.5 10V6.5C16.5 4.6 15 3 13 3h-1Z"/>
-          <path d="M8 7h8"/>
-          <path d="M9 12h6"/>
-        </svg>
-      </div>
-      <h3>Cucarachas</h3>
-      <p>Eliminación total con gel y aspersión.</p>
-      <a href="#contacto">Ver más <span aria-hidden="true">›</span></a>
-    </article>
+  <div class="plagas-container">
+    <div class="plagas-grid">
 
-    <article class="plaga-card" role="listitem">
-      <div class="plaga-icon plaga-icon--rodents" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M14 18c-2.8 0-5-2.2-5-5s2.2-5 5-5c1.2 0 2.3.4 3.1 1.1"/>
-          <path d="M7.5 14.5c-1.8-1.7-2.8-4-2.8-6.6 0-1.7.4-3.1 1.1-4.2"/>
-          <path d="M17.5 6.5c.4-1.2 1.2-2.1 2.5-2.7"/>
-          <path d="M18 18.5c1.5.2 2.8-.1 4-1"/>
-          <path d="M8 19.5c1 .6 2.1.9 3.5 1"/>
-          <path d="M10.5 9.5c.3-.7.9-1.3 1.6-1.7"/>
-        </svg>
+      <div class="plaga-card">
+        <div class="plaga-badge riesgo-alto">Riesgo Sanitario: Alto</div>
+        <div class="plaga-icon">🪳</div>
+        <h3>Cucarachas (Blattodea)</h3>
+        <p class="plaga-meta"><strong>Especies comunes:</strong> Alemana, Americana, Oriental.</p>
+        <p class="plaga-desc">Vectores mecánicos de patógenos como Salmonella y E. coli. Contaminan alimentos y superficies mediante fluidos y exoesqueletos.</p>
+        <div class="plaga-actions">
+          <a routerLink="/contacto" class="btn-plaga">Cotizar Erradicación →</a>
+        </div>
       </div>
-      <h3>Roedores</h3>
-      <p>Control de ratas y ratones, exterior e interior.</p>
-      <a href="#contacto">Ver más <span aria-hidden="true">›</span></a>
-    </article>
 
-    <article class="plaga-card" role="listitem">
-      <div class="plaga-icon plaga-icon--termites" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M6 4l2.5 2.5"/>
-          <path d="M10 6c2.8 0 5 2.2 5 5s-2.2 5-5 5-5-2.2-5-5 2.2-5 5-5Z"/>
-          <path d="M15 11h4"/>
-          <path d="M17 11v6"/>
-          <path d="M9 16l-2 3"/>
-          <path d="M11 16l2 3"/>
-          <path d="M10 6v-3"/>
-        </svg>
+      <div class="plaga-card">
+        <div class="plaga-badge riesgo-critico">Riesgo Sanitario: Crítico</div>
+        <div class="plaga-icon">🐭</div>
+        <h3>Roedores (Rattus / Mus)</h3>
+        <p class="plaga-meta"><strong>Especies comunes:</strong> Rata de alcantarilla, Rata de tejado, Ratón doméstico.</p>
+        <p class="plaga-desc">Transmiten Hantavirus, Leptospirosis y parásitos. Causan severos daños estructurales al roer cableados eléctricos e infraestructura.</p>
+        <div class="plaga-actions">
+          <a routerLink="/contacto" class="btn-plaga">Cotizar Erradicación →</a>
+        </div>
       </div>
-      <h3>Termitas</h3>
-      <p>Tratamientos estructurales preventivos.</p>
-      <a href="#contacto">Ver más <span aria-hidden="true">›</span></a>
-    </article>
 
-    <article class="plaga-card" role="listitem">
-      <div class="plaga-icon plaga-icon--bedbugs" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M4 14v-3.5A2.5 2.5 0 0 1 6.5 8h11A2.5 2.5 0 0 1 20 10.5V14"/>
-          <path d="M4 14h16"/>
-          <path d="M5 14v4"/>
-          <path d="M19 14v4"/>
-          <path d="M8 10V8"/>
-          <path d="M16 10V8"/>
-          <path d="M9 14v2"/>
-          <path d="M15 14v2"/>
-        </svg>
+      <div class="plaga-card">
+        <div class="plaga-badge riesgo-alto">Riesgo Estructural: Alto</div>
+        <div class="plaga-icon">🪵</div>
+        <h3>Termitas (Isoptera)</h3>
+        <p class="plaga-meta"><strong>Especies comunes:</strong> Termita subterránea, Termita de madera seca.</p>
+        <p class="plaga-desc">Destruyen silenciosamente celulosa en estructuras de madera, marcos, vigas y cimientos. Su detección tardía compromete inmuebles enteros.</p>
+        <div class="plaga-actions">
+          <a routerLink="/contacto" class="btn-plaga">Cotizar Erradicación →</a>
+        </div>
       </div>
-      <h3>Chinches</h3>
-      <p>Erradicación con calor y tratamiento químico.</p>
-      <a href="#contacto">Ver más <span aria-hidden="true">›</span></a>
-    </article>
 
-    <article class="plaga-card" role="listitem">
-      <div class="plaga-icon plaga-icon--ants" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M7 14c-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3Z"/>
-          <path d="M12 10.5c-1.3 0-2.3 1-2.3 2.3S10.7 15.1 12 15.1s2.3-1 2.3-2.3-1-2.3-2.3-2.3Z"/>
-          <path d="M17.5 7.2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2Z"/>
-          <path d="M9 16l2-1"/>
-          <path d="M14.2 12.5l1.8-1"/>
-          <path d="M8 18.5l1.5 1.5"/>
-        </svg>
+      <div class="plaga-card">
+        <div class="plaga-badge riesgo-alto">Riesgo Sanitario: Alto</div>
+        <div class="plaga-icon">🪲</div>
+        <h3>Chinches de Cama (Cimex lectularius)</h3>
+        <p class="plaga-meta"><strong>Especies comunes:</strong> Chinche común de cama.</p>
+        <p class="plaga-desc">Plaga hematófaga de rápida propagación en colchones, cabeceras y ropa de cama. Sus picaduras provocan dermatitis e insomnio severo.</p>
+        <div class="plaga-actions">
+          <a routerLink="/contacto" class="btn-plaga">Cotizar Erradicación →</a>
+        </div>
       </div>
-      <h3>Hormigas</h3>
-      <p>Control de colonias y rutas de acceso.</p>
-      <a href="#contacto">Ver más <span aria-hidden="true">›</span></a>
-    </article>
 
-    <article class="plaga-card" role="listitem">
-      <div class="plaga-icon plaga-icon--mosquitoes" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 6v6"/>
-          <path d="M9.5 8.5 7 6"/>
-          <path d="M14.5 8.5 17 6"/>
-          <path d="M11 12.5 8.5 15"/>
-          <path d="M13 12.5 15.5 15"/>
-          <path d="M12 12c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4Z"/>
-          <path d="M18 10h2"/>
-          <path d="M4 10h2"/>
-        </svg>
+      <div class="plaga-card">
+        <div class="plaga-badge riesgo-alto">Riesgo Sanitario: Alto</div>
+        <div class="plaga-icon">🪰</div>
+        <h3>Insectos Voladores</h3>
+        <p class="plaga-meta"><strong>Especies comunes:</strong> Mosca doméstica, Mosquito Aedes aegypti.</p>
+        <p class="plaga-desc">Transmisores de Dengue, Zika, Chikungunya y fiebres estomacales. Requieren control ambiental y trampas de luz UV industriales.</p>
+        <div class="plaga-actions">
+          <a routerLink="/contacto" class="btn-plaga">Cotizar Erradicación →</a>
+        </div>
       </div>
-      <h3>Mosquitos</h3>
-      <p>Nebulización en exteriores y jardines.</p>
-      <a href="#contacto">Ver más <span aria-hidden="true">›</span></a>
-    </article>
 
-    <article class="plaga-card" role="listitem">
-      <div class="plaga-icon plaga-icon--spiders" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 8.5c-2.2 0-4 1.8-4 4 0 2.3 1.8 4 4 4s4-1.7 4-4c0-2.2-1.8-4-4-4Z"/>
-          <path d="M12 4v4"/>
-          <path d="M12 16v4"/>
-          <path d="M8.5 10.5 6 8.5"/>
-          <path d="M15.5 10.5 18 8.5"/>
-          <path d="M8.5 13.5 6 15.5"/>
-          <path d="M15.5 13.5 18 15.5"/>
-        </svg>
+      <div class="plaga-card">
+        <div class="plaga-badge riesgo-medio">Riesgo Sanitario: Medio</div>
+        <div class="plaga-icon">🦂</div>
+        <h3>Fauna Nociva y Rastreros</h3>
+        <p class="plaga-meta"><strong>Especies comunes:</strong> Alacrán de corteza, Hormiga arriera, Arañas.</p>
+        <p class="plaga-desc">Invasores perimetrales que comprometen la seguridad física mediante picaduras venenosas. Se combaten con cordones químicos externos.</p>
+        <div class="plaga-actions">
+          <a routerLink="/contacto" class="btn-plaga">Cotizar Erradicación →</a>
+        </div>
       </div>
-      <h3>Arañas</h3>
-      <p>Incluye alacranes y artrópodos.</p>
-      <a href="#contacto">Ver más <span aria-hidden="true">›</span></a>
-    </article>
 
-    <article class="plaga-card" role="listitem">
-      <div class="plaga-icon plaga-icon--pigeons" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M4 16c2.2-2.5 5-4 8-4 3.8 0 7.1 2 9 5"/>
-          <path d="M10.5 12c0-2.2 1.7-4 4-4h1.2c.8 0 1.6.2 2.3.6"/>
-          <path d="M15 6.5c1.2.1 2.4.6 3.2 1.5"/>
-          <path d="M8 17.5c.8.8 1.8 1.3 3 1.5"/>
-          <path d="M7.2 11.8c-.8.2-1.5.6-2.2 1.2"/>
-          <path d="M19 9.5l1-1"/>
-        </svg>
-      </div>
-      <h3>Palomas</h3>
-      <p>Control con métodos disuasorios humanos.</p>
-      <a href="#contacto">Ver más <span aria-hidden="true">›</span></a>
-    </article>
+    </div>
   </div>
 </section>

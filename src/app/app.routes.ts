@@ -12,6 +12,11 @@ export const routes: Routes = [
 		loadComponent: () => import('./pages/servicios/servicios').then(m => m.Servicios)
 	},
 	{
+		path: 'plagas',
+		title: 'Catálogo de Plagas | MAXIFUM',
+		loadComponent: () => import('./pages/plagas/plagas').then(m => m.Plagas)
+	},
+	{
 		path: 'nosotros',
 		title: 'Quiénes Somos | MAXIFUM',
 		loadComponent: () => import('./pages/nosotros/nosotros').then(m => m.Nosotros)
