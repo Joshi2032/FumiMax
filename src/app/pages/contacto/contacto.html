@@ -1,42 +1,94 @@
-<section class="contacto-section">
-  <div class="contacto-info-block">
-    <h2>¿Buscas fumigadoras en Guadalajara?</h2>
-    <p class="contacto-descripcion">No esperes más. Contáctanos hoy y obtén una solución rápida y efectiva. Atendemos Guadalajara, Michoacán, Querétaro y zonas cercanas con servicio 24/7.</p>
-    <div class="contacto-info-list">
-      <div class="contacto-info-item">
-        <span class="contacto-info-icon">📞</span>
-        <div>
-          <div class="contacto-info-label">Teléfono</div>
-          <a href="tel:+525512345678">+52 (55) 1234-5678</a>
+<section class="contacto-page">
+  <div class="contacto-container">
+
+    <div class="contacto-info-sidebar">
+      <span class="contacto-tag">Atención Centralizada</span>
+      <h2>¿Listo para asegurar <em>su inmueble</em>?</h2>
+      <p class="sidebar-desc">
+        Póngase en contacto con nuestros ingenieros de servicio para coordinar una inspección técnica o solicitar un plan MIP corporativo adaptado a normativas.
+      </p>
+
+      <div class="info-cards-group">
+        <div class="info-card-direct">
+          <div class="info-card-icon">📞</div>
+          <div class="info-card-text">
+            <strong>Línea Directa de Urgencias</strong>
+            <a href="tel:3521234567">352 123 4567</a>
+          </div>
         </div>
-      </div>
-      <div class="contacto-info-item">
-        <span class="contacto-info-icon">✉️</span>
-        <div>
-          <div class="contacto-info-label">Email</div>
-          <a href="mailto:info@fumimax.com">info@fumimax.com</a>
+
+        <div class="info-card-direct">
+          <div class="info-card-icon">📍</div>
+          <div class="info-card-text">
+            <strong>Área de Cobertura Principal</strong>
+            <span>La Piedad, Michoacán y zona del Bajío.</span>
+          </div>
         </div>
-      </div>
-      <div class="contacto-info-item">
-        <span class="contacto-info-icon">📍</span>
-        <div>
-          <div class="contacto-info-label">Dirección</div>
-          <span>Av. Protección 123, Col. Seguridad, CDMX</span>
+
+        <div class="info-card-direct">
+          <div class="info-card-icon">📜</div>
+          <div class="info-card-text">
+            <strong>Cumplimiento Sanitario</strong>
+            <span>Certificados válidos para auditorías COFEPRIS.</span>
+          </div>
         </div>
       </div>
     </div>
+
+    <div class="contacto-form-block">
+      <h3>Solicitud de Cotización Técnica</h3>
+      <p>Complete los siguientes campos para canalizar su requerimiento con el área correspondiente.</p>
+
+      <form class="lead-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Nombre Completo / Empresa</label>
+            <input type="text" id="name" placeholder="Ej. Ing. Carlos Mendoza" required />
+          </div>
+        </div>
+
+        <div class="form-grid-fields">
+          <div class="form-group">
+            <label for="phone">Teléfono de Contacto</label>
+            <input type="tel" id="phone" placeholder="Ej. 352 123 4567" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Correo Electrónico</label>
+            <input type="email" id="email" placeholder="carlos@empresa.com" required />
+          </div>
+        </div>
+
+        <div class="form-grid-fields">
+          <div class="form-group">
+            <label for="inmueble">Tipo de Inmueble</label>
+            <select id="inmueble" required>
+              <option value="" disabled selected>Seleccione una opción</option>
+              <option value="residencial">Residencial (Casa / Departamento)</option>
+              <option value="comercial">Comercial (Local / Restaurante / Oficina)</option>
+              <option value="industrial">Industrial (Planta / Almacén / Logística)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="plaga">Plaga Objetivo (Si se conoce)</label>
+            <select id="plaga">
+              <option value="desconocido">No estoy seguro / Inspección general</option>
+              <option value="rastreros">Insectos Rastreros (Cucarachas, Hormigas)</option>
+              <option value="roedores">Roedores (Ratas, Ratones)</option>
+              <option value="termitas">Termitas o Polilla</option>
+              <option value="voladores">Insectos Voladores (Moscas, Mosquitos)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Detalles Adicionales del Problema</label>
+          <textarea id="message" rows="4" placeholder="Describa brevemente la situación o requerimientos específicos de auditoría..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit-lead">Enviar Solicitud de Inspección</button>
+      </form>
+    </div>
+
   </div>
-  <form class="contact-form">
-    <label>Nombre Completo *<input type="text" name="nombre" required></label>
-    <label>Correo Electrónico *<input type="email" name="email" required></label>
-    <label>Teléfono<input type="tel" name="telefono"></label>
-    <label>Mensaje *<textarea name="mensaje" required></textarea></label>
-    <button type="submit">Enviar Mensaje</button>
-    <a href="https://wa.me/5215512345678?text=Hola%2C%20me%20interesa%20una%20cotizaci%C3%B3n%20de%20fumigaci%C3%B3n" target="_blank" rel="noopener" class="whatsapp-btn">
-      <span class="whatsapp-btn-content">
-        <span class="whatsapp-icon"></span>
-        <span>Contactar por WhatsApp</span>
-      </span>
-    </a>
-  </form>
 </section>
