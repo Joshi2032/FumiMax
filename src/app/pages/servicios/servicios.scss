@@ -1,5 +1,4 @@
 @use '../variables' as *;
-@use 'sass:color';
 
 .services-page {
   padding: 80px 20px;
@@ -90,7 +89,6 @@
   }
 }
 
-// Rejilla maestra de CSS Grid
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -105,16 +103,22 @@
   padding: 40px 30px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  box-shadow: $shadow-sm;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   transition: $transition-base;
+  text-decoration: none;
 
   &:hover {
     transform: translateY(-5px);
     box-shadow: $shadow-hover;
     border-color: rgba($brand-navy, 0.12);
+
+    .service-link {
+      color: $brand-orange;
+      padding-left: 5px;
+    }
   }
 
   .card-accent {
@@ -123,10 +127,10 @@
     left: 0;
     right: 0;
     height: 4px;
-    background-color: $brand-orange; // Detalle Naranja para residencial
+    background-color: $brand-orange;
 
     &.corporate {
-      background-color: $brand-navy; // Detalle Azul para corporativo
+      background-color: $brand-navy;
     }
   }
 
@@ -147,28 +151,26 @@
     font-size: 0.95rem;
     line-height: 1.6;
     margin: 0 0 24px 0;
-    flex-grow: 1; // Empuja el link al fondo uniformemente
+    flex-grow: 1;
   }
 
   .service-link {
-    color: $brand-navy;
+    color: $brand-navy-light;
     text-decoration: none;
     font-weight: 700;
     font-size: 0.95rem;
-    transition: color 0.2s ease;
-
-    &:hover {
-      color: $brand-orange;
-    }
+    transition: $transition-base;
   }
 
   &.commercial {
-    .service-link {
-      color: $brand-orange;
-
-      &:hover {
+    &:hover {
+      .service-link {
         color: $brand-navy;
       }
+    }
+
+    .service-link {
+      color: $brand-orange;
     }
   }
 }
@@ -182,12 +184,12 @@
     gap: 60px;
   }
 
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
   .section-title-block {
     align-items: center;
     text-align: center;
-  }
-
-  .service-card {
-    padding: 30px 24px;
   }
 }
