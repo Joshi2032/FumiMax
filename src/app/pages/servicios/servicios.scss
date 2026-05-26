@@ -1,139 +1,193 @@
 @use '../variables' as *;
+@use 'sass:color';
 
-.servicios-section {
+.services-page {
+  padding: 80px 20px;
   background-color: $gris-fondo;
-  padding: 5rem 2rem;
   font-family: 'Inter', sans-serif;
 }
 
-.servicios-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.servicios-header {
+.services-header {
   text-align: center;
-  max-width: 700px;
-  margin: 0 auto 4rem auto;
+  max-width: 800px;
+  margin: 0 auto 60px auto;
 
-  .eyebrow {
+  .services-tag {
     display: inline-block;
+    padding: 6px 16px;
+    background: rgba($brand-orange, 0.1);
     color: $brand-orange;
+    border-radius: 50px;
     font-weight: 700;
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-size: 0.875rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 16px;
   }
 
-  h2 {
+  h1 {
+    font-size: 2.75rem;
     color: $brand-navy;
-    font-size: 2.5rem;
     font-weight: 800;
-    margin: 0 0 1rem 0;
     line-height: 1.2;
-  }
+    margin: 0 0 20px 0;
 
-  .servicios-descripcion {
-    color: $gris-texto;
-    font-size: 1.125rem;
-    line-height: 1.6;
-  }
-}
-
-.servicios-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-}
-
-.servicio-card {
-  background: $blanco-limpio;
-  border: 1px solid $gris-bordes;
-  border-radius: 12px;
-  padding: 2rem;
-  text-decoration: none; // Evita subrayado por ser una etiqueta <a>
-  display: flex;
-  flex-direction: column;
-  transition: $transition-base;
-  box-shadow: $shadow-sm;
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: $shadow-hover;
-    border-color: $brand-navy-light;
-
-    .servicio-icon {
-      background: $brand-navy;
-      color: $blanco-limpio;
-    }
-
-    .servicio-link {
+    em {
+      font-style: normal;
       color: $brand-orange;
-      padding-left: 5px; // Pequeña animación del texto
     }
-  }
-
-  .servicio-icon {
-    width: 64px;
-    height: 64px;
-    background: rgba($brand-navy, 0.05);
-    color: $brand-navy;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-    transition: $transition-base;
-  }
-
-  h3 {
-    color: $brand-navy;
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin: 0 0 0.75rem 0;
   }
 
   p {
     color: $gris-texto;
+    font-size: 1.15rem;
     line-height: 1.6;
-    margin: 0 0 1.5rem 0;
-    flex-grow: 1; // Empuja el enlace hacia abajo si hay poco texto
+    margin: 0;
+  }
+}
+
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.services-section-group {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.section-title-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 600px;
+
+  .icon-circle {
+    font-size: 1.75rem;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: $shadow-sm;
+    margin-bottom: 16px;
   }
 
-  .servicio-link {
-    color: $brand-navy-light;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: $transition-base;
+  h2 {
+    font-size: 1.75rem;
+    color: $brand-navy;
+    font-weight: 700;
+    margin: 0 0 10px 0;
   }
 
-  // Estilo especial para la tarjeta empresarial
-  &.highlight-card {
-    border-top: 4px solid $brand-orange;
+  p {
+    color: $gris-texto;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+}
 
-    .servicio-icon {
-      color: $brand-orange;
-      background: rgba($brand-orange, 0.1);
+// Rejilla maestra de CSS Grid
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  width: 100%;
+}
+
+.service-card {
+  background-color: $blanco-limpio;
+  border: 1px solid $gris-bordes;
+  border-radius: 14px;
+  padding: 40px 30px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: $transition-base;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-hover;
+    border-color: rgba($brand-navy, 0.12);
+  }
+
+  .card-accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: $brand-orange; // Detalle Naranja para residencial
+
+    &.corporate {
+      background-color: $brand-navy; // Detalle Azul para corporativo
     }
+  }
+
+  .service-icon {
+    font-size: 2.25rem;
+    margin-bottom: 24px;
+  }
+
+  h3 {
+    font-size: 1.35rem;
+    color: $brand-navy;
+    font-weight: 700;
+    margin: 0 0 14px 0;
+  }
+
+  p {
+    color: $gris-texto;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0 0 24px 0;
+    flex-grow: 1; // Empuja el link al fondo uniformemente
+  }
+
+  .service-link {
+    color: $brand-navy;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
 
     &:hover {
-      border-color: $brand-orange;
+      color: $brand-orange;
+    }
+  }
 
-      .servicio-icon {
-        background: $brand-orange;
-        color: $blanco-limpio;
+  &.commercial {
+    .service-link {
+      color: $brand-orange;
+
+      &:hover {
+        color: $brand-navy;
       }
     }
   }
 }
 
-// Responsive
 @media (max-width: 768px) {
-  .servicios-header h2 {
-    font-size: 2rem;
+  .services-header h1 {
+    font-size: 2.2rem;
   }
-  .servicios-grid {
-    grid-template-columns: 1fr; // Una columna en móviles
+
+  .services-container {
+    gap: 60px;
+  }
+
+  .section-title-block {
+    align-items: center;
+    text-align: center;
+  }
+
+  .service-card {
+    padding: 30px 24px;
   }
 }
