@@ -5,7 +5,7 @@ import { NosotrosComponent } from './nosotros/nosotros';
 import { Historia } from './historia/historia';
 import { Testimonios } from './testimonios/testimonios';
 import { FaqComponent } from './faq/faq';
-import { Cobertura } from './cobertura/cobertura';
+import { CoberturaComponent } from './cobertura/cobertura';
 import { Contacto } from './contacto/contacto';
 
 @Component({
@@ -20,7 +20,7 @@ import { Contacto } from './contacto/contacto';
     Historia,
     Testimonios,
     FaqComponent,
-    Cobertura,
+    CoberturaComponent,
     Contacto
   ]
 })

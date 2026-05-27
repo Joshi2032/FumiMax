@@ -24,7 +24,7 @@ export const routes: Routes = [
 	{
 		path: 'cobertura',
 		title: 'Zonas de Cobertura | MAXIFUM',
-		loadComponent: () => import('./pages/cobertura/cobertura').then(m => m.Cobertura)
+		loadComponent: () => import('./pages/cobertura/cobertura').then(m => m.CoberturaComponent)
 	},
 	{
 		path: 'faq',
