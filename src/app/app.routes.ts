@@ -29,7 +29,7 @@ export const routes: Routes = [
 	{
 		path: 'faq',
 		title: 'Preguntas Frecuentes | MAXIFUM',
-		loadComponent: () => import('./pages/faq/faq').then(m => m.Faq)
+		loadComponent: () => import('./pages/faq/faq').then(m => m.faq)
 	},
 	{
 		path: 'contacto',
