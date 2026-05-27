@@ -15,7 +15,7 @@ export class Contacto implements OnInit {
   isSubmitting = false;
   formEnviado = false;
 
-  private readonly WHATSAPP_NUMBER = '523521234567';
+  private readonly WHATSAPP_NUMBER = '3521887541';
 
   constructor(
     private fb: FormBuilder,
