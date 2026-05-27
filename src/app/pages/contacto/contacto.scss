@@ -20,7 +20,7 @@
   }
 }
 
-// Columna de información
+// Columna Izquierda: Información de Autoridad y Soporte
 .contacto-info-sidebar {
   display: flex;
   flex-direction: column;
@@ -120,7 +120,7 @@
   }
 }
 
-// Bloque del formulario
+// Columna Derecha: Bloque del Formulario
 .contacto-form-block {
   background-color: $blanco-limpio;
   border: 1px solid $gris-bordes;
@@ -223,5 +223,37 @@
       box-shadow: $shadow-md;
       opacity: 0.95;
     }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none !important;
+      box-shadow: none !important;
+    }
   }
+}
+
+// Clases de Feedback Visual para Validaciones Reactivas
+.input-error {
+  border-color: #e53e3e !important;
+  background-color: rgba(229, 62, 62, 0.02) !important;
+}
+
+.error-text {
+  color: #e53e3e;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.alert-success {
+  background-color: rgba(72, 187, 120, 0.1);
+  color: #48bb78;
+  padding: 15px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 25px;
+  border: 1px solid rgba(72, 187, 120, 0.2);
+  text-align: center;
 }
