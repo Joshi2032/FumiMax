@@ -1,27 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import { Title, Meta } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { Title, Meta } from '@angular/platform-browser'; // <-- Asegúrate de tener estos imports
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [RouterLink],
+  imports: [CommonModule, RouterLink],
   templateUrl: './hero.html',
   styleUrl: './hero.scss'
 })
 export class Hero implements OnInit {
+
   constructor(private titleService: Title, private metaService: Meta) {}
 
   ngOnInit(): void {
-    this.titleService.setTitle('Fumi-Max | Manejo Integrado de Plagas Profesionales');
+    // Título optimizado para buscadores: Ataca "Fumigadoras", "Control de Plagas" y la región clave
+    this.titleService.setTitle('Fumigadoras y Control de Plagas en La Piedad | MAXIFUM DEL BAJÍO');
 
+    // Descripción indexable con intención de búsqueda comercial e industrial
     this.metaService.updateTag({
       name: 'description',
-      content: 'Empresa líder en control y erradicación de plagas residenciales, comerciales e industriales en el Bajío. Certificaciones y licencias sanitarias oficiales.'
+      content: '¿Busca fumigadoras confiables? MAXIFUM DEL BAJÍO ofrece servicios de fumigación y manejo integrado de plagas residencial, comercial e industrial con certificación COFEPRIS.'
     });
-
-    this.metaService.updateTag({ property: 'og:title', content: 'Fumi-Max | Control de Plagas con Rigor Clínico' });
-    this.metaService.updateTag({ property: 'og:description', content: 'Servicios de fumigación técnica contra insectos, roedores y termitas con planes MIP alineados a COFEPRIS.' });
-    this.metaService.updateTag({ property: 'og:image', content: 'assets/Maxifum.png' });
   }
 }
