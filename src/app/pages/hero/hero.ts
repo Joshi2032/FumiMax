@@ -20,7 +20,6 @@ export class Hero implements OnInit {
       content: 'Empresa líder en control y erradicación de plagas residenciales, comerciales e industriales en el Bajío. Certificaciones y licencias sanitarias oficiales.'
     });
 
-    // Configuración de tarjetas de Open Graph para compartir por WhatsApp
     this.metaService.updateTag({ property: 'og:title', content: 'Fumi-Max | Control de Plagas con Rigor Clínico' });
     this.metaService.updateTag({ property: 'og:description', content: 'Servicios de fumigación técnica contra insectos, roedores y termitas con planes MIP alineados a COFEPRIS.' });
     this.metaService.updateTag({ property: 'og:image', content: 'assets/Maxifum.png' });
