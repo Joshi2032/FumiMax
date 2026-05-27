@@ -31,12 +31,12 @@ export class Servicios implements OnInit {
       icon: '🏭',
       titulo: 'Cordones Sanitarios de Alta Densidad para Industria, Almacenes y Agro',
       subtitulo: 'Protección perimetral estricta para cadenas de suministro y empaques',
-      descripcion: 'Diseñamos e implementamos sistemas de Manejo Integrado de Plagas (MIP) específicos para plantas manufactureras, almacenes complejos y centros de distribución del Bajío. Nos enfocamos en el blindaje perimetral, el monitoreo predictivo y la disminución del uso de plaguicidas en áreas críticas mediante el uso prioritario de medios mecánicos avanzados.',
+      descripcion: 'Diseñamos e implementamos sistemas de Manejo Integrado de Plagas (MIP) específicos para plantas manufactureras de alta exigencia, almacenes complejos, la industria automotriz y centros de distribución (CEDIS) del Bajío. Nos enfocamos en el blindaje perimetral, el monitoreo predictivo y la disminución del uso de plaguicidas en áreas críticas mediante el uso prioritario de medios mecánicos avanzados.',
       enfoqueClave: [
-        'Industria Alimentaria y de Bebidas: Control estricto de vectores diarreicos y contaminantes.',
-        'Almacenes de Granos y Semillas: Monitoreo predictivo continuo contra roedores urbanos.',
-        'Empaques Agrícolas y Distribución: Sistemas MIP adaptados a exigentes estándares de exportación.',
-        'Plantas Manufactureras y Maquiladoras: Blindaje perimetral mediante estaciones de cebado herméticas numeradas.'
+        'Industria Alimentaria y de Bebidas: Control estricto de vectores diarreicos y contaminantes bajo estándares de exportación.',
+        'Sector Automotriz y Aeroespacial: Blindaje técnico perimetral contra roedores urbanos que comprometan cableados o componentes.',
+        'Centros Logísticos y de Almacenamiento (CEDIS): Monitoreo predictivo continuo en zonas de alta rotación.',
+        'Plantas Manufactureras y Maquiladoras: Estaciones de cebado herméticas numeradas para superar auditorías severas.'
       ],
       normativas: ['COFEPRIS', 'Registros CICOPLAFEST', 'Estándares EPA (EE. UU.)', 'Norma Oficial Mexicana']
     },
@@ -46,12 +46,12 @@ export class Servicios implements OnInit {
       icon: '🏢',
       titulo: 'Protección de Marca e Inocuidad Alimentaria Comercial y Clínica',
       subtitulo: 'Tratamientos discretos y efectivos que garantizan su operación continua',
-      descripcion: 'Soluciones orientadas al sector hostelero, restaurantero, clínico y retail. Implementamos aplicaciones controladas sin olores desagradables y en horarios especiales para no interferir con la experiencia de sus clientes, cumpliendo con las más estrictas pautas de sanidad.',
+      descripcion: 'Soluciones orientadas al sector hostelero, restaurantero, retail y entornos de salud estrictamente regulados. Implementamos aplicaciones de grado clínico controladas sin olores desagradables y en horarios especiales para no interferir con la operación, cumpliendo con las más exigentes auditorías de sanidad nacionales e internacionales.',
       enfoqueClave: [
-        'Hoteles, Moteles y Hospedajes: Tratamientos focalizados con alto efecto de expulsión perimetral.',
-        'Restaurantes y Comedores Industriales: Soporte completo para la aprobación de Distintivo H y NOM-251.',
-        'Centros de Salud, Clínicas y Laboratorios: Aplicación quirúrgica en ambientes controlados con químicos de nula volatilidad residual.',
-        'Escuelas, Guarderías y Oficinas: Entornos corporativos 100% seguros y desinfectados tras el periodo de exclusión.'
+        'Sector Farmacéutico y Dispositivos Médicos: Control biológico absoluto bajo normativas de nula volatilidad residual.',
+        'Centros de Salud, Clínicas y Laboratorios: Aplicación quirúrgica en ambientes controlados con registros COFEPRIS vigentes.',
+        'Restaurantes y Comedores Industriales: Soporte documental riguroso para la aprobación de Distintivo H y NOM-251.',
+        'Hoteles, Moteles y Complejos Comerciales: Tratamientos discretos con alto efecto de expulsión perimetral.'
       ],
       normativas: ['Distintivo H', 'Norma Oficial Mexicana NOM-251', 'Regulación Sanitaria Local', 'Protocolos Clínicos']
     },
