@@ -1,79 +1,53 @@
 <section class="plagas-page">
-  <div class="plagas-header">
-    <span class="plagas-tag">Manual Técnico</span>
-    <h1>Identificación y Control de <em>Plagas Urbanas</em></h1>
-    <p>Consulte nuestra guía de vectores biológicos comunes en la región del Bajío y los riesgos asociados a su presencia.</p>
+
+  <div class="plagas-main-header">
+    <span class="plagas-tag">Manual de Vectores Biológicos</span>
+    <h1>Centro de Identificación y <em>Riesgo Sanitario</em></h1>
+    <p>Consulte nuestra enciclopedia técnica para identificar el espécimen que amenaza sus instalaciones y evalúe de forma inmediata su nivel de peligro estructural y legal.</p>
   </div>
 
-  <div class="plagas-container">
-    <div class="plagas-grid">
+  <div class="plagas-dashboard-container">
 
-      <div class="plaga-card">
-        <div class="plaga-badge riesgo-alto">Riesgo Sanitario: Alto</div>
-        <div class="plaga-icon">🪳</div>
-        <h3>Cucarachas (Blattodea)</h3>
-        <p class="plaga-meta"><strong>Especies comunes:</strong> Alemana, Americana, Oriental.</p>
-        <p class="plaga-desc">Vectores mecánicos de patógenos como Salmonella y E. coli. Contaminan alimentos y superficies mediante fluidos y exoesqueletos.</p>
-        <div class="plaga-actions">
-          <a routerLink="/contacto" class="btn-plaga">Cotizar Erradicación →</a>
-        </div>
-      </div>
-
-      <div class="plaga-card">
-        <div class="plaga-badge riesgo-critico">Riesgo Sanitario: Crítico</div>
-        <div class="plaga-icon">🐭</div>
-        <h3>Roedores (Rattus / Mus)</h3>
-        <p class="plaga-meta"><strong>Especies comunes:</strong> Rata de alcantarilla, Rata de tejado, Ratón doméstico.</p>
-        <p class="plaga-desc">Transmiten Hantavirus, Leptospirosis y parásitos. Causan severos daños estructurales al roer cableados eléctricos e infraestructura.</p>
-        <div class="plaga-actions">
-          <a routerLink="/contacto" class="btn-plaga">Cotizar Erradicación →</a>
-        </div>
-      </div>
-
-      <div class="plaga-card">
-        <div class="plaga-badge riesgo-alto">Riesgo Estructural: Alto</div>
-        <div class="plaga-icon">🪵</div>
-        <h3>Termitas (Isoptera)</h3>
-        <p class="plaga-meta"><strong>Especies comunes:</strong> Termita subterránea, Termita de madera seca.</p>
-        <p class="plaga-desc">Destruyen silenciosamente celulosa en estructuras de madera, marcos, vigas y cimientos. Su detección tardía compromete inmuebles enteros.</p>
-        <div class="plaga-actions">
-          <a routerLink="/contacto" class="btn-plaga">Cotizar Erradicación →</a>
-        </div>
-      </div>
-
-      <div class="plaga-card">
-        <div class="plaga-badge riesgo-alto">Riesgo Sanitario: Alto</div>
-        <div class="plaga-icon">🪲</div>
-        <h3>Chinches de Cama (Cimex lectularius)</h3>
-        <p class="plaga-meta"><strong>Especies comunes:</strong> Chinche común de cama.</p>
-        <p class="plaga-desc">Plaga hematófaga de rápida propagación en colchones, cabeceras y ropa de cama. Sus picaduras provocan dermatitis e insomnio severo.</p>
-        <div class="plaga-actions">
-          <a routerLink="/contacto" class="btn-plaga">Cotizar Erradicación →</a>
-        </div>
-      </div>
-
-      <div class="plaga-card">
-        <div class="plaga-badge riesgo-alto">Riesgo Sanitario: Alto</div>
-        <div class="plaga-icon">🪰</div>
-        <h3>Insectos Voladores</h3>
-        <p class="plaga-meta"><strong>Especies comunes:</strong> Mosca doméstica, Mosquito Aedes aegypti.</p>
-        <p class="plaga-desc">Transmisores de Dengue, Zika, Chikungunya y fiebres estomacales. Requieren control ambiental y trampas de luz UV industriales.</p>
-        <div class="plaga-actions">
-          <a routerLink="/contacto" class="btn-plaga">Cotizar Erradicación →</a>
-        </div>
-      </div>
-
-      <div class="plaga-card">
-        <div class="plaga-badge riesgo-medio">Riesgo Sanitario: Medio</div>
-        <div class="plaga-icon">🦂</div>
-        <h3>Fauna Nociva y Rastreros</h3>
-        <p class="plaga-meta"><strong>Especies comunes:</strong> Alacrán de corteza, Hormiga arriera, Arañas.</p>
-        <p class="plaga-desc">Invasores perimetrales que comprometen la seguridad física mediante picaduras venenosas. Se combaten con cordones químicos externos.</p>
-        <div class="plaga-actions">
-          <a routerLink="/contacto" class="btn-plaga">Cotizar Erradicación →</a>
-        </div>
-      </div>
-
+    <div class="plagas-filter-bar">
+      <button [class.active]="filtroActivo === 'todas'" (click)="aplicarFiltro('todas')">Ver Todas</button>
+      <button [class.active]="filtroActivo === 'rastrero'" (click)="aplicarFiltro('rastrero')">🦟 Rastreros</button>
+      <button [class.active]="filtroActivo === 'volador'" (click)="aplicarFiltro('volador')">🪰 Voladores</button>
+      <button [class.active]="filtroActivo === 'roedor'" (click)="aplicarFiltro('roedor')">🐀 Roedores</button>
+      <button [class.active]="filtroActivo === 'madera'" (click)="aplicarFiltro('madera')">🪵 Madera / Termitas</button>
     </div>
+
+    <div class="plagas-cards-grid">
+      @for (plaga of plagasFiltradas; track plaga.id) {
+        <div class="plaga-card-item">
+          <div class="plaga-card-header">
+            <div class="plaga-meta-title">
+              <h3>{{ plaga.nombre }}</h3>
+              <p class="scientific-name">{{ plaga.nombreCientifico }}</p>
+            </div>
+            <span class="badge-riesgo-indicator" [ngClass]="plaga.riesgoClass">
+              Riesgo: {{ plaga.riesgo }}
+            </span>
+          </div>
+
+          <div class="plaga-card-body">
+            <p class="plaga-behavior-desc">{{ plaga.descripcion }}</p>
+
+            <div class="plaga-threat-box">
+              <strong>⚠️ Impacto Crítico en Operaciones:</strong>
+              <p>{{ plaga.amenazaClave }}</p>
+            </div>
+          </div>
+
+          <div class="plaga-card-footer">
+            <a href="/contacto" class="btn-card-action">Reportar Avistamiento / Solicitar Cerco ↓</a>
+          </div>
+        </div>
+      } @empty {
+        <div class="empty-filter-state">
+          <p>No se encontraron vectores registrados bajo esta categoría específica actualmente.</p>
+        </div>
+      }
+    </div>
+
   </div>
 </section>

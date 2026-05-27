@@ -1,14 +1,17 @@
 @use '../variables' as *;
 
+// ==========================================================================
+// Estilos Base de la Página y Encabezado Principal
+// ==========================================================================
 .plagas-page {
-  padding: 80px 20px;
-  background-color: $gris-fondo;
   font-family: 'Inter', sans-serif;
+  background-color: $gris-fondo;
+  padding: 80px 20px;
 }
 
-.plagas-header {
+.plagas-main-header {
   text-align: center;
-  max-width: 800px;
+  max-width: 850px;
   margin: 0 auto 60px auto;
 
   .plagas-tag {
@@ -20,7 +23,6 @@
     font-weight: 700;
     font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
     margin-bottom: 16px;
   }
 
@@ -45,129 +47,205 @@
   }
 }
 
-.plagas-container {
+.plagas-dashboard-container {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.plagas-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 30px;
-  width: 100%;
+// ==========================================================================
+// MÓDULO INTERACTIVO: Barra de Filtros de Diagnóstico (Estilo Rentokil)
+// ==========================================================================
+.plagas-filter-bar {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 45px;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 10px;
+  scrollbar-width: none; // Oculta scroll en Firefox
+
+  &::-webkit-scrollbar {
+    display: none; // Oculta scroll en Chrome/Safari
+  }
+
+  button {
+    background-color: $blanco-limpio;
+    border: 1px solid $gris-bordes;
+    color: $gris-texto;
+    padding: 12px 24px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: $shadow-sm;
+    transition: $transition-base;
+
+    &:hover {
+      border-color: rgba($brand-navy, 0.2);
+      color: $brand-navy;
+    }
+
+    &.active {
+      background-color: $brand-navy;
+      border-color: $brand-navy;
+      color: $blanco-limpio;
+    }
+  }
 }
 
-.plaga-card {
+// ==========================================================================
+// ESTRUCTURA DEL DASHBOARD: Grid y Tarjetas Operativas de Vectores
+// ==========================================================================
+.plagas-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.plaga-card-item {
   background-color: $blanco-limpio;
   border: 1px solid $gris-bordes;
   border-radius: 12px;
-  padding: 35px 30px;
+  box-shadow: $shadow-sm;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  position: relative;
-  box-shadow: $shadow-sm;
+  overflow: hidden;
   transition: $transition-base;
 
   &:hover {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
     box-shadow: $shadow-hover;
-    border-color: rgba($brand-navy, 0.15);
+    border-color: rgba($brand-navy, 0.12);
   }
+}
 
-  .plaga-badge {
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    padding: 4px 10px;
-    border-radius: 4px;
-    margin-bottom: 20px;
+// Encabezado de la Tarjeta (Títulos e Indicador)
+.plaga-card-header {
+  padding: 30px;
+  border-bottom: 1px solid $gris-bordes;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
 
-    &.riesgo-medio {
-      background-color: rgba(238, 156, 0, 0.1);
-      color: #ee9c00;
-    }
-
-    &.riesgo-alto {
-      background-color: rgba($brand-orange, 0.1);
-      color: $brand-orange;
-    }
-
-    &.riesgo-critico {
-      background-color: rgba(229, 62, 62, 0.1);
-      color: #e53e3e;
-    }
-  }
-
-  .plaga-icon {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-    line-height: 1;
-  }
-
-  h3 {
-    font-size: 1.3rem;
-    color: $brand-navy;
-    font-weight: 700;
-    margin: 0 0 8px 0;
-  }
-
-  .plaga-meta {
-    font-size: 0.85rem;
-    color: $gris-texto;
-    margin: 0 0 16px 0;
-    line-height: 1.4;
-
-    strong {
+  .plaga-meta-title {
+    h3 {
+      font-size: 1.25rem;
       color: $brand-navy;
+      margin: 0 0 4px 0;
+      font-weight: 800;
     }
-  }
-
-  .plaga-desc {
-    font-size: 0.95rem;
-    color: $gris-texto;
-    line-height: 1.6;
-    margin: 0 0 25px 0;
-    flex-grow: 1;
-  }
-
-  .plaga-actions {
-    width: 100%;
-
-    .btn-plaga {
-      display: inline-block;
-      width: 100%;
-      text-align: center;
-      padding: 10px 16px;
-      background-color: transparent;
-      border: 2px solid $brand-navy-light;
-      color: $brand-navy;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.9rem;
-      border-radius: 6px;
-      transition: $transition-base;
-
-      &:hover {
-        background-color: $brand-navy;
-        border-color: $brand-navy;
-        color: $blanco-limpio;
-      }
+    .scientific-name {
+      font-size: 0.88rem;
+      font-style: italic;
+      color: $brand-navy-light;
+      margin: 0;
     }
   }
 }
 
+// --------------------------------------------------------------------------
+// Etiquetas Semánticas de Alerta de Riesgo Sanitario
+// --------------------------------------------------------------------------
+.badge-riesgo-indicator {
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+
+  &.riesgo-critico {
+    background-color: #fff5f5;
+    color: #c53030;
+    border: 1px solid #fed7d7;
+  }
+
+  &.riesgo-alto {
+    background-color: #fffaf0;
+    color: #dd6b20;
+    border: 1px solid #feebc8;
+  }
+
+  &.riesgo-moderado {
+    background-color: #fffff0;
+    color: #b7791f;
+    border: 1px solid #fefcbf;
+  }
+}
+
+// Cuerpo de la Tarjeta (Descripciones Técnicas)
+.plaga-card-body {
+  padding: 30px;
+  flex-grow: 1;
+
+  .plaga-behavior-desc {
+    color: $gris-texto;
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+  }
+}
+
+// Bloque de Impacto Comercial y Urgencia Operativa
+.plaga-threat-box {
+  background-color: $gris-fondo;
+  border-left: 3px solid $brand-orange;
+  padding: 16px;
+  border-radius: 0 6px 6px 0;
+
+  strong {
+    display: block;
+    font-size: 0.88rem;
+    color: $brand-navy;
+    margin-bottom: 4px;
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: $gris-texto;
+    line-height: 1.4;
+  }
+}
+
+// Pie de la Tarjeta (Llamado a la Acción Interno)
+.plaga-card-footer {
+  padding: 0 30px 30px 30px;
+
+  .btn-card-action {
+    display: inline-block;
+    color: $brand-orange;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $brand-navy;
+    }
+  }
+}
+
+// Estado Vacío (Por si un filtro no arroja resultados)
+.empty-filter-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  color: $gris-texto;
+  font-size: 1.1rem;
+}
+
+// ==========================================================================
+// Ajustes de Adaptabilidad Móvil (Responsividad)
+// ==========================================================================
 @media (max-width: 768px) {
-  .plagas-header h1 {
-    font-size: 2.2rem;
-  }
-
-  .plagas-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .plaga-card {
-    padding: 25px 20px;
+  .plagas-main-header h1 {
+    font-size: 2.1rem;
   }
 }
