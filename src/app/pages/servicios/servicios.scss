@@ -1,26 +1,29 @@
 @use '../variables' as *;
 
-.services-page {
-  padding: 80px 20px;
-  background-color: $gris-fondo;
+// ==========================================================================
+// Estilos Base y Estructura de la Página
+// ==========================================================================
+.servicios-page {
   font-family: 'Inter', sans-serif;
+  background-color: $blanco-limpio;
 }
 
-.services-header {
+// Encabezado Principal de Servicios
+.servicios-main-header {
   text-align: center;
-  max-width: 800px;
-  margin: 0 auto 60px auto;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 80px 20px 40px 20px;
 
-  .services-tag {
+  .servicios-tag {
     display: inline-block;
     padding: 6px 16px;
-    background: rgba($brand-orange, 0.1);
-    color: $brand-orange;
+    background: rgba($brand-navy, 0.08);
+    color: $brand-navy;
     border-radius: 50px;
     font-weight: 700;
     font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
     margin-bottom: 16px;
   }
 
@@ -30,6 +33,7 @@
     font-weight: 800;
     line-height: 1.2;
     margin: 0 0 20px 0;
+    letter-spacing: -0.5px;
 
     em {
       font-style: normal;
@@ -45,161 +49,221 @@
   }
 }
 
-.services-container {
+// ==========================================================================
+// MÓDULO PREMIUM 1: Sistema de Pestañas Interactivas (Tabs por Sector)
+// ==========================================================================
+.tabs-expert-container {
   max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 80px;
+  margin: 0 auto 80px auto;
+  padding: 0 20px;
 }
 
-.services-section-group {
+// Barra de navegación de botones superiores
+.tabs-navigation-bar {
   display: flex;
-  flex-direction: column;
-  gap: 35px;
+  border-bottom: 2px solid $gris-bordes;
+  gap: 10px;
+  margin-bottom: 40px;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none; // Oculta barra de scroll en Firefox
+
+  &::-webkit-scrollbar {
+    display: none; // Oculta barra de scroll en Chrome/Safari
+  }
 }
 
-.section-title-block {
+.tab-nav-btn {
+  background: none;
+  border: none;
+  padding: 16px 24px;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  max-width: 600px;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: $gris-texto;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: $transition-base;
 
-  .icon-circle {
-    font-size: 1.75rem;
-    background-color: #ffffff;
-    padding: 10px;
-    border-radius: 12px;
-    box-shadow: $shadow-sm;
-    margin-bottom: 16px;
+  &:hover {
+    color: $brand-navy;
+  }
+
+  &.active {
+    color: $brand-navy;
+    border-bottom-color: $brand-orange;
+  }
+}
+
+// Panel contenedor del contenido dinámico
+.tab-content-display-panel {
+  background-color: $blanco-limpio;
+  border: 1px solid $gris-bordes;
+  border-radius: 12px;
+  padding: 50px;
+  box-shadow: $shadow-sm;
+}
+
+.sector-dynamic-view {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 50px;
+  align-items: start;
+
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+// Detalles del servicio (Columna Izquierda)
+.sector-details-col {
+  .sector-badge-id {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $brand-orange;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 8px;
   }
 
   h2 {
-    font-size: 1.75rem;
+    font-size: 1.85rem;
     color: $brand-navy;
-    font-weight: 700;
-    margin: 0 0 10px 0;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+    line-height: 1.2;
   }
 
-  p {
+  .sector-sub-msg {
+    font-size: 1.1rem;
+    color: $brand-navy-light;
+    font-weight: 600;
+    margin: 0 0 24px 0;
+  }
+
+  .sector-main-desc {
     color: $gris-texto;
-    font-size: 1rem;
-    line-height: 1.5;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin: 0 0 30px 0;
+  }
+}
+
+.sector-points-list {
+  h3 {
+    font-size: 1.1rem;
+    color: $brand-navy;
+    margin: 0 0 16px 0;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    li {
+      position: relative;
+      padding-left: 24px;
+      color: $gris-texto;
+      font-size: 0.98rem;
+      line-height: 1.5;
+
+      &::before {
+        content: "•";
+        position: absolute;
+        left: 6px;
+        color: $brand-orange;
+        font-size: 1.4rem;
+        top: -2px;
+      }
+    }
   }
 }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
-  width: 100%;
-}
-
-.service-card {
-  background-color: $blanco-limpio;
+// Caja de Validación Regulatoria (Columna Derecha)
+.compliance-box-card {
+  background-color: $gris-fondo;
   border: 1px solid $gris-bordes;
-  border-radius: 14px;
-  padding: 40px 30px;
-  position: relative;
-  overflow: hidden;
-  box-shadow: $shadow-sm;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  transition: $transition-base;
-  text-decoration: none;
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: $shadow-hover;
-    border-color: rgba($brand-navy, 0.12);
-
-    .service-link {
-      color: $brand-orange;
-      padding-left: 5px;
-    }
-  }
-
-  .card-accent {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background-color: $brand-orange;
-
-    &.corporate {
-      background-color: $brand-navy;
-    }
-  }
-
-  .service-icon {
-    font-size: 2.25rem;
-    margin-bottom: 24px;
-  }
+  border-radius: 8px;
+  padding: 35px;
 
   h3 {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
     color: $brand-navy;
+    margin: 0 0 10px 0;
     font-weight: 700;
-    margin: 0 0 14px 0;
   }
 
   p {
     color: $gris-texto;
     font-size: 0.95rem;
-    line-height: 1.6;
-    margin: 0 0 24px 0;
-    flex-grow: 1;
+    line-height: 1.5;
+    margin: 0 0 20px 0;
+  }
+}
+
+.normativas-tags-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.norma-tag-item {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: $brand-navy;
+  background-color: $blanco-limpio;
+  border: 1px solid $gris-bordes;
+  padding: 10px 16px;
+  border-radius: 6px;
+}
+
+.compliance-footer-action {
+  border-top: 1px solid $gris-bordes;
+  padding-top: 20px;
+
+  p {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
   }
 
-  .service-link {
-    color: $brand-navy-light;
+  .btn-compliance-cta {
+    display: inline-block;
+    background: $degradado;
+    color: $blanco-limpio;
     text-decoration: none;
     font-weight: 700;
     font-size: 0.95rem;
-    transition: $transition-base;
-  }
-
-  &.commercial {
-    &:hover {
-      .service-link {
-        color: $brand-navy;
-      }
-    }
-
-    .service-link {
-      color: $brand-orange;
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .services-header h1 {
-    font-size: 2.2rem;
-  }
-
-  .services-container {
-    gap: 60px;
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .section-title-block {
-    align-items: center;
+    padding: 12px 24px;
+    border-radius: 6px;
+    width: 100%;
     text-align: center;
+    box-shadow: $shadow-sm;
+    transition: $transition-base;
+
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: $shadow-md;
+      opacity: 0.95;
+    }
   }
 }
 
-// Estilos para el Panel de Documentación Técnica de Alta Conversión
+// ==========================================================================
+// MÓDULO PREMIUM 2: Panel de Descarga de Carpeta Técnica Operativa
+// ==========================================================================
 .documentacion-tecnica-section {
   padding: 80px 20px;
   background-color: $gris-fondo;
   border-top: 1px solid $gris-bordes;
-  font-family: 'Inter', sans-serif;
 }
 
 .docs-container {
@@ -316,6 +380,23 @@
         }
       }
     }
+  }
+}
+
+// ==========================================================================
+// Media Queries para Adaptabilidad Móvil (Responsividad)
+// ==========================================================================
+@media (max-width: 768px) {
+  .servicios-main-header h1 {
+    font-size: 2.1rem;
+  }
+
+  .tab-content-display-panel {
+    padding: 30px 20px;
+  }
+
+  .sector-details-col h2 {
+    font-size: 1.5rem;
   }
 }
 

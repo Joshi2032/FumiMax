@@ -1,49 +1,73 @@
 <section class="servicios-page">
-  <div class="servicios-grid-container">
+
+  <div class="servicios-main-header">
+    <span class="servicios-tag">Divisiones Especializadas</span>
+    <h1>Soluciones de Control Adaptadas a su <em>Giro Comercial</em></h1>
+    <p>Rentokil demostró que cada sector exige un rigor técnico distinto. En Fumi-Max estructuramos nuestros protocolos en función de la exigencia operativa y regulatoria de su negocio.</p>
+  </div>
+
+  <div class="tabs-expert-container">
+
+    <div class="tabs-navigation-bar">
+      @for (sector of sectores; track sector.id) {
+        <button
+          class="tab-nav-btn"
+          [class.active]="sectorActivo === sector.id"
+          (click)="cambiarTab(sector.id)"
+        >
+          <span class="tab-btn-icon">{{ sector.icon }}</span>
+          <span class="tab-btn-text">{{ sector.tabName }}</span>
+        </button>
+      }
     </div>
+
+    <div class="tab-content-display-panel">
+      @for (sector of sectores; track sector.id) {
+        @if (sectorActivo === sector.id) {
+          <div class="sector-dynamic-view">
+
+            <div class="sector-details-col">
+              <span class="sector-badge-id">Protocolo Técnico Homologado</span>
+              <h2>{{ sector.titulo }}</h2>
+              <p class="sector-sub-msg">{{ sector.subtitulo }}</p>
+              <p class="sector-main-desc">{{ sector.descripcion }}</p>
+
+              <div class="sector-points-list">
+                <h3>📌 Ejes Operativos Clave:</h3>
+                <ul>
+                  @for (punto of sector.enfoqueClave; track punto) {
+                    <li>{{ punto }}</li>
+                  }
+                </ul>
+              </div>
+            </div>
+
+            <div class="sector-compliance-col">
+              <div class="compliance-box-card">
+                <h3>Marco Regulatorio de Aprobación</h3>
+                <p>Este servicio incluye la entrega de bitácoras institucionales alineadas al cumplimiento de:</p>
+
+                <div class="normativas-tags-group">
+                  @for (norma of sector.normativas; track norma) {
+                    <span class="norma-tag-item">✔ {{ norma }}</span>
+                  }
+                </div>
+
+                <div class="compliance-footer-action">
+                  <p>¿Requiere una cotización formalizada para este sector?</p>
+                  <a href="/contacto" class="btn-compliance-cta">Solicitar Inspección de Riesgo</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        }
+      }
+    </div>
+
+  </div>
 
   <div class="documentacion-tecnica-section">
-    <div class="docs-container">
-      <div class="docs-header">
-        <span class="docs-badge">Área de Descargas</span>
-        <h2>Carpeta Técnica Operativa para Auditorías</h2>
-        <p>Facilitamos el cumplimiento normativo de su empresa. Descargue los formatos de ejemplo de los documentos oficiales que integramos en cada servicio técnico.</p>
-      </div>
-
-      <div class="docs-grid">
-        <div class="doc-download-card">
-          <div class="doc-icon">📄</div>
-          <div class="doc-meta">
-            <h3>Ficha Técnica MIP (Ejemplo)</h3>
-            <p>Estructura general del plan de Manejo Integrado de Plagas adaptado a lineamientos federales.</p>
-            <a href="assets/docs/ficha-tecnica-ejemplo.pdf" download class="btn-download">
-              <span>Descargar PDF</span> ↓
-            </a>
-          </div>
-        </div>
-
-        <div class="doc-download-card">
-          <div class="doc-icon">🛡️</div>
-          <div class="doc-meta">
-            <h3>Hoja de Seguridad MSDS</h3>
-            <p>Formato de ejemplo de las fichas de seguridad de los productos bioracionales banda verde utilizados.</p>
-            <a href="assets/docs/hoja-seguridad-ejemplo.pdf" download class="btn-download">
-              <span>Descargar PDF</span> ↓
-            </a>
-          </div>
-        </div>
-
-        <div class="doc-download-card">
-          <div class="doc-icon">📋</div>
-          <div class="doc-meta">
-            <h3>Modelo de Certificado COFEPRIS</h3>
-            <p>Vista previa del documento oficial de validez sanitaria indispensable para verificaciones de higiene.</p>
-            <a href="assets/docs/certificado-sanitario-ejemplo.pdf" download class="btn-download">
-              <span>Descargar PDF</span> ↓
-            </a>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
+
 </section>
