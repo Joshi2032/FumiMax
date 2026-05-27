@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
-import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-servicios',
   standalone: true,
-  imports: [RouterLink],
+  imports: [], // <-- Dejamos esto vacío (o con los módulos que uses en tus otras tarjetas)
   templateUrl: './servicios.html',
   styleUrl: './servicios.scss',
 })
@@ -14,12 +13,9 @@ export class Servicios implements OnInit {
 
   ngOnInit(): void {
     this.titleService.setTitle('Servicios MIP | Soluciones Residenciales e Industriales - Fumi-Max');
-
     this.metaService.updateTag({
       name: 'description',
       content: 'Ofrecemos planes integrales de fumigación residencial y soluciones de control de plagas comerciales e industriales avalados por auditorías de sanidad.'
     });
-
-    this.metaService.updateTag({ property: 'og:title', content: 'Planes de Control Integrado de Plagas | Fumi-Max' });
   }
 }

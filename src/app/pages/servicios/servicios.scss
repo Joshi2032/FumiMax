@@ -193,3 +193,140 @@
     text-align: center;
   }
 }
+
+// Estilos para el Panel de Documentación Técnica de Alta Conversión
+.documentacion-tecnica-section {
+  padding: 80px 20px;
+  background-color: $gris-fondo;
+  border-top: 1px solid $gris-bordes;
+  font-family: 'Inter', sans-serif;
+}
+
+.docs-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.docs-header {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 50px auto;
+
+  .docs-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background-color: rgba($brand-navy, 0.06);
+    color: $brand-navy;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+  }
+
+  h2 {
+    font-size: 2.25rem;
+    color: $brand-navy;
+    font-weight: 800;
+    margin: 0 0 16px 0;
+  }
+
+  p {
+    color: $gris-texto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+}
+
+.docs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.doc-download-card {
+  background-color: $blanco-limpio;
+  border: 1px solid $gris-bordes;
+  border-radius: 12px;
+  padding: 30px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  box-shadow: $shadow-sm;
+  transition: $transition-base;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-hover;
+    border-color: rgba($brand-navy, 0.12);
+  }
+
+  .doc-icon {
+    font-size: 2rem;
+    background-color: $gris-fondo;
+    min-width: 55px;
+    height: 55px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+
+  .doc-meta {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    h3 {
+      font-size: 1.15rem;
+      color: $brand-navy;
+      font-weight: 700;
+      margin: 0 0 6px 0;
+    }
+
+    p {
+      color: $gris-texto;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin: 0 0 20px 0;
+    }
+
+    .btn-download {
+      align-self: flex-start;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: $brand-orange;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s ease;
+
+      span {
+        border-bottom: 1px solid transparent;
+      }
+
+      &:hover {
+        color: $brand-navy;
+        span {
+          border-bottom-color: $brand-navy;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .docs-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .doc-download-card {
+    padding: 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+}
