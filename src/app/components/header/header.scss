@@ -131,6 +131,19 @@
   }
 }
 
+// Animación de las barras para formar una X al abrir el menú móvil
+.nav-toggle.open {
+  .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+  .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+}
+
 @media (max-width: 768px) {
   .site-topbar {
     display: none;
