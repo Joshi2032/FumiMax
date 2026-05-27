@@ -1,11 +1,16 @@
 @use '../variables' as *;
 
+// ==========================================================================
+// Estilos Base de la Landing Page
+// ==========================================================================
 .hero-landing {
   font-family: 'Inter', sans-serif;
   background-color: $blanco-limpio;
 }
 
-// Bloque 1: Impacto Principal
+// ==========================================================================
+// BLOQUE 1: Impacto Principal (Hero Content)
+// ==========================================================================
 .hero-main-block {
   padding: 100px 20px;
   background-color: $gris-fondo;
@@ -57,6 +62,7 @@
   }
 }
 
+// Grupo de Botones de Acción (Call to Action)
 .hero-actions-group {
   display: flex;
   gap: 20px;
@@ -107,7 +113,9 @@
   }
 }
 
-// Bloque 2: Pilares de Autoridad
+// ==========================================================================
+// BLOQUE 2: Pilares de Autoridad Sanitaria
+// ==========================================================================
 .hero-pillars-section {
   padding: 60px 20px;
   border-bottom: 1px solid $gris-bordes;
@@ -154,7 +162,178 @@
   }
 }
 
-// Bloque 3: Accesos Rápidos Portafolio
+// ==========================================================================
+// MÓDULO PREMIUM: Innovación Tecnológica y Monitoreo (Estilo Rentokil)
+// ==========================================================================
+.hero-innovation-block {
+  padding: 90px 20px;
+  border-bottom: 1px solid $gris-bordes;
+  background-color: $blanco-limpio;
+}
+
+.innovation-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: center;
+
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.innovation-text {
+  .innovation-badge {
+    display: inline-block;
+    padding: 5px 12px;
+    background-color: rgba($brand-orange, 0.08);
+    color: $brand-orange;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+
+  h2 {
+    font-size: 2.25rem;
+    color: $brand-navy;
+    font-weight: 800;
+    margin: 0 0 16px 0;
+    line-height: 1.2;
+  }
+
+  p {
+    color: $gris-texto;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin: 0 0 35px 0;
+  }
+}
+
+.tech-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tech-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+
+  .tech-bullet {
+    background-color: $brand-navy;
+    color: $blanco-limpio;
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+  .tech-info {
+    font-size: 0.98rem;
+    color: $gris-texto;
+    line-height: 1.5;
+
+    strong {
+      color: $brand-navy;
+      display: block;
+      margin-bottom: 2px;
+    }
+  }
+}
+
+// Tarjeta Gráfica Interactiva (Lado Derecho del Módulo)
+.innovation-visual-card {
+  background-color: $brand-navy;
+  border-radius: 12px;
+  padding: 40px;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  box-shadow: $shadow-md;
+
+  .visual-badge {
+    align-self: flex-start;
+    background-color: rgba($blanco-limpio, 0.1);
+    color: $blanco-limpio;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border: 1px solid rgba($blanco-limpio, 0.15);
+    z-index: 2;
+  }
+}
+
+.visual-graphic-mock {
+  display: flex;
+  flex-direction: column;
+  color: $blanco-limpio;
+  position: relative;
+  z-index: 2;
+
+  .mock-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+  }
+
+  .mock-subtitle {
+    font-size: 0.9rem;
+    color: rgba($blanco-limpio, 0.6);
+  }
+}
+
+// Animación de Efecto Pulso de Radar
+.radar-pulse {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background-color: rgba($brand-orange, 0.15);
+  border: 2px solid $brand-orange;
+  border-radius: 50%;
+  top: -20px;
+  right: -20px;
+  z-index: 1;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid $brand-orange;
+    animation: pulseRadar 2s infinite ease-out;
+  }
+}
+
+@keyframes pulseRadar {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+// ==========================================================================
+// BLOQUE 3: Accesos Rápidos al Portafolio Estructurado
+// ==========================================================================
 .hero-portfolio-preview {
   padding: 80px 20px;
   background-color: $gris-fondo;
@@ -241,6 +420,9 @@
   }
 }
 
+// ==========================================================================
+// Media Queries para Ajustes Responsivos Móviles
+// ==========================================================================
 @media (max-width: 768px) {
   .hero-main-block {
     padding: 70px 20px;
