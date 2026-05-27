@@ -49,7 +49,20 @@
     color: #a0aec0;
     line-height: 1.6;
     font-size: 0.95rem;
-    margin-bottom: 25px;
+    margin-bottom: 15px; // Ajustado sutilmente para dar espacio al lema
+  }
+
+  // ESTILO DEL LEMA OFICIAL INYECTADO (Integración limpia sin modificar el layout original)
+  .footer-official-motto {
+    font-size: 0.88rem;
+    font-style: italic;
+    color: #cbd5e0;
+    line-height: 1.5;
+    margin: 0 0 20px 0;
+    max-width: 320px;
+    border-left: 2px solid $brand-orange;
+    padding-left: 10px;
+    letter-spacing: 0.1px;
   }
 
   .footer-status {
