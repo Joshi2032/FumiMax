@@ -1,13 +1,15 @@
 <section class="servicios-page">
-
   <div class="servicios-main-header">
     <span class="servicios-tag">Divisiones Especializadas</span>
     <h1>Soluciones de Control Adaptadas a su <em>Giro Comercial</em></h1>
-    <p>Rentokil demostró que cada sector exige un rigor técnico distinto. En Fumi-Max estructuramos nuestros protocolos en función de la exigencia operativa y regulatoria de su negocio.</p>
+    <p>
+      En <strong>MAXIFUM DEL BAJÍO S.A. DE C.V.</strong> estructuramos nuestros protocolos de Manejo
+      Integrado de Plagas (MIP) en función de la exigencia operativa, de inocuidad y regulatoria que
+      exige la industria actual.
+    </p>
   </div>
 
   <div class="tabs-expert-container">
-
     <div class="tabs-navigation-bar">
       @for (sector of sectores; track sector.id) {
         <button
@@ -25,7 +27,6 @@
       @for (sector of sectores; track sector.id) {
         @if (sectorActivo === sector.id) {
           <div class="sector-dynamic-view">
-
             <div class="sector-details-col">
               <span class="sector-badge-id">Protocolo Técnico Homologado</span>
               <h2>{{ sector.titulo }}</h2>
@@ -45,7 +46,10 @@
             <div class="sector-compliance-col">
               <div class="compliance-box-card">
                 <h3>Marco Regulatorio de Aprobación</h3>
-                <p>Este servicio incluye la entrega de bitácoras institucionales alineadas al cumplimiento de:</p>
+                <p>
+                  Este servicio incluye la entrega de bitácoras institucionales alineadas al
+                  cumplimiento de:
+                </p>
 
                 <div class="normativas-tags-group">
                   @for (norma of sector.normativas; track norma) {
@@ -59,15 +63,11 @@
                 </div>
               </div>
             </div>
-
           </div>
         }
       }
     </div>
-
   </div>
 
-  <div class="documentacion-tecnica-section">
-    </div>
-
+  <div class="documentacion-tecnica-section"></div>
 </section>

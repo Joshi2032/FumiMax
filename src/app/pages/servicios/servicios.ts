@@ -37,7 +37,7 @@ export class Servicios implements OnInit {
         'Análisis de tendencias de capturas y mapas de calor analíticos.',
         'Exclusión estructural y control estricto de accesos logísticos.'
       ],
-      normativas: ['COFEPRIS', 'Alineación ISO 9001', 'Estándares de Exportación']
+      normativas: ['COFEPRIS', 'Registros CICOPLAFEST', 'Estándares EPA (EE. UU.)', 'Norma Oficial Mexicana']
     },
     {
       id: 'comercial',
@@ -86,12 +86,12 @@ export class Servicios implements OnInit {
   constructor(private titleService: Title, private metaService: Meta) {}
 
   ngOnInit(): void {
-    this.titleService.setTitle('Soluciones por Sector | Control de Plagas Avanzado - Fumi-Max');
-    this.metaService.updateTag({
-      name: 'description',
-      content: 'Fumigación corporativa y residencial segmentada por industria. Planes MIP específicos para sector industrial, alimentario, clínico y comercial.'
-    });
-  }
+  this.titleService.setTitle('Soluciones por Sector | Control de Plagas Avanzado - MAXIFUM DEL BAJÍO');
+  this.metaService.updateTag({
+    name: 'description',
+    content: 'MAXIFUM DEL BAJÍO S.A. DE C.V. ofrece control integrado de plagas certificado por COFEPRIS y la EPA para los sectores industrial, comercial y residencial.'
+  });
+}
 
   cambiarTab(id: string): void {
     this.sectorActivo = id;
