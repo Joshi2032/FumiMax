@@ -1,15 +1,11 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-nosotros',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './nosotros.html',
-  styleUrl: './nosotros.scss',
+  styleUrl: './nosotros.scss'
 })
-export class Nosotros {
-  activeTab = signal<'mision' | 'vision' | 'valores'>('mision');
-
-  setTab(tab: 'mision' | 'vision' | 'valores') {
-    this.activeTab.set(tab);
-  }
-}
+export class NosotrosComponent {}

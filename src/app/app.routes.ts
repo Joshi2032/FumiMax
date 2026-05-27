@@ -22,11 +22,6 @@ export const routes: Routes = [
 		loadComponent: () => import('./pages/proceso/proceso').then(m => m.Proceso)
 	},
 	{
-		path: 'nosotros',
-		title: 'Quiénes Somos | MAXIFUM',
-		loadComponent: () => import('./pages/nosotros/nosotros').then(m => m.Nosotros)
-	},
-	{
 		path: 'cobertura',
 		title: 'Zonas de Cobertura | MAXIFUM',
 		loadComponent: () => import('./pages/cobertura/cobertura').then(m => m.Cobertura)
