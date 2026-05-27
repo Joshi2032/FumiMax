@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Hero } from './hero/hero';
 import { Proceso } from './proceso/proceso';
 import { NosotrosComponent } from './nosotros/nosotros';
-import { Historia } from './historia/historia';
 import { Testimonios } from './testimonios/testimonios';
 import { FaqComponent } from './faq/faq';
 import { CoberturaComponent } from './cobertura/cobertura';
@@ -17,7 +16,6 @@ import { Contacto } from './contacto/contacto';
     Hero,
     Proceso,
     NosotrosComponent,
-    Historia,
     Testimonios,
     FaqComponent,
     CoberturaComponent,

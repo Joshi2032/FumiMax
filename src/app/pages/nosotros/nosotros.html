@@ -1,24 +1,64 @@
 <section class="nosotros-page">
   <div class="nosotros-hero">
     <div class="nosotros-container">
-      <span class="section-tag">Sobre Fumi-Max</span>
-      <h2>Líderes en el Manejo Integrado de Plagas</h2>
+      <span class="section-tag">Nuestra Identidad</span>
+      <h2>MAXIFUM DEL BAJÍO S.A. DE C.V.</h2>
       <p class="hero-lead">
-        Somos una empresa dedicada a ofrecer soluciones profesionales de control de plagas, comprometida con la salud pública, la inocuidad industrial y la preservación ambiental en el Bajío.
+        Una organización con más de tres décadas de trayectoria, dedicada de manera profesional al Manejo Integral de Plagas (MIP), blindando la inocuidad industrial y protegiendo el entorno del Bajío.
       </p>
 
       <div class="nosotros-mision-vision-grid">
         <div class="identity-card">
           <div class="card-icon">🎯</div>
           <h3>Nuestra Misión</h3>
-          <p>Proteger los espacios de nuestros clientes mediante la implementación de sistemas MIP avanzados, garantizando la erradicación de vectores biológicos bajo estrictos estándares clínicos y sanitarios.</p>
+          <p>Ofrecer un servicio de calidad en el control de plagas, logrando la erradicación de las mismas, cuidando la salud de la organización y el medio ambiente.</p>
         </div>
 
         <div class="identity-card">
           <div class="card-icon">👁️</div>
           <h3>Nuestra Visión</h3>
-          <p>Ser el referente de autoridad en control biológico e inocuidad a nivel regional, reconocidos por nuestra innovación técnica, rigurosidad documental y excelencia en el servicio al cliente.</p>
+          <p>Ser una organización líder e innovadora en el mercado de control de plagas, satisfaciendo las necesidades de nuestros clientes con personal calificado.</p>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="history-timeline-section">
+    <div class="nosotros-container">
+      <div class="section-header-center">
+        <h2>Trayectoria Sostenida Desde 1985</h2>
+        <p>Evolución técnica e institucional de una base operativa de élite.</p>
+      </div>
+
+      <div class="timeline-wrapper">
+        @for (hito of historia; track hito.ano) {
+          <div class="timeline-node">
+            <div class="node-year"><span>{{ hito.ano }}</span></div>
+            <div class="node-content-box">
+              <h3>{{ hito.titulo }}</h3>
+              <p>{{ hito.descripcion }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+
+  <div class="valores-section">
+    <div class="nosotros-container">
+      <div class="section-header-center">
+        <h2>Valores que Guían Nuestra Operación</h2>
+        <p>Los pilares éticos de nuestra cultura organizacional definidos en nuestro marco normativo.</p>
+      </div>
+
+      <div class="valores-cards-grid">
+        @for (valor of valores; track valor.nombre) {
+          <div class="valor-mini-card">
+            <span class="val-icon">{{ valor.icon }}</span>
+            <h4>{{ valor.nombre }}</h4>
+            <p>{{ valor.descripcion }}</p>
+          </div>
+        }
       </div>
     </div>
   </div>
@@ -26,9 +66,9 @@
   <div class="certificaciones-block">
     <div class="nosotros-container">
       <div class="certificaciones-header">
-        <span class="badge-legal">Marco Regulatorio</span>
-        <h2>Validación Legal y Cumplimiento Sanitario</h2>
-        <p>Operamos bajo el amparo de licencias federales, garantizando documentación 100% auditable para la industria alimentaria, comercial y residencial.</p>
+        <span class="badge-legal">Validación y Alianzas</span>
+        <h2>Soporte Regulatorio y Operativo Nacional e Internacional</h2>
+        <p>Operamos bajo el amparo de licencias federales vigentes, garantizando auditorías 100% auditables para plantas alimenticias, CEDIS, sector comercial y agroindustrial.</p>
       </div>
 
       <div class="certificaciones-grid">
@@ -37,26 +77,26 @@
           <div class="cert-content">
             <h3>Licencia Sanitaria Federal</h3>
             <p class="cert-authority">Emitida por COFEPRIS</p>
-            <p class="cert-desc">Autorización oficial que nos faculta legalmente para la aplicación de agentes químicos urbanos e industriales, asegurando el uso exclusivo de productos bioracionales autorizados.</p>
+            <p class="cert-desc">Autorización oficial y sanitaria que nos faculta legalmente para la aplicación de agentes de control urbano e industrial, utilizando productos aprobados por CICOPLAFEST.</p>
             <span class="legal-tag">Estatus: Activa / Vigente</span>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-badge-icon">🌎</div>
+          <div class="cert-content">
+            <h3>Miembros Activos de la NPMA</h3>
+            <p class="cert-authority">National Pest Management Association</p>
+            <p class="cert-desc">Alineados a los estándares de control biológico e inocuidad norteamericanos, reduciendo el uso de pesticidas mediante control mecánico avanzado.</p>
           </div>
         </div>
 
         <div class="cert-card">
           <div class="cert-badge-icon">📋</div>
           <div class="cert-content">
-            <h3>Alineación MIP e ISO 9001</h3>
-            <p class="cert-authority">Estándares de Calidad</p>
-            <p class="cert-desc">Nuestros procesos de inspección, aplicación y monitoreo continuo están estructurados bajo metodologías de gestión de calidad para superar auditorías internacionales.</p>
-          </div>
-        </div>
-
-        <div class="cert-card">
-          <div class="cert-badge-icon">🍏</div>
-          <div class="cert-content">
-            <h3>Soporte a Distintivo H y Urbano</h3>
-            <p class="cert-authority">Inocuidad Alimentaria</p>
-            <p class="cert-desc">Diseñamos carpetas técnicas operativas que facilitan a restaurantes, comedores industriales y hoteles la aprobación de verificaciones de salubridad e higiene.</p>
+            <h3>Respaldo ANCPUAC y APROCOPUEM</h3>
+            <p class="cert-authority">Asociaciones Profesionales</p>
+            <p class="cert-desc">Afiliados a los máximos organismos de profesionales en el control de plagas urbanas en el país y en el estado de Michoacán.</p>
           </div>
         </div>
       </div>
