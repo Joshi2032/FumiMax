@@ -50,16 +50,18 @@
   align-items: center;
 }
 
+// Ventana principal del carrusel (el "Card")
 .slider-track-window {
   width: 100%;
-  height: 520px;
+  height: 520px; // Altura fija del card
   position: relative;
   overflow: hidden;
   border-radius: 24px;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-  background-color: $brand-navy;
+  background-color: $brand-navy; // ¡IMPORTANTE! El color de fondo para los espacios vacíos
 }
 
+// Estenedor del slide individual
 .slide-item {
   position: absolute;
   top: 0;
@@ -69,24 +71,33 @@
   opacity: 0;
   z-index: 1;
   transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  display: grid;
-  place-items: center;
-  background-color: $brand-navy;
+
+  // SOLUCIÓN PUNTO 2: Centrado absoluto de la imagen contenida
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &.active {
     opacity: 1;
     z-index: 2;
   }
 
+  // La Imagen (LA CORRECCIÓN ESTÁ AQUÍ)
   .slide-img {
+    // Reemplazamos width/height 100% por max-width/height
     max-width: 100%;
     max-height: 100%;
+    width: auto; // Permite que la imagen mantenga su proporción original
+    height: auto;
+
+    // SOLUCIÓN PUNTO 1: Adaptar sin recortar
     object-fit: contain;
-    object-position: center;
-    filter: brightness(0.75);
+
+    filter: brightness(0.9); // Un brillo sutil para que los textos sean legibles
   }
 }
 
+// Ficha informativa Glassmorphism
 .slide-info-card {
   position: absolute;
   bottom: 40px;
@@ -98,6 +109,7 @@
   max-width: 450px;
   box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.2);
   border-left: 6px solid $brand-orange;
+  z-index: 5; // Asegurar que esté sobre la imagen contenida
 
   .slide-tag {
     font-size: 0.75rem;
@@ -123,6 +135,7 @@
   }
 }
 
+// Flechas de navegación
 .slider-arrow {
   position: absolute;
   top: 50%;
@@ -153,6 +166,7 @@
   &.next { right: -26px; }
 }
 
+// Indicadores de paginación
 .slider-dots {
   display: flex;
   justify-content: center;
@@ -175,6 +189,7 @@
   }
 }
 
+// Diseño Responsivo
 @media (max-width: 768px) {
   .slider-track-window { height: 420px; }
   .slide-info-card { left: 20px; bottom: 20px; right: 20px; padding: 25px; }
