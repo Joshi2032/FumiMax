@@ -6,6 +6,7 @@ import { Testimonios } from './testimonios/testimonios';
 import { FaqComponent } from './faq/faq';
 import { CoberturaComponent } from './cobertura/cobertura';
 import { Contacto } from './contacto/contacto';
+import { Galeria } from "./galeria/galeria";
 
 @Component({
   selector: 'app-landing',
@@ -19,7 +20,8 @@ import { Contacto } from './contacto/contacto';
     Testimonios,
     FaqComponent,
     CoberturaComponent,
-    Contacto
-  ]
+    Contacto,
+    Galeria
+]
 })
 export class LandingComponent {}

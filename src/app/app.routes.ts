@@ -27,6 +27,11 @@ export const routes: Routes = [
 		loadComponent: () => import('./pages/cobertura/cobertura').then(m => m.CoberturaComponent)
 	},
 	{
+		path: 'galeria',
+		title: 'Galería de Proyectos | MAXIFUM',
+		loadComponent: () => import('./pages/galeria/galeria').then(m => m.Galeria)
+	},
+	{
 		path: 'faq',
 		title: 'Preguntas Frecuentes | MAXIFUM',
 		loadComponent: () => import('./pages/faq/faq').then(m => m.FaqComponent)

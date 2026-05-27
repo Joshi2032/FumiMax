@@ -1,0 +1,35 @@
+<section class="galeria-page">
+  <div class="carrusel-proyectos-container">
+    <div class="carrusel-header-text">
+      <span class="carrusel-badge">Evidencia en Campo</span>
+      <h2>Evidencia Operativa y Casos de Éxito</h2>
+      <p>Conozca nuestras aplicaciones técnicas reales y los sectores comerciales e industriales bajo nuestro resguardo biológico en el Bajío.</p>
+    </div>
+
+    <div class="slider-wrapper">
+      <button class="slider-arrow prev" (click)="anteriorSlide()" aria-label="Anterior">❮</button>
+
+      <div class="slider-track-window">
+        @for (proyecto of proyectos; track $index) {
+          <div class="slide-item" [class.active]="$index === currentIndex">
+            <img [src]="proyecto.url" [alt]="proyecto.titulo" [title]="proyecto.titulo" class="slide-img">
+
+            <div class="slide-info-card">
+              <span class="slide-tag">{{ proyecto.sector }}</span>
+              <h3>{{ proyecto.titulo }}</h3>
+              <p class="slide-location">📍 {{ proyecto.ubicacion }}</p>
+            </div>
+          </div>
+        }
+      </div>
+
+      <button class="slider-arrow next" (click)="siguienteSlide()" aria-label="Siguiente">❯</button>
+    </div>
+
+    <div class="slider-dots">
+      @for (dot of proyectos; track $index) {
+        <span class="dot" [class.active]="$index === currentIndex" (click)="setSlide($index)"></span>
+      }
+    </div>
+  </div>
+</section>
