@@ -420,6 +420,16 @@
   }
 }
 
+.hero-official-motto {
+  font-size: 1.05rem;
+  font-style: italic;
+  color: $brand-navy-light;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0 auto 30px auto;
+  max-width: 600px;
+  letter-spacing: 0.2px;
+}
 // ==========================================================================
 // Media Queries para Ajustes Responsivos Móviles
 // ==========================================================================
