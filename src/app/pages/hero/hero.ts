@@ -1,4 +1,5 @@
-import { Component, signal } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Title, Meta } from '@angular/platform-browser';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -6,18 +7,22 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [RouterLink],
   templateUrl: './hero.html',
-  styleUrl: './hero.scss',
+  styleUrl: './hero.scss'
 })
-export class Hero {
-  activeIndex = signal(0);
+export class Hero implements OnInit {
+  constructor(private titleService: Title, private metaService: Meta) {}
 
-  // Lista simple sin IDs conflictivos
-  slides = [
-    { title: 'Control de plagas residencial', eyebrow: 'Servicio Residencial' },
-    { title: 'Soluciones empresariales MIP', eyebrow: 'Servicio Comercial' }
-  ];
+  ngOnInit(): void {
+    this.titleService.setTitle('Fumi-Max | Manejo Integrado de Plagas Profesionales');
 
-  goToSlide(index: number) {
-    this.activeIndex.set(index);
+    this.metaService.updateTag({
+      name: 'description',
+      content: 'Empresa líder en control y erradicación de plagas residenciales, comerciales e industriales en el Bajío. Certificaciones y licencias sanitarias oficiales.'
+    });
+
+    // Configuración de tarjetas de Open Graph para compartir por WhatsApp
+    this.metaService.updateTag({ property: 'og:title', content: 'Fumi-Max | Control de Plagas con Rigor Clínico' });
+    this.metaService.updateTag({ property: 'og:description', content: 'Servicios de fumigación técnica contra insectos, roedores y termitas con planes MIP alineados a COFEPRIS.' });
+    this.metaService.updateTag({ property: 'og:image', content: 'assets/Maxifum.png' });
   }
 }

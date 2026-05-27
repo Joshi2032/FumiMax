@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-contacto',
@@ -14,12 +15,22 @@ export class Contacto implements OnInit {
   isSubmitting = false;
   formEnviado = false;
 
-  // Reemplaza este número por el teléfono de Fumi-Max (con código de país, sin espacios ni el signo +)
-  private readonly WHATSAPP_NUMBER = '3521887541';
+  private readonly WHATSAPP_NUMBER = '523521234567';
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private titleService: Title,
+    private metaService: Meta
+  ) {}
 
   ngOnInit(): void {
+    // Inicialización del SEO específico
+    this.titleService.setTitle('Cotización Gratis | Agenda una Inspección Técnica - Fumi-Max');
+    this.metaService.updateTag({
+      name: 'description',
+      content: 'Solicite una cotización técnica sin costo. Canalice sus requerimientos comerciales, residenciales o industriales de control de plagas de forma inmediata.'
+    });
+
     this.initForm();
   }
 
@@ -42,10 +53,8 @@ export class Contacto implements OnInit {
     this.isSubmitting = true;
     this.formEnviado = false;
 
-    // 1. Extraer los datos limpios del formulario reactivo
     const datos = this.leadForm.value;
 
-    // 2. Mapear el valor del selector a un texto legible para el mensaje
     const serviciosMapeados: { [key: string]: string } = {
       residencial: 'Fumigación Residencial 🏠',
       comercial: 'Control Comercial / Negocios 🏢',
@@ -53,37 +62,28 @@ export class Contacto implements OnInit {
     };
     const servicioTexto = serviciosMapeados[datos.servicio] || datos.servicio;
 
-    // 3. Estructurar el cuerpo del mensaje de forma técnica e institucional
     const mensajeTexto =
-  `💼 *FUMI-MAX | MANEJO INTEGRADO DE PLAGAS*\n` +
-  `====================================\n` +
-  `📋 *ORDEN DE INSPECCIÓN / COTIZACIÓN*\n` +
-  `====================================\n\n` +
-  `🔹 *DATOS DEL CLIENTE*\n` +
-  `• *Nombre:* ${datos.nombre}\n` +
-  `• *Teléfono:* ${datos.telefono}\n` +
-  `• *Correo:* ${datos.email}\n\n` +
-  `🔹 *DETALLES DEL SERVICIO*\n` +
-  `• *Segmento:* ${servicioTexto}\n` +
-  `• *Especificación:* ${datos.mensaje || 'Sin detalles adicionales.'}\n\n` +
-  `====================================\n` +
-  `📡 *Origen:* Formulario Web Oficial`;
+      `💼 *FUMI-MAX | MANEJO INTEGRADO DE PLAGAS*\n` +
+      `====================================\n` +
+      `📋 *ORDEN DE INSPECCIÓN / COTIZACIÓN*\n` +
+      `====================================\n\n` +
+      `🔹 *DATOS DEL CLIENTE*\n` +
+      `• *Nombre:* ${datos.nombre}\n` +
+      `• *Teléfono:* ${datos.telefono}\n` +
+      `• *Correo:* ${datos.email}\n\n` +
+      `🔹 *DETALLES DEL SERVICIO*\n` +
+      `• *Segmento:* ${servicioTexto}\n` +
+      `• *Especificación:* ${datos.mensaje || 'Sin detalles adicionales.'}\n\n` +
+      `====================================\n` +
+      `📡 *Origen:* Formulario Web Oficial`;
 
-    // 4. Codificar el texto para que sea válido dentro de una URL de WhatsApp
     const urlWhatsapp = `https://wa.me/${this.WHATSAPP_NUMBER}?text=${encodeURIComponent(mensajeTexto)}`;
 
-    // 5. Simular procesamiento local, activar alerta de éxito y redirigir
     setTimeout(() => {
       this.isSubmitting = false;
       this.formEnviado = true;
-
-      // Abre WhatsApp en una pestaña nueva
       window.open(urlWhatsapp, '_blank');
-
-      // Resetea el formulario limpiando los selectores
-      this.leadForm.reset({
-        servicio: ''
-      });
+      this.leadForm.reset({ servicio: '' });
     }, 800);
   }
 }
