@@ -14,7 +14,7 @@ interface FAQItem {
   templateUrl: './faq.html',
   styleUrl: './faq.scss'
 })
-export class FaqComponent {
+export class Faq {
   faqs: FAQItem[] = [
     {
       pregunta: '¿Los productos químicos que aplican representan un riesgo para niños o mascotas?',

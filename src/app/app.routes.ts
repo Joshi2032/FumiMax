@@ -24,7 +24,7 @@ export const routes: Routes = [
 	{
 		path: 'cobertura',
 		title: 'Zonas de Cobertura | MAXIFUM',
-		loadComponent: () => import('./pages/cobertura/cobertura').then(m => m.CoberturaComponent)
+		loadComponent: () => import('./pages/cobertura/cobertura').then(m => m.Cobertura)
 	},
 	{
 		path: 'galeria',
@@ -34,7 +34,7 @@ export const routes: Routes = [
 	{
 		path: 'faq',
 		title: 'Preguntas Frecuentes | MAXIFUM',
-		loadComponent: () => import('./pages/faq/faq').then(m => m.FaqComponent)
+		loadComponent: () => import('./pages/faq/faq').then(m => m.Faq)
 	},
 	{
 		path: 'contacto',

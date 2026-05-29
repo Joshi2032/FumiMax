@@ -9,7 +9,7 @@ import { Title, Meta } from '@angular/platform-browser';
   templateUrl: './cobertura.html',
   styleUrl: './cobertura.scss'
 })
-export class CoberturaComponent implements OnInit {
+export class Cobertura implements OnInit { 
   constructor(private titleService: Title, private metaService: Meta) {}
 
   ngOnInit(): void {
