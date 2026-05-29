@@ -257,3 +257,52 @@
   border: 1px solid rgba(72, 187, 120, 0.2);
   text-align: center;
 }
+
+/* ==========================================================================
+   Alineación de la Lista de Metadatos de Contacto
+   ========================================================================== */
+.info-meta-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.meta-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+
+  .icon {
+    font-size: 1.3rem;
+    line-height: 1;
+    margin-top: 2px;
+  }
+
+  .meta-text {
+    h4 {
+      margin: 0 0 4px 0;
+      color: #0a2540; // O tu variable $brand-navy
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    p {
+      margin: 0;
+      color: #639fab; // O tu variable $gris-texto
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+  }
+}
+
+.sidebar-phone-link, .sidebar-email-link {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #ff6b35; // O tu variable $brand-orange
+  }
+}
