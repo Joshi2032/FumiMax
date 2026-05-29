@@ -1,38 +1,69 @@
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
+/* ==========================================================================
+   Configuración Global: Reset y Protección contra desbordes
+   ========================================================================== */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* Esto elimina la molesta barra de desplazamiento horizontal */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
-html {
-	scroll-behavior: smooth;
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
-body {
-	margin: 0;
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-	background:
-		radial-gradient(circle at top left, rgba(26, 143, 92, 0.08), transparent 22%),
-		radial-gradient(circle at 100% 18%, rgba(37, 211, 102, 0.05), transparent 18%),
-		#f5f7fa;
-
-	&.historia-bg {
-		background: #f6faf9;
-	}
-
-	font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-	color: #1a2a36;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+/* ==========================================================================
+   Contenedor Raíz de Angular
+   ========================================================================== */
+app-root {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
-main {
-	flex: 1 0 auto;
-	width: 100%;
+/* ==========================================================================
+   Utilidades Globales de Diseño
+   ========================================================================== */
+// Asegura que las imágenes nunca sobresalgan del ancho de su contenedor
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-.main-footer {
-	flex-shrink: 0;
+// Estilo global para enlaces
+a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   Tipografía base para consistencia en todo el proyecto
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  line-height: 1.2;
+}
+
+p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   Clases de utilidades rápidas (para evitar duplicidad)
+   ========================================================================== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-padding {
+  padding: 4rem 0;
 }
