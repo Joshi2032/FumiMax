@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 interface ImagenProyecto {
@@ -15,65 +15,81 @@ interface ImagenProyecto {
   templateUrl: './galeria.html',
   styleUrl: './galeria.scss'
 })
-export class Galeria implements OnInit {
+export class Galeria implements OnInit, OnDestroy {
   currentIndex: number = 0;
+  timer: any; // Variable para guardar el temporizador
 
   proyectos: ImagenProyecto[] = [
     {
-      url: '/Servicio%20a%20BIotecnologia.jpeg',
-      titulo: 'Servicio a BIotecnologia',
-      ubicacion: 'Imagen de proyecto real',
-      sector: 'Galería de campo'
+      url: 'Servicio a BIotecnologia.jpeg',
+      titulo: 'Micronebulización Intramuros y Control Biológico en Zonas Críticas',
+      ubicacion: 'Instalaciones de Biotecnología',
+      sector: 'Grado Clínico / Laboratorios'
     },
     {
-      url: '/Servicio%20a%20BIotecnologia%202.jpeg',
-      titulo: 'Servicio a BIotecnologia 2',
-      ubicacion: 'Imagen de proyecto real',
-      sector: 'Galería de campo'
+      url: 'Unidad productiva san miguel.jpeg',
+      titulo: 'Instalación de Cordón Sanitario Perimetral y Barrera Química',
+      ubicacion: 'Unidad Productiva San Miguel',
+      sector: 'Industrial Manufacturero'
     },
     {
-      url: '/Servicio%20a%20BIotecnologia%203.jpeg',
-      titulo: 'Servicio a BIotecnologia 3',
-      ubicacion: 'Imagen de proyecto real',
-      sector: 'Galería de campo'
+      url: 'Servicio goca.jpeg',
+      titulo: 'Auditoría de Inocuidad e Inspección de Estaciones de Monitoreo',
+      ubicacion: 'Instalaciones GOCA',
+      sector: 'Operación Logística / CEDIS'
     },
     {
-      url: '/servicio%20a%20los%20fresnos.jpeg',
-      titulo: 'servicio a los fresnos',
-      ubicacion: 'Imagen de proyecto real',
-      sector: 'Galería de campo'
+      url: 'servicio a los fresnos.jpeg',
+      titulo: 'Aspersión Focalizada con Efecto de Expulsión Prolongado (Banda Verde)',
+      ubicacion: 'Complejo Los Fresnos',
+      sector: 'Comercial / Áreas Comunes'
     },
     {
-      url: '/Servicio%20goca.jpeg',
-      titulo: 'Servicio goca',
-      ubicacion: 'Imagen de proyecto real',
-      sector: 'Galería de campo'
-    },
-    {
-      url: '/trabajador.jpeg',
-      titulo: 'trabajador',
-      ubicacion: 'Imagen de proyecto real',
-      sector: 'Galería de campo'
-    },
-    {
-      url: '/Unidad%20productiva%20san%20miguel.jpeg',
-      titulo: 'Unidad productiva san miguel',
-      ubicacion: 'Imagen de proyecto real',
-      sector: 'Galería de campo'
+      url: 'trabajador.jpeg',
+      titulo: 'Ejecución de Manejo Integrado de Plagas (MIP) y Análisis de Riesgos',
+      ubicacion: 'Despliegue Técnico Operativo',
+      sector: 'Intervención Especializada'
     }
   ];
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // Inicia el carrusel automático al cargar la página
+    this.iniciarAutoPlay();
+  }
+
+  ngOnDestroy(): void {
+    // Limpia el temporizador al salir de la página para no saturar la memoria
+    this.detenerAutoPlay();
+  }
+
+  iniciarAutoPlay(): void {
+    // Configura el cambio cada 5000 milisegundos (5 segundos)
+    this.timer = setInterval(() => {
+      this.currentIndex = (this.currentIndex + 1) % this.proyectos.length;
+    }, 5000);
+  }
+
+  detenerAutoPlay(): void {
+    if (this.timer) {
+      clearInterval(this.timer);
+    }
+  }
 
   siguienteSlide(): void {
+    this.detenerAutoPlay(); // Pausa el timer actual
     this.currentIndex = (this.currentIndex + 1) % this.proyectos.length;
+    this.iniciarAutoPlay(); // Lo reinicia desde cero
   }
 
   anteriorSlide(): void {
+    this.detenerAutoPlay();
     this.currentIndex = (this.currentIndex - 1 + this.proyectos.length) % this.proyectos.length;
+    this.iniciarAutoPlay();
   }
 
   setSlide(index: number): void {
+    this.detenerAutoPlay();
     this.currentIndex = index;
+    this.iniciarAutoPlay();
   }
 }
