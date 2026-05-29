@@ -1,10 +1,10 @@
-@use '../../pages/variables' as *;
+@use '../../pages/variables' as *; // Asegúrate que esta ruta es correcta en tu proyecto
 @use "sass:color";
 
 .site-header {
   width: 100%;
-  background-color: $blanco-limpio;
-  box-shadow: $shadow-sm;
+  background-color: $blanco-limpio; // Usa #ffffff si no tienes la variable
+  box-shadow: $shadow-sm; // Usa 0 1px 3px rgba(0,0,0,0.1) si no tienes la variable
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -12,8 +12,8 @@
 }
 
 .site-topbar {
-  background-color: $brand-navy;
-  color: $blanco-limpio;
+  background-color: $brand-navy; // Usa #0a2540 si no tienes la variable
+  color: $blanco-limpio; // Usa #ffffff si no tienes la variable
   padding: 0.6rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -27,13 +27,13 @@
   }
 
   .topbar-cta {
-    color: $brand-orange;
+    color: $brand-orange; // Usa #ff6b35 si no tienes la variable
     text-decoration: none;
     font-weight: 700;
-    transition: $transition-base;
+    transition: $transition-base; // Usa all 0.3s ease si no tienes la variable
 
     &:hover {
-      color: color.adjust($brand-orange, $lightness: 10%);
+      color: color.adjust($brand-orange, $lightness: 10%); // Usa un tono más claro de naranja
     }
   }
 }
@@ -41,73 +41,73 @@
 .main-nav {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  // Reduje padding vertical para compensar logo más alto
+  padding: 0.5rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .nav-brand {
+  // Simplificado al quitar el tagline
   display: flex;
-  flex-direction: column;
+  align-items: center;
 
-  .nav-logo {
-    font-size: 1.6rem;
-    font-weight: 800;
-    margin: 0;
-    line-height: 1;
-    color: $brand-navy;
-    letter-spacing: -0.5px;
-
-    span {
-      color: $brand-orange;
-    }
+  .logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
   }
 
-  .nav-tagline {
-    font-size: 0.7rem;
-    color: $gris-texto;
-    margin-top: 0.25rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+  .header-logo-img {
+    // --- CAMBIO CLAVE PARA VISIBILIDAD ---
+    height: 75px; // Aumentado drásticamente de 38px para que sea legible
+    width: auto;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.02);
+    }
   }
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  // Reduje gap de 2rem a 1.5rem para ayudar a responsividad en escritorio
+  gap: 1.5rem;
   list-style: none;
   margin: 0;
   padding: 0;
 
   li a {
     text-decoration: none;
-    color: $brand-navy;
+    color: $brand-navy; // Usa #0a2540 si no tienes la variable
     font-weight: 600;
     font-size: 0.95rem;
-    transition: $transition-base;
+    transition: $transition-base; // Usa all 0.3s ease si no tienes la variable
     padding: 0.5rem 0;
     border-bottom: 2px solid transparent;
 
     &:hover, &.active {
-      color: $brand-navy-light;
+      color: $brand-navy-light; // Usa un tono más claro de navy
       border-bottom-color: $brand-navy-light;
     }
   }
 
   .nav-cta {
-    background: $degradado;
-    color: $blanco-limpio !important;
-    padding: 0.75rem 1.5rem !important;
+    background: $degradado; // Usa linear-gradient si no tienes la variable
+    color: $blanco-limpio !important; // Usa #ffffff si no tienes la variable
+    padding: 0.7rem 1.3rem !important; // Ligeramente más compacto
     border-radius: 6px;
     border-bottom: none !important;
-    box-shadow: $shadow-sm;
+    box-shadow: $shadow-sm; // Usa 0 1px 3px rgba(0,0,0,0.1) si no tienes la variable
 
     &:hover {
       transform: translateY(-2px);
-      box-shadow: $shadow-md;
+      box-shadow: $shadow-md; // Usa 0 4px 6px rgba(0,0,0,0.1) si no tienes la variable
       opacity: 0.95;
     }
   }
@@ -125,9 +125,9 @@
   .bar {
     width: 26px;
     height: 3px;
-    background-color: $brand-navy;
+    background-color: $brand-navy; // Usa #0a2540 si no tienes la variable
     border-radius: 2px;
-    transition: $transition-base;
+    transition: $transition-base; // Usa all 0.3s ease si no tienes la variable
   }
 }
 
@@ -144,46 +144,95 @@
   }
 }
 
-@media (max-width: 768px) {
+// --- NUEVO PUNTO DE QUIEBRE INTERMEDIO (TABLETS/LAPTOPS PEQUEÑAS) ---
+// Evita que el menú choque con el logo y cause scroll horizontal
+@media (max-width: 1100px) {
+  .main-nav {
+    padding: 0.5rem 1.5rem; // Reduce paddings laterales
+  }
+
+  .nav-brand .header-logo-img {
+    height: 65px; // Reduce un poco el logo en tablets
+  }
+
+  .nav-links {
+    gap: 1rem; // Reduce espacio entre enlaces
+
+    li a {
+      font-size: 0.9rem; // Reduce ligeramente tamaño de letra
+    }
+
+    .nav-cta {
+      padding: 0.6rem 1rem !important; // Botón más compacto
+    }
+  }
+}
+
+// --- MENÚ MÓVIL (breakpoint existente adaptado) ---
+@media (max-width: 850px) { // Aumenté el breakpoint de 768 a 850 para activar menú móvil antes
   .site-topbar {
     display: none;
   }
 
+  .nav-brand .header-logo-img {
+    height: 55px; // Logo más compacto en móvil
+  }
+
   .nav-toggle {
     display: flex;
+    z-index: 1001; // Asegura que esté sobre el menú abierto
   }
 
   .nav-links {
-    position: absolute;
-    top: 100%;
+    position: fixed; // Cambiado de absolute a fixed para mejor control en scroll
+    top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
-    background-color: $blanco-limpio;
+    height: 100vh; // Ocupa toda la pantalla
+    background-color: rgba($blanco-limpio, 0.98); // Fondo casi opaco
+    backdrop-filter: blur(10px); // Efecto blur moderno
     flex-direction: column;
+    justify-content: center; // Centra enlaces verticalmente
     padding: 2rem;
-    gap: 1.5rem;
-    border-top: 1px solid $gris-bordes;
-    box-shadow: $shadow-md;
-    transform: translateY(-10px);
+    gap: 2rem; // Más espacio entre enlaces en móvil
+    transform: translateX(100%); // Escondido a la derecha
     opacity: 0;
     pointer-events: none;
-    transition: $transition-base;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    z-index: 1000;
 
     &.open {
-      transform: translateY(0);
+      transform: translateX(0); // Desliza hacia adentro
       opacity: 1;
       pointer-events: auto;
+    }
+
+    li {
+      width: 100%;
+      text-align: center;
     }
 
     li a {
       width: 100%;
       text-align: center;
       display: block;
+      font-size: 1.2rem; // Letra más grande en móvil
+      padding: 1rem 0;
+      border-bottom: none;
+
+      &:hover, &.active {
+        color: $brand-orange;
+        border-bottom: none;
+      }
     }
 
     .nav-cta {
-      width: 100%;
-      text-align: center;
+      width: auto;
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      padding: 1rem 2.5rem !important;
     }
   }
 }

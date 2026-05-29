@@ -1,22 +1,20 @@
 <header class="site-header">
   <div class="site-topbar">
     <p>🛡️ Control de Plagas con Certificación Sanitaria Federal</p>
-    <a href="tel:3521234567" class="topbar-cta">📞 Urgencias: 352 522 1143</a>
+    <a href="tel:3525221143" class="topbar-cta">📞 Urgencias: 352 522 1143</a>
   </div>
 
   <nav class="main-nav">
     <div class="nav-brand">
-      <h1 class="nav-logo">Fumi<span>Max</span></h1>
-      <span class="nav-tagline">Manejo Integrado de Plagas</span>
-    </div>
+      <a routerLink="/" class="logo-link">
+        <img src="Maxifum.png" alt="MAXIFUM DEL BAJÍO" class="header-logo-img">
+      </a>
+      </div>
 
     <ul class="nav-links" [class.open]="isMenuOpen">
       <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()">Inicio</a></li>
       <li><a routerLink="/servicios" routerLinkActive="active" (click)="closeMenu()">Servicios</a></li>
-      <li><a routerLink="/plagas" routerLinkActive="active" (click)="closeMenu()">Catálogo de Plagas</a></li>
-      <li><a routerLink="/proceso" routerLinkActive="active" (click)="closeMenu()">Nuestro Proceso</a></li>
-      <li><a routerLink="/contacto" class="nav-cta" (click)="closeMenu()">Cotizar Ahora</a></li>
-    </ul>
+      <li><a routerLink="/plagas" routerLinkActive="active" (click)="closeMenu()">Catálogo</a></li> <li><a routerLink="/proceso" routerLinkActive="active" (click)="closeMenu()">Proceso</a></li> <li><a routerLink="/contacto" class="nav-cta" (click)="closeMenu()">Cotizar</a></li> </ul>
 
     <button class="nav-toggle" (click)="toggleMenu()" aria-label="Abrir menú" [class.open]="isMenuOpen">
       <span class="bar"></span>
