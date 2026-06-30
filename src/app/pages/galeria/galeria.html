@@ -12,13 +12,7 @@
       <div class="slider-track-window">
         @for (proyecto of proyectos; track $index) {
           <div class="slide-item" [class.active]="$index === currentIndex">
-            <img [src]="proyecto.url" [alt]="proyecto.titulo" [title]="proyecto.titulo" class="slide-img">
-
-            <div class="slide-info-card">
-              <span class="slide-tag">{{ proyecto.sector }}</span>
-              <h3>{{ proyecto.titulo }}</h3>
-              <p class="slide-location">📍 {{ proyecto.ubicacion }}</p>
-            </div>
+            <img [src]="proyecto.url" class="slide-img">
           </div>
         }
       </div>

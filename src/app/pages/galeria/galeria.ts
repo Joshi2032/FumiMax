@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 interface ImagenProyecto {
   url: string;
-  titulo: string;
   ubicacion: string;
   sector: string;
 }
@@ -22,31 +21,26 @@ export class Galeria implements OnInit, OnDestroy {
   proyectos: ImagenProyecto[] = [
     {
       url: 'Servicio a BIotecnologia.jpeg',
-      titulo: 'Micronebulización Intramuros y Control Biológico en Zonas Críticas',
       ubicacion: 'Instalaciones de Biotecnología',
       sector: 'Grado Clínico / Laboratorios'
     },
     {
       url: 'Unidad productiva san miguel.jpeg',
-      titulo: 'Instalación de Cordón Sanitario Perimetral y Barrera Química',
       ubicacion: 'Unidad Productiva San Miguel',
       sector: 'Industrial Manufacturero'
     },
     {
       url: 'Servicio goca.jpeg',
-      titulo: 'Auditoría de Inocuidad e Inspección de Estaciones de Monitoreo',
       ubicacion: 'Instalaciones GOCA',
       sector: 'Operación Logística / CEDIS'
     },
     {
       url: 'servicio a los fresnos.jpeg',
-      titulo: 'Aspersión Focalizada con Efecto de Expulsión Prolongado (Banda Verde)',
       ubicacion: 'Complejo Los Fresnos',
       sector: 'Comercial / Áreas Comunes'
     },
     {
       url: 'trabajador.jpeg',
-      titulo: 'Ejecución de Manejo Integrado de Plagas (MIP) y Análisis de Riesgos',
       ubicacion: 'Despliegue Técnico Operativo',
       sector: 'Intervención Especializada'
     }
