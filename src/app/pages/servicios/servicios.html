@@ -31,6 +31,9 @@
               <span class="sector-badge-id">Protocolo Técnico Homologado</span>
               <h2>{{ sector.titulo }}</h2>
               <p class="sector-sub-msg">{{ sector.subtitulo }}</p>
+              
+              
+
               <p class="sector-main-desc">{{ sector.descripcion }}</p>
 
               <div class="sector-points-list">
@@ -55,6 +58,10 @@
                   @for (norma of sector.normativas; track norma) {
                     <span class="norma-tag-item">✔ {{ norma }}</span>
                   }
+                </div>
+
+                <div class="sector-image-wrapper">
+                  <img [src]="sector.imagen" [alt]="sector.titulo" class="sector-fluid-img">
                 </div>
 
                 <div class="compliance-footer-action">

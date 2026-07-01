@@ -10,6 +10,7 @@ interface ProtocoloServicio {
   subtitulo: string;
   descripcion: string;
   enfoqueClave: string[];
+  imagen: string; // <-- Nueva propiedad para la ruta de la imagen
   normativas: string[];
 }
 
@@ -21,7 +22,6 @@ interface ProtocoloServicio {
   styleUrl: './servicios.scss',
 })
 export class Servicios implements OnInit {
-  // Estado para controlar qué pestaña está renderizada
   sectorActivo: string = 'industrial';
 
   sectores: ProtocoloServicio[] = [
@@ -29,46 +29,49 @@ export class Servicios implements OnInit {
       id: 'industrial',
       tabName: 'Industrial y CEDIS',
       icon: '🏭',
-      titulo: 'Cordones Sanitarios de Alta Densidad para Industria, Almacenes y Agro',
-      subtitulo: 'Protección perimetral estricta para cadenas de suministro y empaques',
-      descripcion: 'Diseñamos e implementamos sistemas de Manejo Integrado de Plagas (MIP) específicos para plantas manufactureras de alta exigencia, almacenes complejos, la industria automotriz y centros de distribución (CEDIS) del Bajío. Nos enfocamos en el blindaje perimetral, el monitoreo predictivo y la disminución del uso de plaguicidas en áreas críticas mediante el uso prioritario de medios mecánicos avanzados.',
+      titulo: 'Cordones Sanitarios de Alta Densidad',
+      subtitulo: 'Blindaje perimetral y protección de la cadena de suministro.',
+      descripcion: 'Sistemas avanzados de Manejo Integrado de Plagas (MIP) para la industria de alta exigencia del Bajío. Nos enfocamos en el monitoreo predictivo y el uso prioritario de medios mecánicos avanzados para minimizar plaguicidas en áreas críticas.',
       enfoqueClave: [
-        'Industria Alimentaria y de Bebidas: Control estricto de vectores diarreicos y contaminantes bajo estándares de exportación.',
-        'Sector Automotriz y Aeroespacial: Blindaje técnico perimetral contra roedores urbanos que comprometan cableados o componentes.',
-        'Centros Logísticos y de Almacenamiento (CEDIS): Monitoreo predictivo continuo en zonas de alta rotación.',
-        'Plantas Manufactureras y Maquiladoras: Estaciones de cebado herméticas numeradas para superar auditorías severas.'
+        'Alimentos y Bebidas: Estándares de exportación y control estricto de vectores.',
+        'Automotriz y Aeroespacial: Blindaje perimetral contra roedores para proteger componentes.',
+        'Logística y CEDIS: Monitoreo predictivo continuo en zonas de alta rotación.',
+        'Plantas Manufactureras: Estaciones herméticas numeradas listas para auditorías.'
       ],
-      normativas: ['COFEPRIS', 'Registros CICOPLAFEST', 'Estándares EPA (EE. UU.)', 'Norma Oficial Mexicana']
+      imagen: 'control-plagas-industrial.jpg', // <-- Ruta local sugerida
+      normativas: ['COFEPRIS', 'CICOPLAFEST', 'Estándares EPA', 'Normas Oficiales Mexicanas']
     },
     {
       id: 'comercial',
-      tabName: 'Comercio y Restaurantes',
+      tabName: 'Comercio y Salud',
       icon: '🏢',
-      titulo: 'Protección de Marca e Inocuidad Alimentaria Comercial y Clínica',
-      subtitulo: 'Tratamientos discretos y efectivos que garantizan su operación continua',
-      descripcion: 'Soluciones orientadas al sector hostelero, restaurantero, retail y entornos de salud estrictamente regulados. Implementamos aplicaciones de grado clínico controladas sin olores desagradables y en horarios especiales para no interferir con la operación, cumpliendo con las más exigentes auditorías de sanidad nacionales e internacionales.',
+      titulo: 'Protección de Marca e Inocuidad',
+      subtitulo: 'Tratamientos discretos que garantizan su operación continua.',
+      descripcion: 'Soluciones para comercio, restaurantes y entornos de salud. Implementamos aplicaciones sin olor en horarios especiales para no interferir con su operación, listos para superar auditorías de sanidad.', 
       enfoqueClave: [
-        'Sector Farmacéutico y Dispositivos Médicos: Control biológico absoluto bajo normativas de nula volatilidad residual.',
-        'Centros de Salud, Clínicas y Laboratorios: Aplicación quirúrgica en ambientes controlados con registros COFEPRIS vigentes.',
-        'Restaurantes y Comedores Industriales: Soporte documental riguroso para la aprobación de Distintivo H y NOM-251.',
-        'Hoteles, Moteles y Complejos Comerciales: Tratamientos discretos con alto efecto de expulsión perimetral.'
+        'Farmacéutica y Dispositivos Médicos: Control estricto con productos de nula volatilidad residual.',
+        'Clínicas y Laboratorios: Aplicación en ambientes controlados con registros COFEPRIS vigentes.',
+        'Restaurantes y Comedores: Soporte documental para aprobación de Distintivo H y NOM-251.',
+        'Hoteles y Centros Comerciales: Tratamientos discretos con alta efectividad de expulsión.'
       ],
-      normativas: ['Distintivo H', 'Norma Oficial Mexicana NOM-251', 'Regulación Sanitaria Local', 'Protocolos Clínicos']
+      imagen: 'control-plagas-comercial.jpg',
+      normativas: ['Distintivo H', 'NOM-251-SSA1', 'Regulación Sanitaria', 'Protocolos Clínicos']
     },
     {
       id: 'residencial',
       tabName: 'Residencial',
       icon: '🏠',
-      titulo: 'Resguardo Sanitario Familiar y Control Urbano Habitacional',
-      subtitulo: 'Tratamientos seguros de amplio espectro contra plagas caseras',
-      descripcion: 'Protegemos su hogar y a su familia (incluyendo mascotas) de los riesgos sanitarios provocados por insectos y roedores urbanos. Aplicaciones limpias con efecto de expulsión y prolongada persistencia residual, utilizando formulaciones autorizadas con bandas de seguridad verde y azul.',
+      titulo: 'Protección Familiar y Residencial',
+      subtitulo: 'Tratamientos seguros y de amplio espectro contra plagas caseras.',
+      descripcion: 'Protegemos tu hogar, familia y mascotas de riesgos sanitarios. Utilizamos aplicaciones limpias, sin olores molestos y con productos autorizados de banda verde y azul que garantizan una larga protección residual.',
       enfoqueClave: [
-        'Casas Habitación y Complejos Residenciales: Persistencia residual prolongada sin aromas molestos ni desalojos.',
-        'Transportes de Pasajeros y Unidades de Carga: Desinfección integral y sanidad estricta en rutas de traslado.',
-        'Control Perimetral de Jardines y Zoclos: Barreras biológicas seguras que protegen a sus animales domésticos.',
-        'Pólizas de Mantenimiento Bimestral: Monitoreo continuo con cobertura total y garantía por escrito.'
+        'Casas y Residenciales: Protección prolongada sin necesidad de desalojar la vivienda.',
+        'Jardines y Perímetros: Barreras seguras que cuidan a tus animales domésticos.',
+        'Transporte de Pasajeros: Desinfección integral y control de plagas en unidades de traslado.',
+        'Pólizas Bimestrales: Monitoreo continuo con cobertura total y garantía por escrito.'
       ],
-      normativas: ['Uso Urbano Autorizado', 'Línea Bioracional Segura', 'Registros de Inocuidad COFEPRIS']
+      imagen: 'control-plagas-residencial.jpg',
+      normativas: ['Uso Urbano Autorizado', 'Línea Bioracional', 'Registros COFEPRIS']
     }
   ];
 

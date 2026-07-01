@@ -42,8 +42,8 @@ export class Plagas implements OnInit {
       categoria: 'roedor',
       riesgo: 'Crítico',
       riesgoClass: 'riesgo-critico',
-      descripcion: 'Plaga de alto impacto estructural y sanitario. Destruyen cableados, estructuras de madera y contaminan insumos con heces, orina y vello.',
-      amenazaClave: 'Riesgo de incendios por cortocircuito y transmisión de Leptospirosis.'
+      descripcion: 'Plaga de alto impacto estructural y sanitario. Destruyen cableados, estructuras de madera y contaminan insumos con heces, orina y pelaje.',
+      amenazaClave: 'Riesgo de incendios por corto circuito, transmisión de enfermedades como salmonelosis, Brucelosis, leptospirosis, fiebre aptosa, triquinosis, Peste, rabia, otras.'
     },
     {
       id: 'mosca',
@@ -52,7 +52,7 @@ export class Plagas implements OnInit {
       categoria: 'volador',
       riesgo: 'Alto',
       riesgoClass: 'riesgo-alto',
-      descripcion: 'Vectores mecánicos voladores atraídos por materia orgánica en descomposición. Su presencia en comedores o plantas de alimentos arruina el Distintivo H.',
+      descripcion: 'Vectores mecánicos voladores atraídos por materia orgánica en descomposición. Su presencia en comedores, plantas de alimentos y empaques de frutas y vegetales, contaminan con sus patógenos en los sitios donde se Posan.',
       amenazaClave: 'Altas cargas bacterianas en superficies de contacto directo con alimentos.'
     },
     {

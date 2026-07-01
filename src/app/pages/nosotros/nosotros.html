@@ -1,83 +1,19 @@
 <section class="nosotros-page">
-  <div class="nosotros-hero">
-    <div class="nosotros-container">
-      <span class="section-tag">Nuestra Identidad</span>
-      <h2>MAXIFUM DEL BAJÍO S.A. DE C.V.</h2>
-      <p class="hero-lead">
-        Una organización con más de tres décadas de trayectoria, dedicada de manera profesional al Manejo Integral de Plagas (MIP), blindando la inocuidad industrial y protegiendo el entorno del Bajío.
-      </p>
-
-      <div class="nosotros-mision-vision-grid">
-        <div class="identity-card">
-          <div class="card-icon">🎯</div>
-          <h3>Nuestra Misión</h3>
-          <p>Ofrecer un servicio de calidad en el control de plagas, logrando la erradicación de las mismas, cuidando la salud de la organización y el medio ambiente.</p>
-        </div>
-
-        <div class="identity-card">
-          <div class="card-icon">👁️</div>
-          <h3>Nuestra Visión</h3>
-          <p>Ser una organización líder e innovadora en el mercado de control de plagas, satisfaciendo las necesidades de nuestros clientes con personal calificado.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="history-timeline-section">
-    <div class="nosotros-container">
-      <div class="section-header-center">
-        <h2>Trayectoria Sostenida Desde 1985</h2>
-        <p>Evolución técnica e institucional de una base operativa de élite.</p>
-      </div>
-
-      <div class="timeline-wrapper">
-        @for (hito of historia; track hito.ano) {
-          <div class="timeline-node">
-            <div class="node-year"><span>{{ hito.ano }}</span></div>
-            <div class="node-content-box">
-              <h3>{{ hito.titulo }}</h3>
-              <p>{{ hito.descripcion }}</p>
-            </div>
-          </div>
-        }
-      </div>
-    </div>
-  </div>
-
-  <div class="valores-section">
-    <div class="nosotros-container">
-      <div class="section-header-center">
-        <h2>Valores que Guían Nuestra Operación</h2>
-        <p>Los pilares éticos de nuestra cultura organizacional definidos en nuestro marco normativo.</p>
-      </div>
-
-      <div class="valores-cards-grid">
-        @for (valor of valores; track valor.nombre) {
-          <div class="valor-mini-card">
-            <span class="val-icon">{{ valor.icon }}</span>
-            <h4>{{ valor.nombre }}</h4>
-            <p>{{ valor.descripcion }}</p>
-          </div>
-        }
-      </div>
-    </div>
-  </div>
-
   <div class="certificaciones-block">
     <div class="nosotros-container">
       <div class="certificaciones-header">
         <span class="badge-legal">Validación y Alianzas</span>
         <h2>Soporte Regulatorio y Operativo Nacional e Internacional</h2>
-        <p>Operamos bajo el amparo de licencias federales vigentes, garantizando auditorías 100% auditables para plantas alimenticias, CEDIS, sector comercial y agroindustrial.</p>
+        <p>Operamos bajo el amparo de la licencia sanitaria vigente garantizando auditorías 100% auditables para plantas alimenticias, CEDIS, sector comercial y agroindustrial.</p>
       </div>
 
       <div class="certificaciones-grid">
         <div class="cert-card corporate-highlight">
           <div class="cert-badge-icon">🎖️</div>
           <div class="cert-content">
-            <h3>Licencia Sanitaria Federal</h3>
+            <h3>Licencia Sanitaria</h3>
             <p class="cert-authority">Emitida por COFEPRIS</p>
-            <p class="cert-desc">Autorización oficial y sanitaria que nos faculta legalmente para la aplicación de agentes de control urbano e industrial, utilizando productos aprobados por CICOPLAFEST.</p>
+            <p class="cert-desc">Autorización oficial y sanitaria que nos faculta legalmente para la aplicación de agentes de control urbano e industrial, utilizando productos aprobados por CICOPLAFEST y COFEPRIS.</p>
             <span class="legal-tag">Estatus: Activa / Vigente</span>
           </div>
         </div>
@@ -87,7 +23,7 @@
           <div class="cert-content">
             <h3>Miembros Activos de la NPMA</h3>
             <p class="cert-authority">National Pest Management Association</p>
-            <p class="cert-desc">Alineados a los estándares de control biológico e inocuidad norteamericanos, reduciendo el uso de pesticidas mediante control mecánico avanzado.</p>
+            <p class="cert-desc">Alineados a los estándares de calidad e inocuidad reduciendo el uso de pesticidas mediante control físico y mecánico.</p>
           </div>
         </div>
 
@@ -96,7 +32,7 @@
           <div class="cert-content">
             <h3>Respaldo ANCPUAC y APROCOPUEM</h3>
             <p class="cert-authority">Asociaciones Profesionales</p>
-            <p class="cert-desc">Afiliados a los máximos organismos de profesionales en el control de plagas urbanas en el país y en el estado de Michoacán.</p>
+            <p class="cert-desc">Afiliados a los máximos organismos de profesionales en el control de plagas urbanas en el país y en la región del bajío Guanajuato y Michoacán.</p>
           </div>
         </div>
       </div>
