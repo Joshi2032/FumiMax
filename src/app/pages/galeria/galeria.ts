@@ -30,7 +30,7 @@ export class Galeria implements OnInit, OnDestroy {
       sector: 'Industrial Manufacturero'
     },
     {
-      url: 'Servicio goca.jpeg',
+      url: 'Servicio goca 3.0.png',
       ubicacion: 'Instalaciones GOCA',
       sector: 'Operación Logística / CEDIS'
     },
