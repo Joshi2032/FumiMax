@@ -2,6 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Title, Meta } from '@angular/platform-browser';
 
+interface EnfoqueClave {
+  icono: string;
+  titulo: string;
+  descripcion: string;
+}
+
 interface ProtocoloServicio {
   id: string;
   tabName: string;
@@ -9,8 +15,8 @@ interface ProtocoloServicio {
   titulo: string;
   subtitulo: string;
   descripcion: string;
-  enfoqueClave: string[];
-  imagen: string; // <-- Nueva propiedad para la ruta de la imagen
+  enfoqueClave: EnfoqueClave[];
+  imagen: string;
   normativas: string[];
 }
 
@@ -33,12 +39,12 @@ export class Servicios implements OnInit {
       subtitulo: 'Blindaje perimetral y protección de la cadena de suministro.',
       descripcion: 'Sistemas avanzados de Manejo Integrado de Plagas (MIP) para la industria de alta exigencia del Bajío. Nos enfocamos en el monitoreo predictivo y el uso prioritario de medios mecánicos avanzados para minimizar plaguicidas en áreas críticas.',
       enfoqueClave: [
-        'Alimentos y Bebidas: Estándares de exportación y control estricto de vectores.',
-        'Automotriz y Aeroespacial: Blindaje perimetral contra roedores para proteger componentes.',
-        'Logística y CEDIS: Monitoreo predictivo continuo en zonas de alta rotación.',
-        'Plantas Manufactureras: Estaciones herméticas numeradas listas para auditorías.'
+        { icono: '🍽️', titulo: 'Alimentos y Bebidas', descripcion: 'Control de vectores para exportación.' },
+        { icono: '🚗', titulo: 'Automotriz', descripcion: 'Blindaje perimetral de componentes.' },
+        { icono: '📦', titulo: 'Logística y CEDIS', descripcion: 'Monitoreo continuo en zonas de rotación.' },
+        { icono: '🏭', titulo: 'Plantas Manufactureras', descripcion: 'Estaciones herméticas numeradas.' },
       ],
-      imagen: 'control-plagas-industrial.jpg', // <-- Ruta local sugerida
+      imagen: 'control-plagas-industrial.jpg',
       normativas: ['COFEPRIS', 'CICOPLAFEST', 'Estándares EPA', 'Normas Oficiales Mexicanas']
     },
     {
@@ -47,12 +53,12 @@ export class Servicios implements OnInit {
       icon: '🏢',
       titulo: 'Protección de Marca e Inocuidad',
       subtitulo: 'Tratamientos discretos que garantizan su operación continua.',
-      descripcion: 'Soluciones para comercio, restaurantes y entornos de salud. Implementamos aplicaciones sin olor en horarios especiales para no interferir con su operación, listos para superar auditorías de sanidad.', 
+      descripcion: 'Soluciones para comercio, restaurantes y entornos de salud. Implementamos aplicaciones sin olor en horarios especiales para no interferir con su operación, listos para superar auditorías de sanidad.',
       enfoqueClave: [
-        'Farmacéutica y Dispositivos Médicos: Control estricto con productos de nula volatilidad residual.',
-        'Clínicas y Laboratorios: Aplicación en ambientes controlados con registros COFEPRIS vigentes.',
-        'Restaurantes y Comedores: Soporte documental para aprobación de Distintivo H y NOM-251.',
-        'Hoteles y Centros Comerciales: Tratamientos discretos con alta efectividad de expulsión.'
+        { icono: '💊', titulo: 'Farmacéutica y Dispositivos Médicos', descripcion: 'Productos sin volatilidad residual.' },
+        { icono: '🧪', titulo: 'Clínicas y Laboratorios', descripcion: 'Registros COFEPRIS vigentes.' },
+        { icono: '🍴', titulo: 'Restaurantes y Comedores', descripcion: 'Soporte para Distintivo H y NOM-251.' },
+        { icono: '🏨', titulo: 'Hoteles y Centros Comerciales', descripcion: 'Tratamientos discretos, alta efectividad.' },
       ],
       imagen: 'control-plagas-comercial.jpg',
       normativas: ['Distintivo H', 'NOM-251-SSA1', 'Regulación Sanitaria', 'Protocolos Clínicos']
@@ -65,10 +71,10 @@ export class Servicios implements OnInit {
       subtitulo: 'Tratamientos seguros y de amplio espectro contra plagas caseras.',
       descripcion: 'Protegemos tu hogar, familia y mascotas de riesgos sanitarios. Utilizamos aplicaciones limpias, sin olores molestos y con productos autorizados de banda verde y azul que garantizan una larga protección residual.',
       enfoqueClave: [
-        'Casas y Residenciales: Protección prolongada sin necesidad de desalojar la vivienda.',
-        'Jardines y Perímetros: Barreras seguras que cuidan a tus animales domésticos.',
-        'Transporte de Pasajeros: Desinfección integral y control de plagas en unidades de traslado.',
-        'Pólizas Bimestrales: Monitoreo continuo con cobertura total y garantía por escrito.'
+        { icono: '🏡', titulo: 'Casas y Residenciales', descripcion: 'Protección sin desalojar la vivienda.' },
+        { icono: '🌳', titulo: 'Jardines y Perímetros', descripcion: 'Barreras seguras para mascotas.' },
+        { icono: '🚌', titulo: 'Transporte de Pasajeros', descripcion: 'Desinfección integral de unidades.' },
+        { icono: '📋', titulo: 'Pólizas Bimestrales', descripcion: 'Cobertura y garantía por escrito.' },
       ],
       imagen: 'control-plagas-residencial.jpg',
       normativas: ['Uso Urbano Autorizado', 'Línea Bioracional', 'Registros COFEPRIS']

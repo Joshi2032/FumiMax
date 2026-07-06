@@ -31,42 +31,37 @@
               <span class="sector-badge-id">Protocolo Técnico Homologado</span>
               <h2>{{ sector.titulo }}</h2>
               <p class="sector-sub-msg">{{ sector.subtitulo }}</p>
-              
-              
 
-              <p class="sector-main-desc">{{ sector.descripcion }}</p>
-
-              <div class="sector-points-list">
-                <h3>📌 Ejes Operativos Clave:</h3>
-                <ul>
-                  @for (punto of sector.enfoqueClave; track punto) {
-                    <li>{{ punto }}</li>
-                  }
-                </ul>
+              <div class="sector-highlights-grid">
+                @for (punto of sector.enfoqueClave; track punto.titulo) {
+                  <div class="sector-highlight-card">
+                    <span class="highlight-icon">{{ punto.icono }}</span>
+                    <div>
+                      <p class="highlight-title">{{ punto.titulo }}</p>
+                      <p class="highlight-desc">{{ punto.descripcion }}</p>
+                    </div>
+                  </div>
+                }
               </div>
             </div>
 
             <div class="sector-compliance-col">
               <div class="compliance-box-card">
-                <h3>Marco Regulatorio de Aprobación</h3>
-                <p>
-                  Este servicio incluye la entrega de bitácoras institucionales alineadas al
-                  cumplimiento de:
-                </p>
+                <div class="compliance-image-wrapper">
+                  <img [src]="sector.imagen" [alt]="sector.titulo" class="compliance-fluid-img">
+                </div>
 
-                <div class="normativas-tags-group">
+                <h3>Marco Regulatorio</h3>
+                <p class="compliance-summary">Bitácoras y registros listos para auditoría.</p>
+
+                <div class="normativas-tags-grid">
                   @for (norma of sector.normativas; track norma) {
                     <span class="norma-tag-item">✔ {{ norma }}</span>
                   }
                 </div>
 
-                <div class="sector-image-wrapper">
-                  <img [src]="sector.imagen" [alt]="sector.titulo" class="sector-fluid-img">
-                </div>
-
                 <div class="compliance-footer-action">
-                  <p>¿Requiere una cotización formalizada para este sector?</p>
-                  <a href="/contacto" class="btn-compliance-cta">Solicitar Inspección de Riesgo</a>
+                  <a href="/contacto" class="btn-compliance-cta">Solicitar Inspección</a>
                 </div>
               </div>
             </div>
